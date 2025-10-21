@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2FAACC09-9C76-4935-AF83-E7857F09BCCF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ScadenzaDiLegge</RootNamespace>
+    <AssemblyName>ScadenzaDiLegge</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ClassiUserController\ComadoUserControl.xaml.cs">
+      <DependentUpon>ComadoUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserController\Logo_Marina_USERCONTROLLER.xaml.cs">
+      <DependentUpon>Logo_Marina_USERCONTROLLER.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserController\menuLaterare_usersControler.xaml.cs">
+      <DependentUpon>menuLaterare_usersControler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserController\MarinaDifesaUserControl.xaml.cs" />
+    <Compile Include="UserController\Ministero_della_DIfesa_USERCONTROLLER.xaml.cs">
+      <DependentUpon>Ministero_della_DIfesa_USERCONTROLLER.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bettica.cs" />
+    <Compile Include="Models\Borsini.cs" />
+    <Compile Include="Models\Cassiopea.cs" />
+    <Compile Include="Models\DboMarinaresco.cs" />
+    <Compile Include="Models\Favignana.cs" />
+    <Compile Include="Models\Foscari.cs" />
+    <Compile Include="Models\Gasa1013.cs" />
+    <Compile Include="Models\Gasa1014.cs" />
+    <Compile Include="Models\Gasa1023.cs" />
+    <Compile Include="Models\Gd319.cs" />
+    <Compile Include="Models\GeMs16.cs" />
+    <Compile Include="Models\Gg1012.cs" />
+    <Compile Include="Models\Ggs1018.cs" />
+    <Compile Include="Models\GkM28.cs" />
+    <Compile Include="Models\Go53.cs" />
+    <Compile Include="Models\Grg563.cs" />
+    <Compile Include="Models\Grg564.cs" />
+    <Compile Include="Models\Jdg10.cs" />
+    <Compile Include="Models\Levanzo.cs" />
+    <Compile Include="Models\Libra.cs" />
+    <Compile Include="Models\Linosa.cs" />
+    <Compile Include="Models\Lipari.cs" />
+    <Compile Include="Models\marinarescosqliteContext.cs" />
+    <Compile Include="Models\Orione.cs" />
+    <Compile Include="Models\Panarea.cs" />
+    <Compile Include="Models\Polifemo.cs" />
+    <Compile Include="Models\Portoconte.cs" />
+    <Compile Include="Models\Portovenere.cs" />
+    <Compile Include="Models\Rp102.cs" />
+    <Compile Include="Models\Rp112.cs" />
+    <Compile Include="Models\Rp123.cs" />
+    <Compile Include="Models\Rp125.cs" />
+    <Compile Include="Models\Rp126.cs" />
+    <Compile Include="Models\Rp130.cs" />
+    <Compile Include="Models\Rp131.cs" />
+    <Compile Include="Models\Salina.cs" />
+    <Compile Include="Models\Scire.cs" />
+    <Compile Include="Models\Sirio.cs" />
+    <Compile Include="Models\Spica.cs" />
+    <Compile Include="Models\Ticino.cs" />
+    <Compile Include="Models\Tirso.cs" />
+    <Compile Include="Models\Vega.cs" />
+    <Compile Include="SplashScreen\SplashScreen.xaml.cs">
+      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ClassiUserController\ComadoUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary\LabelDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserController\Logo_Marina_USERCONTROLLER.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UserController\menuLaterare_usersControler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserController\MarinaDifesaUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserController\Ministero_della_DIfesa_USERCONTROLLER.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SplashScreen\SplashScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\SplashScreen..png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite">
+      <Version>3.1.32</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+      <Version>3.1.32</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="SQLitePCLRaw.lib.e_sqlite3">
+      <Version>2.1.11</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\ministero-difesa-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\marina-logo.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Img\command.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\commandW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\cassiopea.png" />
+    <Resource Include="Img\cassiopeaW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\zodiac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\zodiacW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\anchor.png" />
+    <Resource Include="Img\anchorW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\tug-of-war.png" />
+    <Resource Include="Img\tug-of-warW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\ship-wheel.png" />
+    <Resource Include="Img\ship-wheelW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\two-vertical-rectangles-with-arrows-pointing-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\two-vertical-rectangles-with-arrows-pointing-outW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\submarine.png" />
+    <Resource Include="Img\submarineW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\journey.png" />
+    <Resource Include="Img\journeyW.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

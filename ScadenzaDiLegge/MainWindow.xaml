@@ -1,0 +1,51 @@
+﻿<Window x:Class="ScadenzaDiLegge.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScadenzaDiLegge"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow"
+        Height="500" Width="1000"
+        
+        >
+
+    <Grid>
+        <!-- Definizione righe principali -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <!-- Header -->
+            <RowDefinition Height="60" />
+            <!-- Riga opzionale -->
+            <RowDefinition Height="363" />
+            <!-- Contenuto -->
+        </Grid.RowDefinitions>
+
+        <!-- Riga 0: intestazione con UserControl -->
+        <Grid Grid.Row="0">
+            <local:Ministero_della_DIfesa_USERCONTROLLER />
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <local:Logo_Marina_USERCONTROLLER/>
+        </Grid>
+
+        <!-- Riga 2: contenuto principale -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="210" />
+                <!-- Menu laterale -->
+                <ColumnDefinition Width="*" />
+                <!-- Area contenuto -->
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="2" Grid.Column="0">
+                <local:menuLaterare_usersControler Height="384"/>
+            </StackPanel>
+
+            <ContentControl Grid.Row="2" Grid.Column="1" x:Name="AreaComune"/>
+        </Grid>
+    </Grid>
+</Window>
