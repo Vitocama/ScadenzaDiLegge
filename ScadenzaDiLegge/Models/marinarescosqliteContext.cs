@@ -22,17 +22,18 @@ namespace ScadenzaDiLegge.Models
         public virtual DbSet<Bettica> Bettica { get; set; }
         public virtual DbSet<Borsini> Borsini { get; set; }
         public virtual DbSet<Cassiopea> Cassiopea { get; set; }
+        public virtual DbSet<Cigali> Cigali { get; set; }
         public virtual DbSet<DboMarinaresco> DboMarinaresco { get; set; }
         public virtual DbSet<Favignana> Favignana { get; set; }
         public virtual DbSet<Foscari> Foscari { get; set; }
         public virtual DbSet<Gasa1013> Gasa1013 { get; set; }
         public virtual DbSet<Gasa1014> Gasa1014 { get; set; }
         public virtual DbSet<Gasa1023> Gasa1023 { get; set; }
-        public virtual DbSet<Gd319> Gd319 { get; set; }
-        public virtual DbSet<GeMs16> GeMs16 { get; set; }
+        public virtual DbSet<Gd139> Gd139 { get; set; }
+        public virtual DbSet<Gems16> Gems16 { get; set; }
         public virtual DbSet<Gg1012> Gg1012 { get; set; }
         public virtual DbSet<Ggs1018> Ggs1018 { get; set; }
-        public virtual DbSet<GkM28> GkM28 { get; set; }
+        public virtual DbSet<Gkm28> Gkm28 { get; set; }
         public virtual DbSet<Go53> Go53 { get; set; }
         public virtual DbSet<Grg563> Grg563 { get; set; }
         public virtual DbSet<Grg564> Grg564 { get; set; }
@@ -165,6 +166,51 @@ namespace ScadenzaDiLegge.Models
             modelBuilder.Entity<Cassiopea>(entity =>
             {
                 entity.ToTable("CASSIOPEA");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("ID")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.ApparecchiaturaSistemazione).HasColumnName("APPARECCHIATURA_SISTEMAZIONE");
+
+                entity.Property(e => e.Base).HasColumnName("BASE");
+
+                entity.Property(e => e.Certificati).HasColumnName("CERTIFICATI");
+
+                entity.Property(e => e.Column18).HasColumnName("column18");
+
+                entity.Property(e => e.Column19).HasColumnName("column19");
+
+                entity.Property(e => e.Comando).HasColumnName("COMANDO");
+
+                entity.Property(e => e.DataEffettuazione).HasColumnName("DATA_EFFETTUAZIONE");
+
+                entity.Property(e => e.DocumentiCorrelati).HasColumnName("DOCUMENTI_CORRELATI");
+
+                entity.Property(e => e.GiorniMancantiAllaScadenza)
+                    .HasColumnName("GIORNI_MANCANTI_ALLA_SCADENZA")
+                    .HasColumnType("INT");
+
+                entity.Property(e => e.MarcaModelloDimensioni).HasColumnName("MARCA_MODELLO_DIMENSIONI");
+
+                entity.Property(e => e.Note).HasColumnName("NOTE");
+
+                entity.Property(e => e.ProssimaScadenza).HasColumnName("PROSSIMA_SCADENZA");
+
+                entity.Property(e => e.TipoDiAccertamento).HasColumnName("TIPO_DI_ACCERTAMENTO");
+
+                entity.Property(e => e.TipologiaApparecchiature).HasColumnName("TIPOLOGIA_APPARECCHIATURE");
+
+                entity.Property(e => e.ValiditaAnni)
+                    .HasColumnName("VALIDITA_anni")
+                    .HasColumnType("INT");
+
+                entity.Property(e => e.Visto).HasColumnType("INT");
+            });
+
+            modelBuilder.Entity<Cigali>(entity =>
+            {
+                entity.ToTable("cigali");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
@@ -341,10 +387,11 @@ namespace ScadenzaDiLegge.Models
 
             modelBuilder.Entity<Gasa1013>(entity =>
             {
-                entity.ToTable("GASA_1013");
+                entity.ToTable("GASA1013");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
+                    .HasColumnType("INT")
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.ApparecchiaturaSistemazione).HasColumnName("APPARECCHIATURA_SISTEMAZIONE");
@@ -386,7 +433,7 @@ namespace ScadenzaDiLegge.Models
 
             modelBuilder.Entity<Gasa1014>(entity =>
             {
-                entity.ToTable("GASA_1014");
+                entity.ToTable("GASA1014");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
@@ -432,10 +479,11 @@ namespace ScadenzaDiLegge.Models
 
             modelBuilder.Entity<Gasa1023>(entity =>
             {
-                entity.ToTable("GASA_1023");
+                entity.ToTable("GASA1023");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
+                    .HasColumnType("INT")
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.ApparecchiaturaSistemazione).HasColumnName("APPARECCHIATURA_SISTEMAZIONE");
@@ -475,12 +523,11 @@ namespace ScadenzaDiLegge.Models
                 entity.Property(e => e.Visto).HasColumnType("INT");
             });
 
-            modelBuilder.Entity<Gd319>(entity =>
+            modelBuilder.Entity<Gd139>(entity =>
             {
-                entity.ToTable("GD_319");
-
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
+                    .HasColumnType("INT")
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.ApparecchiaturaSistemazione).HasColumnName("APPARECCHIATURA_SISTEMAZIONE");
@@ -520,12 +567,13 @@ namespace ScadenzaDiLegge.Models
                 entity.Property(e => e.Visto).HasColumnType("INT");
             });
 
-            modelBuilder.Entity<GeMs16>(entity =>
+            modelBuilder.Entity<Gems16>(entity =>
             {
-                entity.ToTable("GE_MS_16");
+                entity.ToTable("gems16");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
+                    .HasColumnType("INT")
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.ApparecchiaturaSistemazione).HasColumnName("APPARECCHIATURA_SISTEMAZIONE");
@@ -567,10 +615,11 @@ namespace ScadenzaDiLegge.Models
 
             modelBuilder.Entity<Gg1012>(entity =>
             {
-                entity.ToTable("GG_1012");
+                entity.ToTable("gg1012");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
+                    .HasColumnType("INT")
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.ApparecchiaturaSistemazione).HasColumnName("APPARECCHIATURA_SISTEMAZIONE");
@@ -612,10 +661,11 @@ namespace ScadenzaDiLegge.Models
 
             modelBuilder.Entity<Ggs1018>(entity =>
             {
-                entity.ToTable("GGS_1018");
+                entity.ToTable("ggs1018");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
+                    .HasColumnType("INT")
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.ApparecchiaturaSistemazione).HasColumnName("APPARECCHIATURA_SISTEMAZIONE");
@@ -655,12 +705,13 @@ namespace ScadenzaDiLegge.Models
                 entity.Property(e => e.Visto).HasColumnType("INT");
             });
 
-            modelBuilder.Entity<GkM28>(entity =>
+            modelBuilder.Entity<Gkm28>(entity =>
             {
-                entity.ToTable("GK_M_28");
+                entity.ToTable("gkm28");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
+                    .HasColumnType("INT")
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.ApparecchiaturaSistemazione).HasColumnName("APPARECCHIATURA_SISTEMAZIONE");
@@ -702,10 +753,11 @@ namespace ScadenzaDiLegge.Models
 
             modelBuilder.Entity<Go53>(entity =>
             {
-                entity.ToTable("GO_53");
+                entity.ToTable("go53");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
+                    .HasColumnType("INT")
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.ApparecchiaturaSistemazione).HasColumnName("APPARECCHIATURA_SISTEMAZIONE");
@@ -747,11 +799,9 @@ namespace ScadenzaDiLegge.Models
 
             modelBuilder.Entity<Grg563>(entity =>
             {
-                entity.ToTable("GRG_563");
+                entity.HasNoKey();
 
-                entity.Property(e => e.Id)
-                    .HasColumnName("ID")
-                    .ValueGeneratedNever();
+                entity.ToTable("grg563");
 
                 entity.Property(e => e.ApparecchiaturaSistemazione).HasColumnName("APPARECCHIATURA_SISTEMAZIONE");
 
@@ -773,6 +823,10 @@ namespace ScadenzaDiLegge.Models
                     .HasColumnName("GIORNI_MANCANTI_ALLA_SCADENZA")
                     .HasColumnType("INT");
 
+                entity.Property(e => e.Id)
+                    .HasColumnName("ID")
+                    .HasColumnType("INT");
+
                 entity.Property(e => e.MarcaModelloDimensioni).HasColumnName("MARCA_MODELLO_DIMENSIONI");
 
                 entity.Property(e => e.Note).HasColumnName("NOTE");
@@ -792,10 +846,11 @@ namespace ScadenzaDiLegge.Models
 
             modelBuilder.Entity<Grg564>(entity =>
             {
-                entity.ToTable("GRG_564");
+                entity.ToTable("grg564");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
+                    .HasColumnType("INT")
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.ApparecchiaturaSistemazione).HasColumnName("APPARECCHIATURA_SISTEMAZIONE");
@@ -837,10 +892,11 @@ namespace ScadenzaDiLegge.Models
 
             modelBuilder.Entity<Jdg10>(entity =>
             {
-                entity.ToTable("JDG_10");
+                entity.ToTable("jdg10");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
+                    .HasColumnType("INT")
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.ApparecchiaturaSistemazione).HasColumnName("APPARECCHIATURA_SISTEMAZIONE");

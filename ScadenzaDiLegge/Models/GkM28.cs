@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace ScadenzaDiLegge.Models
 {
-    public partial class GkM28
+    public partial class Gkm28
     {
         public long Id { get; set; }
         public string Nave { get; set; }

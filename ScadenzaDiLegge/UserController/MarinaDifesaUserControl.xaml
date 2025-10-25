@@ -6,8 +6,14 @@
              xmlns:local="clr-namespace:ScadenzaDiLegge.UserController"
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="900">
+
+  
+
+
     <Grid>
-        <StackPanel>
+  
+        <StackPanel Width="900" Height="50">
+
             <StackPanel.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                     <GradientStop Color="#0A3568" Offset="0.0"/>
@@ -18,12 +24,14 @@
                 <!-- grigio più scuro -->
             </LinearGradientBrush>
             </StackPanel.Background>
+            
             <Image Source="/Img/marina-logo.png">
                 <Image.RenderTransform>
                     <ScaleTransform ScaleX="0.14" ScaleY="0.14" />
                 </Image.RenderTransform>
 
             </Image>
+
         </StackPanel>
             
     </Grid>

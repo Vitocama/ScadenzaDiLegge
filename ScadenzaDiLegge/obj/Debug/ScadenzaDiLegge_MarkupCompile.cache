@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\App.xaml
-8-493805962
+20-1235930413
 3910771926
-53-413254103
+741014514638
 49-1141739273
-ClassiUserController\ComadoUserControl.xaml;Dictionary\LabelDictionary.xaml;UserController\Logo_Marina_USERCONTROLLER.xaml;MainWindow.xaml;UserController\menuLaterare_usersControler.xaml;UserController\MarinaDifesaUserControl.xaml;UserController\Ministero_della_DIfesa_USERCONTROLLER.xaml;SplashScreen\SplashScreen.xaml;
+CassiopeaClassi\CassiopeaUserControl.xaml;NaviglioClasse\NaviglioMinoreUserControl.xaml;PontoniClassi\PontoniUserControl.xaml;RimorchiatoreClasse\RimorchiatoreUserControl.xaml;ClassiUserController\SommergibiliUserControl.xaml;Dictionary\BorderDictionary.xaml;ComandoClassi\ComadoUserControl.xaml;Dictionary\BorderMenuDictionary.xaml;Dictionary\DataGridDictionary.xaml;Dictionary\HeaderTextBlockDictionary.xaml;Dictionary\TextBlockDictionary1xaml.xaml;Dictionary\LabelDictionary.xaml;FuoriSedeClassi\FuoriSedeUserControl.xaml;DataBaseFrame\FrameDatabase.xaml;UserController\Logo_Marina_USERCONTROLLER.xaml;MainWindow.xaml;UserController\menuLaterare_usersControler.xaml;UserController\MarinaDifesaUserControl.xaml;UserController\Ministero_della_DIfesa_USERCONTROLLER.xaml;SplashScreen\SplashScreen.xaml;
 
-False
+True
 

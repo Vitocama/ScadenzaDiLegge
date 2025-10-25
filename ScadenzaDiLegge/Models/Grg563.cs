@@ -9,7 +9,7 @@ namespace ScadenzaDiLegge.Models
 {
     public partial class Grg563
     {
-        public long Id { get; set; }
+        public long? Id { get; set; }
         public string Nave { get; set; }
         public string Comando { get; set; }
         public string Base { get; set; }

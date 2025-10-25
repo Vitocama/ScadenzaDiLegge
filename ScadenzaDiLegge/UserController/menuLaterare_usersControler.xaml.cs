@@ -1,4 +1,5 @@
 ﻿using ScadenzaDiLegge.ClassiUserController;
+using ScadenzaDiLegge.UserController;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,8 @@ namespace ScadenzaDiLegge
         {
             comando.Source = new BitmapImage(new Uri("pack://application:,,,/Img/command.png"));
             comandoLabel.Foreground = Brushes.Black;
+           
+            
         }
 
         private void comando_MouseLeave(object sender, MouseEventArgs e)
@@ -138,20 +141,80 @@ namespace ScadenzaDiLegge
             MarinarescoLabel.Foreground = Brushes.White;
         }
 
-        private void comandoLabel_MouseDown(object sender, MouseButtonEventArgs e)
+
+
+        private void comando_Down(object sender, MouseButtonEventArgs e)
         {
+            MainWindow main = Window.GetWindow(this) as MainWindow;
+
+            if (main != null)
+            {
+                main.AreaComune.Content = new ComadoUserControl();
+            }
+        }
+
+        private void cassiopea_Down(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow main = Window.GetWindow(this) as MainWindow;
+
+            if (main != null)
+            {
+                main.AreaComune.Content = new CassiopeaUserControl();
+            }
+        }
+
+        private void costellazioni_Down(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow main = Window.GetWindow(this) as MainWindow;
+
+            if (main != null)
+            {
+                main.AreaComune.Content = new CassiopeaUserControl();
+            }
+        }
+
+        private void naviglioMinore_Down(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow main = Window.GetWindow(this) as MainWindow;
+
+            if (main != null)
+            {
+                main.AreaComune.Content = new NaviglioMinoreUserControl();
+            }
+        }
+
+        private void Rimorchiatore_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow main = Window.GetWindow(this) as MainWindow;
+
+            if (main != null)
+            {
+                main.AreaComune.Content = new RimorchiatoreUserControl();
+            }
 
         }
 
-        private void comando_Gruppo(object sender, MouseButtonEventArgs e)
+        private void Pontoni_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            
+            MainWindow main=Window.GetWindow(this) as MainWindow;
+            if (main != null)
+                main.AreaComune.Content= new PontoniUserControl();
+
         }
 
-        private void comando_MouseLeave(object sender, MouseButtonEventArgs e)
+        private void FuoriSede_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MainWindow mainWindow=new MainWindow();
-            mainWindow.AreaComune.Content = new ComadoUserControl();
+            MainWindow main = Window.GetWindow(this) as MainWindow;
+            if (main != null)
+                main.AreaComune.Content = new FuoriSedeUserControl();
+        }
+
+        private void Sommergibili_Down(object sender, MouseButtonEventArgs e)
+        {
+
+            MainWindow main = Window.GetWindow(this) as MainWindow;
+            if (main != null)
+                main.AreaComune.Content = new SommergibiliUserControl();
         }
     }
 }

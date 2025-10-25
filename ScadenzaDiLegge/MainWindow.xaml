@@ -8,9 +8,10 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow"
-        Height="500" Width="1000"
-        
+        Height="650" Width="1000"    
         >
+    
+
 
     <Grid>
         <!-- Definizione righe principali -->
@@ -19,7 +20,7 @@
             <!-- Header -->
             <RowDefinition Height="60" />
             <!-- Riga opzionale -->
-            <RowDefinition Height="363" />
+            <RowDefinition Height="515" />
             <!-- Contenuto -->
         </Grid.RowDefinitions>
 
@@ -42,10 +43,23 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Row="2" Grid.Column="0">
-                <local:menuLaterare_usersControler Height="384"/>
+                <local:menuLaterare_usersControler Height="520"/>
             </StackPanel>
-
-            <ContentControl Grid.Row="2" Grid.Column="1" x:Name="AreaComune"/>
+            <Border Grid.Row="2" Grid.Column="1">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#3A6BA4" Offset="0.8"/>
+                        <GradientStop Color="#0A3568" Offset="0.1111"/>
+                        <GradientStop Color="#0A3568" Offset="0.0"/>
+                        <!-- grigio chiarissimo -->
+                        
+                        <!-- grigio medio -->
+                        
+                        <!-- grigio più scuro -->
+                    </LinearGradientBrush>
+                </Border.Background>
+                <ContentControl x:Name="AreaComune" />
+</Border>
         </Grid>
     </Grid>
 </Window>

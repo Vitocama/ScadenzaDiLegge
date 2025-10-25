@@ -55,9 +55,43 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ClassiUserController\ComadoUserControl.xaml.cs">
+    <Compile Include="CassiopeaClassi\CassiopeaUserControl.xaml.cs">
+      <DependentUpon>CassiopeaUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComandoClassi\ComadoUserControl.xaml.cs">
       <DependentUpon>ComadoUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Gasa10131.cs" />
+    <Compile Include="Models\Gasa10141.cs" />
+    <Compile Include="Models\Gasa10231.cs" />
+    <Compile Include="Models\Gd139.cs" />
+    <Compile Include="Models\Gems161.cs" />
+    <Compile Include="Models\Gg10121.cs" />
+    <Compile Include="Models\Ggs10181.cs" />
+    <Compile Include="Models\Gkm281.cs" />
+    <Compile Include="Models\Go531.cs" />
+    <Compile Include="Models\Grg5631.cs" />
+    <Compile Include="Models\Grg5641.cs" />
+    <Compile Include="Models\Jdg101.cs" />
+    <Compile Include="NaviglioClasse\NaviglioMinoreUserControl.xaml.cs">
+      <DependentUpon>NaviglioMinoreUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PontoniClassi\PontoniUserControl.xaml.cs">
+      <DependentUpon>PontoniUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RimorchiatoreClasse\RimorchiatoreUserControl.xaml.cs">
+      <DependentUpon>RimorchiatoreUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FuoriSedeClassi\FuoriSedeUserControl.xaml.cs">
+      <DependentUpon>FuoriSedeUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClassiUserController\SommergibiliUserControl.xaml.cs">
+      <DependentUpon>SommergibiliUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseFrame\FrameDatabase.xaml.cs">
+      <DependentUpon>FrameDatabase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cigali.cs" />
     <Compile Include="UserController\Logo_Marina_USERCONTROLLER.xaml.cs">
       <DependentUpon>Logo_Marina_USERCONTROLLER.xaml</DependentUpon>
     </Compile>
@@ -113,11 +147,59 @@
     <Compile Include="SplashScreen\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
-    <Page Include="ClassiUserController\ComadoUserControl.xaml">
+    <Page Include="CassiopeaClassi\CassiopeaUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NaviglioClasse\NaviglioMinoreUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PontoniClassi\PontoniUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RimorchiatoreClasse\RimorchiatoreUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClassiUserController\SommergibiliUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary\BorderDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ComandoClassi\ComadoUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary\BorderMenuDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary\DataGridDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary\HeaderTextBlockDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary\TextBlockDictionary1xaml.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dictionary\LabelDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FuoriSedeClassi\FuoriSedeUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataBaseFrame\FrameDatabase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,7 +284,9 @@
   <ItemGroup>
     <Resource Include="Img\marina-logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Delegate\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\command.png" />
   </ItemGroup>
