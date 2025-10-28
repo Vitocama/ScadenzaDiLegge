@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "vwj73OAP1uM=",
+  "dgSpecHash": "eXbvjaFJOss=",
   "success": true,
   "projectFilePath": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\ScadenzaDiLegge.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Hirad\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "C:\\Users\\Hirad\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
+    "C:\\Users\\Hirad\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\9.0.1\\microsoft.bcl.asyncinterfaces.9.0.1.nupkg.sha512",
     "C:\\Users\\Hirad\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\Hirad\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Hirad\\.nuget\\packages\\microsoft.data.sqlite.core\\3.1.32\\microsoft.data.sqlite.core.3.1.32.nupkg.sha512",

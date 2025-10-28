@@ -1,6 +1,8 @@
-﻿using System;
+﻿using ScadenzaDiLegge.Delegate;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,7 +14,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Reflection;
 
 namespace ScadenzaDiLegge.UserController
 {
@@ -47,6 +48,18 @@ namespace ScadenzaDiLegge.UserController
             FrameDatabase database = new FrameDatabase(windowName);
             database.Title = windowName;
             database.Show();
+        }
+
+      
+
+        private void Delete_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DeleteDelegate.DeleteDel();
+        }
+
+        private void Aggiungi_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            AggiungiDelegate.addDel();
         }
     }
 }

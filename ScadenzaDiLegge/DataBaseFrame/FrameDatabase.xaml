@@ -10,14 +10,14 @@
 
     <Grid>
         
+        
+        
+        
+        
+        
     <Grid>
-        <DataGrid x:Name="datagrid" Style="{DynamicResource datagridStyle}" RowEditEnding="bntSalva"/>
+            <DataGrid x:Name="datagrid" Style="{DynamicResource datagridStyle}" RowEditEnding="bntSalva"    />
     </Grid>
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-            <Button Content="Salva"></Button>
-            <Button Content="Elimina"></Button>
-            <Button Content="Aggiungi"></Button>
-
-        </StackPanel>
+    
     </Grid>
 </Window>

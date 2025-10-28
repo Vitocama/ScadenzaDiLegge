@@ -41,10 +41,18 @@
         <Border Grid.Column="2" Grid.Row="1" Style="{StaticResource BorderStyle}" MouseDown="Favignana_MouseDown">
             <TextBlock Text="FAVIGNANA" Style="{DynamicResource textBlockStyle}" ></TextBlock>
         </Border>
-        <Border Grid.Column="1" Grid.Row="2" Style="{StaticResource BorderStyle}" MouseDown="Tirsio_MouseDown">
-            <TextBlock Text="TIRSIO" Style="{DynamicResource textBlockStyle}" ></TextBlock>
+        <Border Grid.Column="1" Grid.Row="2" Style="{StaticResource BorderStyle}" MouseDown="Tirso_MouseDown">
+            <TextBlock Text="TIRSO" Style="{DynamicResource textBlockStyle}" ></TextBlock>
         </Border>
 
+        <Border Grid.Row="2" Grid.Column="0" Style="{DynamicResource AggiungiDeleteBordeStyle}" MouseDown="Aggiungi_MouseDown" Cursor="Hand">
+            <TextBlock Text="AGGIUNGI" Style="{DynamicResource textBlockStyle}"/>
+
+        </Border>
+        <Border Grid.Row="2" Grid.Column="2" Style="{DynamicResource AggiungiDeleteBordeStyle}" Cursor="Hand" MouseDown="Delete_MouseDown">
+            <TextBlock Text="DELETE" Style="{DynamicResource textBlockStyle}"/>
+
+        </Border>
     </Grid>
 
 

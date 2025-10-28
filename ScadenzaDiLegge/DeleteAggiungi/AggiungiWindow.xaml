@@ -1,0 +1,40 @@
+﻿<Window x:Class="ScadenzaDiLegge.DeleteAggiungi.AggiungiWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScadenzaDiLegge.DeleteAggiungi"
+        mc:Ignorable="d"
+        Title="AggiungiWindow" Height="450" Width="800">
+    <Grid>
+
+
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#3A6BA4" Offset="0.8"/>
+                <GradientStop Color="#0A3568" Offset="0.1111"/>
+                <GradientStop Color="#0A3568" Offset="0.0"/>
+                <!-- grigio chiarissimo -->
+
+                <!-- grigio medio -->
+
+                <!-- grigio più scuro -->
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock x:Name="Aggiungi"  Style="{DynamicResource HeaderTextBlockBlockStyle}" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top">AGGIORNA IL DATO</TextBlock>
+
+            <TextBlock  x:Name="idTxt"  Style="{DynamicResource HeaderTextBlockBlockStyle}" Height="50"></TextBlock>
+            <TextBlock    Style="{DynamicResource HeaderTextBlockBlockStyle}" Height="50" Margin="0,50,0,0"> NAVE</TextBlock>
+            <ComboBox x:Name="navComboBox"  Height="70" Width="250" Style="{DynamicResource ComboBoxStyle}"></ComboBox>
+
+            <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource BorderStyle}"  Margin="0,50,0,0" MouseDown="Aggiungi_MouseDown">
+                <TextBlock Text="AGGIUNGI" Style="{DynamicResource textBlockStyle}"  ></TextBlock>
+            </Border>
+        </StackPanel>
+
+
+
+    </Grid>
+</Window>

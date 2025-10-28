@@ -13,6 +13,8 @@
                 <ResourceDictionary Source="/Dictionary/HeaderTextBlockDictionary.xaml"/>
                 <ResourceDictionary Source="/Dictionary/BorderMenuDictionary.xaml"/>
                 <ResourceDictionary Source="/Dictionary/DataGridDictionary.xaml"/>
+                <ResourceDictionary Source="/Dictionary/DeleteAggiungiDictionary.xaml"/>
+                <ResourceDictionary Source="/Dictionary/ComboBoxDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 

@@ -1,10 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Dapper;
+using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using ScadenzaDiLegge.ClassiUserController;
 using ScadenzaDiLegge.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,91 +31,117 @@ namespace ScadenzaDiLegge
     /// </summary>
     public partial class FrameDatabase : Window
     {
-        private marinarescosqliteContext _context;
         private string _nomeTabella;
+
 
         public FrameDatabase(string nomeNave)
         {
             InitializeComponent();
-            _nomeTabella = nomeNave;
 
-            var nave = new marinarescosqliteContext();
 
-            // Usa la riflessione per accedere alla proprietà DbSet dinamicamente
-            var dbSetProperty = typeof(marinarescosqliteContext).GetProperty(_nomeTabella);
-            if (dbSetProperty != null)
+            _nomeTabella = nomeNave.ToUpper();
+            
+            var db = new marinarescosqliteContext();
+            
+
+            if (_nomeTabella.Equals("MARINARESCO"))
             {
-                var dbSet = dbSetProperty.GetValue(nave) as IQueryable;
-                if (dbSet != null)
-                {
-                    var objetBettica = dbSet.Cast<object>().ToList();
-                    datagrid.ItemsSource = objetBettica;
-                }
+
+
+              var  lista = db.DboMarinaresco.ToList();
+                datagrid.ItemsSource = lista;
+                datagrid.LoadingRow += Datagrid_LoadingRow;
+
+
             }
+
+            else
+            {
+                db = new marinarescosqliteContext();
+               var lista = db.DboMarinaresco
+                              .Where(x => x.Nave == _nomeTabella).ToList();
+                datagrid.ItemsSource = lista;
+                datagrid.LoadingRow += Datagrid_LoadingRow;
+            }
+      
+
+        
         }
+
+
+
+        // Usa la riflessione per accedere alla proprietà DbSet dinamicamente
+
 
 
         private void bntSalva(object sender, DataGridRowEditEndingEventArgs e)
         {
-            _context = new marinarescosqliteContext();
             if (e.EditAction == DataGridEditAction.Commit)
             {
                 Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    // Ottieni il tipo del modello dalla stringa
-                    var modelType = Type.GetType($"ScadenzaDiLegge.Models.{_nomeTabella}");
-
-                    if (modelType != null)
+                    try
                     {
-                        // Cast dinamico usando il tipo ottenuto
-                        var edit = Convert.ChangeType(e.Row.Item, modelType);
+                        var db = new marinarescosqliteContext();
+                        var item = e.Row.Item; // Oggetto modificato nel DataGrid
 
-                        if (edit != null)
-                        {
-                            // Usa la riflessione per accedere al DbSet dinamicamente
-                            var dbSetProperty = typeof(marinarescosqliteContext).GetProperty(_nomeTabella);
-                            if (dbSetProperty != null)
-                            {
-                                var dbSet = dbSetProperty.GetValue(_context);
-                                var updateMethod = dbSet.GetType().GetMethod("Update");
-                                updateMethod?.Invoke(dbSet, new[] { edit });
-                            }
+                        db.Attach(item);
+                        db.Entry(item).State = EntityState.Modified;
+                        db.SaveChanges();
 
-                            // Ottieni l'Id usando la riflessione
-                            var idProperty = modelType.GetProperty("Id");
-                            var editId = idProperty?.GetValue(edit);
-
-                            // Trova il record corrispondente in DboMarinaresco
-                            var marinaresco = _context.DboMarinaresco.FirstOrDefault(m => m.Id == (long?)editId);
-                            if (marinaresco != null)
-                            {
-                                // Rimuove il record esistente
-                                _context.DboMarinaresco.Remove(marinaresco);
-                                _context.SaveChanges();
-                            }
-
-                            // Crea un nuovo record in DboMarinaresco copiando tutte le proprietà
-                            var nuovo = new DboMarinaresco();
-
-                            // Copia tutte le proprietà usando la riflessione
-                            foreach (var prop in modelType.GetProperties())
-                            {
-                                var targetProp = typeof(DboMarinaresco).GetProperty(prop.Name);
-                                if (targetProp != null && targetProp.CanWrite)
-                                {
-                                    var value = prop.GetValue(edit);
-                                    targetProp.SetValue(nuovo, value);
-                                }
-                            }
-
-                            _context.DboMarinaresco.Add(nuovo);
-
-                            // Salva tutte le modifiche
-                            _context.SaveChanges();
-                        }
+                        MessageBox.Show("Modifiche salvate con successo!");
                     }
-                }), DispatcherPriority.Background);
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Errore durante il salvataggio: " + ex.Message);
+                    }
+                }), System.Windows.Threading.DispatcherPriority.Background);
+            }
+
+
+        }
+
+
+
+
+        private void Datagrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            var item = e.Row.Item as DboMarinaresco;
+            if (item == null) return;
+
+            if ( item.GiorniMancantiAllaScadenza < 30 && item.GiorniMancantiAllaScadenza !=0)
+            {
+                if (item.GiorniMancantiAllaScadenza < 0)
+                {
+                    e.Row.Background = Brushes.White;
+                    e.Row.Foreground = Brushes.Red;
+                }
+
+                else
+                {
+                    e.Row.Background = Brushes.Red;
+                    e.Row.Foreground = Brushes.Black;
+                }
+            }
+            else if (item.Id % 2 == 0)
+            {
+               
+                
+                    e.Row.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3A6BA4"));
+                    e.Row.Foreground = Brushes.Black;
+                }
+                else
+                {
+                    e.Row.Background = Brushes.LightCyan;
+                    e.Row.Foreground = Brushes.Black;
+
+                }
+
+
+
+
             }
         }
+
+      
     }
-}

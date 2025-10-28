@@ -55,29 +55,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CassiopeaClassi\CassiopeaUserControl.xaml.cs">
+    <Compile Include="CostellazioniClasse\CassiopeaUserControl.xaml.cs">
       <DependentUpon>CassiopeaUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ComandoClassi\ComadoUserControl.xaml.cs">
+    <Compile Include="CassiopeaClasse\CassiopeaUserControl.xaml.cs">
+      <DependentUpon>CassiopeaUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComandantiClasse\ComadoUserControl.xaml.cs">
       <DependentUpon>ComadoUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Gasa10131.cs" />
-    <Compile Include="Models\Gasa10141.cs" />
-    <Compile Include="Models\Gasa10231.cs" />
-    <Compile Include="Models\Gd139.cs" />
-    <Compile Include="Models\Gems161.cs" />
-    <Compile Include="Models\Gg10121.cs" />
-    <Compile Include="Models\Ggs10181.cs" />
-    <Compile Include="Models\Gkm281.cs" />
-    <Compile Include="Models\Go531.cs" />
-    <Compile Include="Models\Grg5631.cs" />
-    <Compile Include="Models\Grg5641.cs" />
-    <Compile Include="Models\Jdg101.cs" />
+    <Compile Include="Delegate\AggiungiDelegate.cs" />
+    <Compile Include="Delegate\DeleteDelegate.cs" />
+    <Compile Include="DeleteAggiungi\AggiungiWindow.xaml.cs">
+      <DependentUpon>AggiungiWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteAggiungi\DeleteWindow.xaml.cs" />
+    <Compile Include="PontoniClasse\PontoniUserControl.xaml.cs">
+      <DependentUpon>PontoniUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SommergibiliClasse\SommergiliUserControl.xaml.cs">
+      <DependentUpon>SommergiliUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Marinaresco\MarinarescoUserControl.xaml.cs">
+      <DependentUpon>MarinarescoUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataMancante.cs" />
+    <Compile Include="Models\DboMarinaresco.cs" />
+    <Compile Include="Models\marinarescosqliteContext.cs" />
     <Compile Include="NaviglioClasse\NaviglioMinoreUserControl.xaml.cs">
       <DependentUpon>NaviglioMinoreUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PontoniClassi\PontoniUserControl.xaml.cs">
-      <DependentUpon>PontoniUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="RimorchiatoreClasse\RimorchiatoreUserControl.xaml.cs">
       <DependentUpon>RimorchiatoreUserControl.xaml</DependentUpon>
@@ -85,13 +91,12 @@
     <Compile Include="FuoriSedeClassi\FuoriSedeUserControl.xaml.cs">
       <DependentUpon>FuoriSedeUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ClassiUserController\SommergibiliUserControl.xaml.cs">
-      <DependentUpon>SommergibiliUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DataBaseFrame\FrameDatabase.xaml.cs">
       <DependentUpon>FrameDatabase.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cigali.cs" />
+    <Compile Include="Scadenze\ScadenzeUserControl.xaml.cs">
+      <DependentUpon>ScadenzeUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserController\Logo_Marina_USERCONTROLLER.xaml.cs">
       <DependentUpon>Logo_Marina_USERCONTROLLER.xaml</DependentUpon>
     </Compile>
@@ -102,52 +107,42 @@
     <Compile Include="UserController\Ministero_della_DIfesa_USERCONTROLLER.xaml.cs">
       <DependentUpon>Ministero_della_DIfesa_USERCONTROLLER.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Bettica.cs" />
-    <Compile Include="Models\Borsini.cs" />
-    <Compile Include="Models\Cassiopea.cs" />
-    <Compile Include="Models\DboMarinaresco.cs" />
-    <Compile Include="Models\Favignana.cs" />
-    <Compile Include="Models\Foscari.cs" />
-    <Compile Include="Models\Gasa1013.cs" />
-    <Compile Include="Models\Gasa1014.cs" />
-    <Compile Include="Models\Gasa1023.cs" />
-    <Compile Include="Models\Gd319.cs" />
-    <Compile Include="Models\GeMs16.cs" />
-    <Compile Include="Models\Gg1012.cs" />
-    <Compile Include="Models\Ggs1018.cs" />
-    <Compile Include="Models\GkM28.cs" />
-    <Compile Include="Models\Go53.cs" />
-    <Compile Include="Models\Grg563.cs" />
-    <Compile Include="Models\Grg564.cs" />
-    <Compile Include="Models\Jdg10.cs" />
-    <Compile Include="Models\Levanzo.cs" />
-    <Compile Include="Models\Libra.cs" />
-    <Compile Include="Models\Linosa.cs" />
-    <Compile Include="Models\Lipari.cs" />
-    <Compile Include="Models\marinarescosqliteContext.cs" />
-    <Compile Include="Models\Orione.cs" />
-    <Compile Include="Models\Panarea.cs" />
-    <Compile Include="Models\Polifemo.cs" />
-    <Compile Include="Models\Portoconte.cs" />
-    <Compile Include="Models\Portovenere.cs" />
-    <Compile Include="Models\Rp102.cs" />
-    <Compile Include="Models\Rp112.cs" />
-    <Compile Include="Models\Rp123.cs" />
-    <Compile Include="Models\Rp125.cs" />
-    <Compile Include="Models\Rp126.cs" />
-    <Compile Include="Models\Rp130.cs" />
-    <Compile Include="Models\Rp131.cs" />
-    <Compile Include="Models\Salina.cs" />
-    <Compile Include="Models\Scire.cs" />
-    <Compile Include="Models\Sirio.cs" />
-    <Compile Include="Models\Spica.cs" />
-    <Compile Include="Models\Ticino.cs" />
-    <Compile Include="Models\Tirso.cs" />
-    <Compile Include="Models\Vega.cs" />
     <Compile Include="SplashScreen\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
-    <Page Include="CassiopeaClassi\CassiopeaUserControl.xaml">
+    <Page Include="CostellazioniClasse\CassiopeaUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CassiopeaClasse\CassiopeaUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteAggiungi\AggiungiWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteAggiungi\DeleteWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\ComboBoxDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary\DeleteAggiungiDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PontoniClasse\PontoniUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SommergibiliClasse\SommergiliUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Marinaresco\MarinarescoUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,15 +150,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PontoniClassi\PontoniUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="RimorchiatoreClasse\RimorchiatoreUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ClassiUserController\SommergibiliUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,7 +158,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ComandoClassi\ComadoUserControl.xaml">
+    <Page Include="ComandantiClasse\ComadoUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,6 +187,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DataBaseFrame\FrameDatabase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Scadenze\ScadenzeUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -266,6 +257,9 @@
     <Resource Include="Img\SplashScreen..png" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Dapper">
+      <Version>2.1.66</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite">
       <Version>3.1.32</Version>
     </PackageReference>
@@ -284,9 +278,7 @@
   <ItemGroup>
     <Resource Include="Img\marina-logo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Delegate\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Img\command.png" />
   </ItemGroup>

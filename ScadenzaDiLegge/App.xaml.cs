@@ -17,6 +17,7 @@ namespace ScadenzaDiLegge
     {
         private const int MINIMUM_SPLASH_TIME = 5000; // Miliseconds  
 
+        static readonly string connection = @"Data Source=C:\NSL_CHIARA\MarinaRescoSqlite.sqlite;";
         protected override void OnStartup(StartupEventArgs e)
         {
             SplashScreen splash = new SplashScreen();

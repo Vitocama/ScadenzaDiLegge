@@ -25,11 +25,11 @@
         </Border>
 
         <Border Grid.Column="1" Grid.Row="0" Style="{StaticResource BorderStyle}" MouseDown="PortoConte_MouseDown" >
-            <TextBlock Text="PORTO CONTE" Style="{DynamicResource textBlockStyle}"></TextBlock>
+            <TextBlock Text="PORTOCONTE" Style="{DynamicResource textBlockStyle}"></TextBlock>
         </Border>
 
         <Border Grid.Column="2" Grid.Row="0" Style="{StaticResource BorderStyle}" MouseDown="PortoVenere_MouseDown">
-            <TextBlock Text="PORTO VENERE" Style="{DynamicResource textBlockStyle}" ></TextBlock>
+            <TextBlock Text="PORTOVENERE" Style="{DynamicResource textBlockStyle}" ></TextBlock>
         </Border>
 
         <Border Grid.Column="0" Grid.Row="1" Style="{StaticResource BorderStyle}" MouseDown="RP102_MouseDown">
@@ -38,11 +38,19 @@
         <Border Grid.Column="1" Grid.Row="1" Style="{StaticResource BorderStyle}" MouseDown="Rp112_MouseDown">
             <TextBlock Text="RP 112" Style="{DynamicResource textBlockStyle}" ></TextBlock>
         </Border>
-        <Border Grid.Column="2" Grid.Row="1" Style="{StaticResource BorderStyle}" MouseDown="Porto123_MouseDown" >
-            <TextBlock Text="PORTO 123" Style="{DynamicResource textBlockStyle}" ></TextBlock>
+        <Border Grid.Column="2" Grid.Row="1" Style="{StaticResource BorderStyle}" MouseDown="Rp123_MouseDown" >
+            <TextBlock Text="RP 123" Style="{DynamicResource textBlockStyle}" ></TextBlock>
         </Border>
-        <Border Grid.Column="1" Grid.Row="2" Style="{StaticResource BorderStyle}" MouseDown="Porto130_MouseDown">
-            <TextBlock Text="PORTO 130" Style="{DynamicResource textBlockStyle}" ></TextBlock>
+        <Border Grid.Column="1" Grid.Row="2" Style="{StaticResource BorderStyle}" MouseDown="Rp130_MouseDown">
+            <TextBlock Text="Rp 130" Style="{DynamicResource textBlockStyle}" ></TextBlock>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="0" Style="{DynamicResource AggiungiDeleteBordeStyle}" MouseDown="Aggiungi_MouseDown">
+            <TextBlock Text="AGGIUNGI" Style="{DynamicResource textBlockStyle}"/>
+
+        </Border>
+        <Border Grid.Row="2" Grid.Column="2" Style="{DynamicResource AggiungiDeleteBordeStyle}"  Cursor="Hand" MouseDown="Delete_MouseDown">
+            <TextBlock Text="DELETE" Style="{DynamicResource textBlockStyle}"/>
         </Border>
 
     </Grid>

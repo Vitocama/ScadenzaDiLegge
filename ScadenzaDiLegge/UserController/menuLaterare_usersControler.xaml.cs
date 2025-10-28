@@ -1,4 +1,6 @@
 ﻿using ScadenzaDiLegge.ClassiUserController;
+using ScadenzaDiLegge.Marinaresco;
+using ScadenzaDiLegge.Scadenze;
 using ScadenzaDiLegge.UserController;
 using System;
 using System.Collections.Generic;
@@ -137,6 +139,7 @@ namespace ScadenzaDiLegge
 
         private void Marinaresco_MouseLeave(object sender, MouseEventArgs e)
         {
+
             Marinaresco.Source = new BitmapImage(new Uri("pack://application:,,,/Img/journeyW.png"));
             MarinarescoLabel.Foreground = Brushes.White;
         }
@@ -169,7 +172,7 @@ namespace ScadenzaDiLegge
 
             if (main != null)
             {
-                main.AreaComune.Content = new CassiopeaUserControl();
+                main.AreaComune.Content = new CostellazioniUserControl();
             }
         }
 
@@ -215,6 +218,30 @@ namespace ScadenzaDiLegge
             MainWindow main = Window.GetWindow(this) as MainWindow;
             if (main != null)
                 main.AreaComune.Content = new SommergibiliUserControl();
+        }
+
+        private void Marinaresco_Down(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow main = Window.GetWindow(this) as MainWindow;
+            if (main != null)
+                main.AreaComune.Content = new MarinarescoUserControl();
+        }
+
+        private void Scadenze_Down(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow main = Window.GetWindow(this) as MainWindow;
+            if (main != null)
+                main.AreaComune.Content = new ScadenzeUserControl();
+        }
+
+        private void Scadenza_MouseEnter(object sender, MouseEventArgs e)
+        {
+           ScadenzeLabel.Foreground = Brushes.Red;
+        }
+
+        private void Scadenza_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ScadenzeLabel.Foreground = Brushes.White;
         }
     }
 }

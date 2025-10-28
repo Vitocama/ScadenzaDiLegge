@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="ScadenzaDiLegge.ClassiUserController.CostellazioniUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScadenzaDiLegge.ClassiUserController"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="CLASSE COSTELLAZIONI" Style="{DynamicResource HeaderTextBlockBlockStyle}"/>
+
+       
+            <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource BorderStyle}" MouseDown="Sirio_MouseDown">
+                <TextBlock Text="SIRIO" Style="{DynamicResource textBlockStyle}" ></TextBlock>
+            </Border>
+
+            <Border Grid.Column="1" Grid.Row="0" Style="{StaticResource BorderStyle}" MouseDown="Orione_MouseDown">
+                <TextBlock Text="ORIONE" Style="{DynamicResource textBlockStyle}"></TextBlock>
+            </Border>
+
+        <Border Grid.Column="0" Grid.Row="1" Style="{DynamicResource AggiungiDeleteBordeStyle}" MouseDown="Aggiungi_MouseDown">
+                <TextBlock Text="AGGIUNGI" Style="{DynamicResource textBlockStyle}" ></TextBlock>
+            </Border>
+
+        <Border Grid.Column="1" Grid.Row="1" Style="{DynamicResource AggiungiDeleteBordeStyle}" MouseDown="Delete_MouseDown">
+                <TextBlock Text="DELETE" Style="{DynamicResource textBlockStyle}"></TextBlock>
+            </Border>
+
+
+       
+
+
+    </Grid>
+</UserControl>

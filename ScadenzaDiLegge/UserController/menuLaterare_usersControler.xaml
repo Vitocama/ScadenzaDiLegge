@@ -49,7 +49,7 @@
             
 
             
-            <Label x:Name="comandoLabel" Grid.Row="0" Grid.Column="1"  Style="{DynamicResource labelStyle}" MouseEnter="Image_MouseEnter" MouseLeave="comando_MouseLeave" MouseDown="comando_Down" Margin="10,2,0,0" >COMANDO</Label>
+            <Label x:Name="comandoLabel" Grid.Row="0" Grid.Column="1"  Style="{DynamicResource labelStyle}" MouseEnter="Image_MouseEnter" MouseLeave="comando_MouseLeave" MouseDown="comando_Down" Margin="10,2,0,0" >COMANDANTI</Label>
             <Image  x:Name="comando" Source="/Img/commandW.png" Grid.Column="0" Grid.Row="0" MouseEnter="Image_MouseEnter" MouseLeave="comando_MouseLeave" Margin="4,10,4,10" />
            
                  
@@ -58,11 +58,11 @@
             <Image x:Name="cassiopea" Source="/Img/cassiopeaW.png" Grid.Column="0" Grid.Row="1" MouseEnter="cassiopea_MouseEnter" MouseLeave="cassiopea_MouseLeave" Margin="4,10,4,10" />
 
             
-            <Label x:Name="costellazioniLabel" Grid.Row="2" Grid.Column="1"  Style="{DynamicResource labelStyle}" MouseEnter="costellazioni_MouseEnter" MouseLeave="costellazioni_MouseLeave" MouseDown="costellazioni_Down" Margin="10,2,0,0" >COSTELLAZIONI</Label>
+            <Label x:Name="costellazioniLabel" Grid.Row="2" Grid.Column="1"  Style="{DynamicResource labelStyle}" MouseEnter="costellazioni_MouseEnter" MouseLeave="costellazioni_MouseLeave" MouseDown="costellazioni_Down" Margin="10,2,0,0" Cursor="Hand" >COSTELLAZIONI</Label>
             
             <Image x:Name="costellazioni" Source="/Img/tug-of-warW.png" Grid.Column="0" Grid.Row="2" MouseEnter="costellazioni_MouseEnter" MouseLeave="costellazioni_MouseLeave" Margin="4,10,4,10" />
 
-            <Label x:Name="naviglioLabel" Grid.Row="3" Grid.Column="1"  Style="{DynamicResource labelStyle}" MouseEnter="naviglio_MouseEnter" MouseLeave="naviglio_MouseLeave"  MouseDown="naviglioMinore_Down" Margin="10,2,0,0" >NAVIGLIO</Label>
+            <Label x:Name="naviglioLabel" Grid.Row="3" Grid.Column="1"  Style="{DynamicResource labelStyle}" MouseEnter="naviglio_MouseEnter" MouseLeave="naviglio_MouseLeave"  MouseDown="naviglioMinore_Down" Margin="10,2,0,0" >NAVIGLIO MINORE</Label>
             
             <Image x:Name="naviglio" Source="/Img/anchorW.png" Grid.Column="0" Grid.Row="3" MouseEnter="naviglio_MouseEnter" MouseLeave="naviglio_MouseLeave" Margin="4,10,4,10" />
 
@@ -82,11 +82,13 @@
             
             <Image x:Name="Sommergibile" Source="/Img/submarineW.png" Grid.Column="0" Grid.Row="7" MouseEnter="Sommergibile_MouseEnter" MouseLeave="Sommergibile_MouseLeave" Margin="4,10,4,10" />
 
-            <Label x:Name="MarinarescoLabel" Grid.Row="8" Grid.Column="1"  Style="{DynamicResource labelStyle}" MouseEnter="Marinaresco_MouseEnter" MouseLeave="Marinaresco_MouseLeave" Margin="10,2,0,0">MARINARESCO</Label>
+            <Label x:Name="MarinarescoLabel" Grid.Row="8" Grid.Column="1"  Style="{DynamicResource labelStyle}" MouseEnter="Marinaresco_MouseEnter" MouseLeave="Marinaresco_MouseLeave" Margin="10,2,0,0" MouseDown="Marinaresco_Down" >MARINARESCO</Label>
             
             <Image x:Name="Marinaresco" Source="/Img/journeyW.png" Grid.Column="0" Grid.Row="8" MouseEnter="Marinaresco_MouseEnter" MouseLeave="Marinaresco_MouseLeave" Margin="4,10,4,10" />
 
-
+            <Label x:Name="ScadenzeLabel"  Grid.Row="9" Grid.Column="1" Style="{DynamicResource labelStyle}"   MouseEnter="Scadenza_MouseEnter"    MouseLeave="Scadenza_MouseLeave"  Margin="10,2,0,0"        MouseDown="Scadenze_Down" Cursor="Hand">
+                SCADENZE
+            </Label>
 
         </Grid>
 

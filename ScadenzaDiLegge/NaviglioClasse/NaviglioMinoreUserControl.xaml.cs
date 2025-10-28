@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScadenzaDiLegge.Delegate;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -163,7 +164,7 @@ namespace ScadenzaDiLegge.ClassiUserController
             database.Show();
         }
 
-        private void Tirsio_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Tirso_MouseDown(object sender, MouseButtonEventArgs e)
         {
             string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
 
@@ -184,6 +185,18 @@ namespace ScadenzaDiLegge.ClassiUserController
             FrameDatabase database = new FrameDatabase(windowName);
             database.Title = windowName;
             database.Show();
+        }
+
+        
+
+        private void Delete_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DeleteDelegate.DeleteDel();
+        }
+
+        private void Aggiungi_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            AggiungiDelegate.addDel();
         }
     }
 }

@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="ScadenzaDiLegge.Scadenze.ScadenzeUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScadenzaDiLegge.Scadenze"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Width="750" Height="500">
+            <DataGrid x:Name="scadenzaDiLeggeDataGrid"
+              AutoGenerateColumns="True"
+              CanUserAddRows="False"
+              CanUserDeleteRows="False"
+              IsReadOnly="True"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch"
+              AlternatingRowBackground="red"
+              RowBackground="LightCoral"
+              AlternationCount="2"/>
+        </ScrollViewer>
+        
+    </Grid>
+</UserControl>
