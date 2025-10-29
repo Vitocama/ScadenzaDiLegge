@@ -222,9 +222,13 @@ namespace ScadenzaDiLegge
 
         private void Marinaresco_Down(object sender, MouseButtonEventArgs e)
         {
+
+
+
             MainWindow main = Window.GetWindow(this) as MainWindow;
             if (main != null)
                 main.AreaComune.Content = new MarinarescoUserControl();
+
         }
 
         private void Scadenze_Down(object sender, MouseButtonEventArgs e)

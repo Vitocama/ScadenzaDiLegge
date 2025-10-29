@@ -127,8 +127,8 @@ namespace ScadenzaDiLegge
             {
                
                 
-                    e.Row.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3A6BA4"));
-                    e.Row.Foreground = Brushes.Black;
+                    e.Row.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6C99C4"));
+                    e.Row.Foreground = Brushes.White;
                 }
                 else
                 {
