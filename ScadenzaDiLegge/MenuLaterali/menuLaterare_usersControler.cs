@@ -1,4 +1,5 @@
 ﻿using ScadenzaDiLegge.ClassiUserController;
+using ScadenzaDiLegge.DeleteAggiungiRinomina;
 using ScadenzaDiLegge.Marinaresco;
 using ScadenzaDiLegge.Scadenze;
 using ScadenzaDiLegge.UserController;
@@ -21,7 +22,7 @@ using static System.Net.Mime.MediaTypeNames;
 namespace ScadenzaDiLegge
 {
     /// <summary>
-    /// Logica di interazione per menuLaterare_usersControler.xaml
+    /// Logica di interazione per menuLaterareSX_usersControler.xaml
     /// </summary>
     public partial class menuLaterare_usersControler : UserControl
     {
@@ -238,14 +239,18 @@ namespace ScadenzaDiLegge
                 main.AreaComune.Content = new ScadenzeUserControl();
         }
 
-        private void Scadenza_MouseEnter(object sender, MouseEventArgs e)
+       
+
+       
+
+        private void Search_Down(object sender, MouseButtonEventArgs e)
         {
-           ScadenzeLabel.Foreground = Brushes.Red;
+            Search search = new Search();
+            search.Show();
         }
 
-        private void Scadenza_MouseLeave(object sender, MouseEventArgs e)
-        {
-            ScadenzeLabel.Foreground = Brushes.White;
-        }
+       
+
+        
     }
 }

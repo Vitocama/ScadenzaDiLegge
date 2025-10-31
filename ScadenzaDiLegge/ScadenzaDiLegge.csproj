@@ -66,10 +66,17 @@
     </Compile>
     <Compile Include="Delegate\AggiungiDelegate.cs" />
     <Compile Include="Delegate\DeleteDelegate.cs" />
-    <Compile Include="DeleteAggiungi\AggiungiWindow.xaml.cs">
+    <Compile Include="Delegate\ListaNavi.cs" />
+    <Compile Include="DeleteAggiungiRinomina\AggiungiWindow.xaml.cs">
       <DependentUpon>AggiungiWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DeleteAggiungi\DeleteWindow.xaml.cs" />
+    <Compile Include="DeleteAggiungiRinomina\DeleteWindow.xaml.cs" />
+    <Compile Include="DeleteAggiungiRinomina\Search.xaml.cs">
+      <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuLaterali\MenuLateraleDXUserControl.xaml.cs">
+      <DependentUpon>MenuLateraleDXUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PontoniClasse\PontoniUserControl.xaml.cs">
       <DependentUpon>PontoniUserControl.xaml</DependentUpon>
     </Compile>
@@ -100,7 +107,7 @@
     <Compile Include="UserController\Logo_Marina_USERCONTROLLER.xaml.cs">
       <DependentUpon>Logo_Marina_USERCONTROLLER.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserController\menuLaterare_usersControler.xaml.cs">
+    <Compile Include="MenuLaterali\menuLaterare_usersControler.cs">
       <DependentUpon>menuLaterare_usersControler.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserController\MarinaDifesaUserControl.xaml.cs" />
@@ -118,19 +125,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DeleteAggiungi\AggiungiWindow.xaml">
+    <Page Include="DeleteAggiungiRinomina\AggiungiWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DeleteAggiungi\DeleteWindow.xaml">
+    <Page Include="DeleteAggiungiRinomina\DeleteWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DeleteAggiungiRinomina\Search.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dictionary\ComboBoxDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dictionary\DeleteAggiungiDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary\TexBoxDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuLaterali\MenuLateraleDXUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -210,7 +229,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UserController\menuLaterare_usersControler.xaml">
+    <Page Include="MenuLaterali\menuLaterare_usersControler.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -278,7 +297,9 @@
   <ItemGroup>
     <Resource Include="Img\marina-logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Img\port-signW.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\command.png" />
   </ItemGroup>
@@ -320,6 +341,15 @@
   <ItemGroup>
     <Resource Include="Img\journey.png" />
     <Resource Include="Img\journeyW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\port-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\port-signR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\logo.tif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

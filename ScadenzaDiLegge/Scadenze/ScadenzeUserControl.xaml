@@ -18,7 +18,7 @@
               HorizontalAlignment="Stretch"
               VerticalAlignment="Stretch"
               AlternatingRowBackground="red"
-              RowBackground="LightCoral"
+              RowBackground="OrangeRed"
               AlternationCount="2"/>
         </ScrollViewer>
         

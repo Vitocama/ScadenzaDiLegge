@@ -18,7 +18,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="CLASSE RIMORCHIATORE" Style="{DynamicResource HeaderTextBlockBlockStyle}"/>
+        <TextBlock Text="CLASSE RIMORCHIATORI" Style="{DynamicResource HeaderTextBlockBlockStyle}"/>
 
         <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource BorderStyle}" MouseDown="Polifemo_MouseDown" >
             <TextBlock Text="POLIFEMO" Style="{DynamicResource textBlockStyle}" ></TextBlock>

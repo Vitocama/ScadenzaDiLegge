@@ -3,12 +3,14 @@ using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using ScadenzaDiLegge.ClassiUserController;
+using ScadenzaDiLegge.Delegate;
 using ScadenzaDiLegge.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -32,7 +34,7 @@ namespace ScadenzaDiLegge
     public partial class FrameDatabase : Window
     {
         private string _nomeTabella;
-
+        
 
         public FrameDatabase(string nomeNave)
         {
@@ -48,7 +50,7 @@ namespace ScadenzaDiLegge
             {
 
 
-              var  lista = db.DboMarinaresco.ToList();
+              var  lista = db.DboMarinaresco.OrderBy(x=>x.Id).ToList();
                 datagrid.ItemsSource = lista;
                 datagrid.LoadingRow += Datagrid_LoadingRow;
 
@@ -76,6 +78,9 @@ namespace ScadenzaDiLegge
 
         private void bntSalva(object sender, DataGridRowEditEndingEventArgs e)
         {
+           
+
+
             if (e.EditAction == DataGridEditAction.Commit)
             {
                 Dispatcher.BeginInvoke(new Action(() =>
@@ -83,10 +88,59 @@ namespace ScadenzaDiLegge
                     try
                     {
                         var db = new marinarescosqliteContext();
-                        var item = e.Row.Item; // Oggetto modificato nel DataGrid
+                        var item = e.Row.Item as DboMarinaresco; // Oggetto modificato nel DataGrid
+
+               
+                        if (!string.IsNullOrWhiteSpace(item.DataEffettuazione))
+                        {
+                            DateTime data;
+                            bool formatoCorretto = DateTime.TryParseExact(
+                                item.DataEffettuazione,
+                                "dd/MM/yyyy",                      // formato richiesto
+                                CultureInfo.InvariantCulture,      // cultura neutra (o usa it-IT)
+                                DateTimeStyles.None,
+                                out data
+                            );
+
+                            if (!formatoCorretto)
+                            {
+                                MessageBox.Show(
+                    "ERRORE: La DATA non è nel formato corretto (Giorno/Mese/Anno).",
+                    "Formato data errato",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error  
+                );
+                                return; 
+                            }
+                        }
+
+                        if (!string.IsNullOrWhiteSpace(item.ProssimaScadenza))
+                        {
+                            DateTime data;
+                            bool formatoCorretto = DateTime.TryParseExact(
+                                item.DataEffettuazione,
+                                "dd/MM/yyyy",                      // formato richiesto
+                                CultureInfo.InvariantCulture,      // cultura neutra (o usa it-IT)
+                                DateTimeStyles.None,
+                                out data
+                            );
+
+                            if (!formatoCorretto)
+                            {
+                                MessageBox.Show(
+                    "ERRORE: La DATA non è nel formato corretto (Giorno/Mese/Anno).",
+                    "Formato data errato",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error
+                );
+                                return;
+                            }
+                        }
 
                         db.Attach(item);
                         db.Entry(item).State = EntityState.Modified;
+
+                        
                         db.SaveChanges();
 
                         MessageBox.Show("Modifiche salvate con successo!");
@@ -141,7 +195,12 @@ namespace ScadenzaDiLegge
 
 
             }
+
+        private void datagrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+        {
+
         }
+    }
 
       
     }

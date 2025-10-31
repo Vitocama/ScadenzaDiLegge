@@ -11,7 +11,7 @@
         <!-- Effetto al passaggio del mouse -->
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Margin" Value="5,0,0,0"/>
+              
                 <Setter Property="FontWeight" Value="Medium"/>
                 <Setter Property="Foreground" Value="White"/>
             </Trigger>

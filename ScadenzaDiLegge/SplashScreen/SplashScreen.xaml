@@ -6,13 +6,24 @@
         xmlns:local="clr-namespace:ScadenzaDiLegge"
         mc:Ignorable="d"
         ResizeMode="NoResize" WindowStyle="None"  
-        WindowStartupLocation="CenterScreen" Background="Transparent"  
+        WindowStartupLocation="CenterScreen" Background="DarkBlue"  
         
-        Title="SplashScreen" Height="350" Width="350">
-    <Grid Background="Transparent">
+        Title="SplashScreen" Height="500" Width="500" 
+        
+        
+        >
+    <Grid >
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#3A6BA4" Offset="0.8"/>
+                <GradientStop Color="#0A3568" Offset="0.1111"/>
+                <GradientStop Color="#0A3568" Offset="0.0"/>
+
+            </LinearGradientBrush>
+        </Grid.Background>
 
 
-        <Image Source="/Img/SplashScreen..png" Stretch="Fill"/>
+        <Image Source="/Img/logo.tif" Stretch="Fill" Width="518" Height="518" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
 
 

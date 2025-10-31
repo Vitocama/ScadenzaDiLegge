@@ -1,27 +1,28 @@
-﻿<Window x:Class="ScadenzaDiLegge.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScadenzaDiLegge"
+        xmlns:ClassiUserController="clr-namespace:ScadenzaDiLegge.ClassiUserController" x:Class="ScadenzaDiLegge.MainWindow"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow"
-        Height="650" Width="1000"    
+        Height="685" Width="1210"    
         Closed="Window_Closed"
         >
-    
+
 
 
     <Grid>
         <!-- Definizione righe principali -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <!-- Header -->
             <RowDefinition Height="60" />
+            <!-- Header -->
+            <RowDefinition Height="80" />
             <!-- Riga opzionale -->
-            <RowDefinition Height="515" />
+            <RowDefinition Height="524" />
             <!-- Contenuto -->
         </Grid.RowDefinitions>
 
@@ -31,7 +32,11 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <local:Logo_Marina_USERCONTROLLER/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="577*"/>
+                <ColumnDefinition Width="633*"/>
+            </Grid.ColumnDefinitions>
+            <local:Logo_Marina_USERCONTROLLER Grid.ColumnSpan="2"/>
         </Grid>
 
         <!-- Riga 2: contenuto principale -->
@@ -39,8 +44,10 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="210" />
                 <!-- Menu laterale -->
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="800" />
                 <!-- Area contenuto -->
+                <ColumnDefinition Width="210" />
+
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Row="2" Grid.Column="0">
@@ -53,14 +60,22 @@
                         <GradientStop Color="#0A3568" Offset="0.1111"/>
                         <GradientStop Color="#0A3568" Offset="0.0"/>
                         <!-- grigio chiarissimo -->
-                        
+
                         <!-- grigio medio -->
-                        
+
                         <!-- grigio più scuro -->
                     </LinearGradientBrush>
                 </Border.Background>
                 <ContentControl x:Name="AreaComune" />
-</Border>
+            </Border>
+
+            <StackPanel Grid.Column="2">
+                <local:MenuLateraleDXUserControl/>
+            </StackPanel>
+
+
+
+            <ClassiUserController:ComadoUserControl Grid.Column="2" HorizontalAlignment="Left" Height="5751" Margin="200,167,0,0" VerticalAlignment="Top" Width="2221"/>
         </Grid>
     </Grid>
 </Window>

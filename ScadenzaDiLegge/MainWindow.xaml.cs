@@ -10,7 +10,6 @@ namespace ScadenzaDiLegge
 {
     public partial class MainWindow : Window
     {
-        private readonly string _connectionString = "Data Source=C:\\NSL_CHIARA\\marinarescosqlite.sqlite";
 
         public MainWindow()
         {
@@ -21,6 +20,7 @@ namespace ScadenzaDiLegge
         private void inizializzaDateScadenza()
         {
              var context = new marinarescosqliteContext();
+           
 
             // 1️⃣ Recupera DataMancante
             var scade =context.DataMancante

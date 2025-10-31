@@ -9,11 +9,11 @@
     <Grid>
         <Grid.RowDefinitions>
 
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="90"/>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>
 
 
         </Grid.RowDefinitions>
@@ -22,7 +22,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="CLASSE PONTONI" Style="{DynamicResource HeaderTextBlockBlockStyle}"/>
+        <TextBlock Text=" PONTONI E BETTOLE" Style="{DynamicResource HeaderTextBlockBlockStyle}"/>
 
         <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource BorderStyle}" MouseDown="Gasa1014_MouseDown">
             <TextBlock Text="GASA 1014" Style="{DynamicResource textBlockStyle}" ></TextBlock>
