@@ -1,5 +1,7 @@
 ﻿using ScadenzaDiLegge.ClassiUserController;
+using ScadenzaDiLegge.Models;
 using ScadenzaDiLegge.Scadenze;
+using ScadenzaDiLegge.Setting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +27,16 @@ namespace ScadenzaDiLegge
         public MenuLateraleDXUserControl()
         {
             InitializeComponent();
+
+
+            var context = new marinarescosqliteContext();
+            int giorniLim = context.DataMancante.Select(x=>x.setdata).FirstOrDefault();
+
+            ScadenzeLabel.Content = "SCADENZA A "+giorniLim;
+                
+
+
+
         }
 
         private void scadenza_MouseDown(object sender, MouseButtonEventArgs e)
@@ -64,6 +76,25 @@ namespace ScadenzaDiLegge
         private void search_MouseLeave(object sender, MouseEventArgs e)
         {
             ScadenzeLabel.Foreground = Brushes.White;
+        }
+
+        private void setting_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            SettingWindow setting = new SettingWindow();
+            setting.Show();
+        }
+
+        private void setting_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Setting.Source = new BitmapImage(new Uri("pack://application:,,,/Img/settings.png"));
+           SettingLabel.Foreground = Brushes.Black;
+        }
+
+        private void setting_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Setting.Source = new BitmapImage(new Uri("pack://application:,,,/Img/settingsW.png"));
+            SettingLabel.Foreground = Brushes.White;
+
         }
     }
 }

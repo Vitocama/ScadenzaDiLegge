@@ -80,6 +80,9 @@
     <Compile Include="PontoniClasse\PontoniUserControl.xaml.cs">
       <DependentUpon>PontoniUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Setting\SettingWindow.xaml.cs">
+      <DependentUpon>SettingWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SommergibiliClasse\SommergiliUserControl.xaml.cs">
       <DependentUpon>SommergiliUserControl.xaml</DependentUpon>
     </Compile>
@@ -156,6 +159,10 @@
     <Page Include="PontoniClasse\PontoniUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Setting\SettingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SommergibiliClasse\SommergiliUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -350,6 +357,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\logo.tif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\settings.png" />
+    <Resource Include="Img\settingsW.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

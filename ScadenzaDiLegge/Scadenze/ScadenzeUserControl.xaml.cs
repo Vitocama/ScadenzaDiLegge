@@ -30,9 +30,23 @@ namespace ScadenzaDiLegge.Scadenze
         {
 
             InitializeComponent();
+
+            var context = new marinarescosqliteContext();
+
+            var giorniLim = context.DataMancante.Select(x => x.setdata).ToList();
+
+            
+
+
+
             using (var conn = new SqliteConnection(_connectionString)) { 
+
+
             
                 conn.Open();
+                
+               
+
                 string Sql = @"SELECT 
     id,
     nave,
@@ -42,22 +56,24 @@ namespace ScadenzaDiLegge.Scadenze
     PROSSIMA_SCADENZA
 FROM dbo_MARINARESCO
 WHERE GIORNI_MANCANTI_ALLA_SCADENZA > 0 
-  AND GIORNI_MANCANTI_ALLA_SCADENZA < 100
+  AND GIORNI_MANCANTI_ALLA_SCADENZA < @GiorniLimite
 ORDER BY GIORNI_MANCANTI_ALLA_SCADENZA ASC;
 ";
 
-                var dboMArinaresco = conn.Query(Sql).ToList();
+                var dboMarinaresco = conn.Query(
+    Sql,
+    new { GiorniLimite =giorniLim}  // <-- qui passi il parametro
+).ToList();
 
-                scadenzaDiLeggeDataGrid.ItemsSource = dboMArinaresco;
+              
+
+             
+
+                scadenzaDiLeggeDataGrid.ItemsSource = dboMarinaresco;
 
 
             }
-
-
             }
-
-
-            
         }
 
         

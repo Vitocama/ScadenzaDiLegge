@@ -3,6 +3,7 @@ using Microsoft.Data.Sqlite;
 using ScadenzaDiLegge.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows;
 
@@ -15,19 +16,25 @@ namespace ScadenzaDiLegge
         {
             InitializeComponent();
             inizializzaDateScadenza();
+
+
         }
 
         private void inizializzaDateScadenza()
         {
+
+
+
+
+
              var context = new marinarescosqliteContext();
-           
+
 
             // 1️⃣ Recupera DataMancante
-            var scade =context.DataMancante
+            var scade = context.DataMancante
                 .FirstOrDefault(x => x.Id == 1);
 
-            if (scade == null || string.IsNullOrEmpty(scade.DataEvento))
-                return;
+
 
             // Converte la stringa "dd/MM/yyyy" in DateTime
             if (!DateTime.TryParseExact(scade.DataEvento, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataEvento))
@@ -40,6 +47,11 @@ namespace ScadenzaDiLegge
             {
                 // 3️⃣ Recupera tutti i record di DboMarinaresco
                 var marinarescoList = context.DboMarinaresco.ToList();
+
+
+
+                        
+
 
                 foreach (var item in marinarescoList)
                 {

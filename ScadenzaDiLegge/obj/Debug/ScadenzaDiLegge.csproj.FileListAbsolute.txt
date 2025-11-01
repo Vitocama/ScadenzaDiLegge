@@ -105,3 +105,5 @@ C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\MenuLatera
 C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\MenuLaterali\menuLaterare_usersControler.baml
 C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\MenuLaterali\MenuLateraleDXUserControl.g.cs
 C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\MenuLaterali\MenuLateraleDXUserControl.baml
+C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\Setting\SettingWindow.g.cs
+C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\Setting\SettingWindow.baml

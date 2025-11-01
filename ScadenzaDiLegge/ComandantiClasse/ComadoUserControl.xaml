@@ -14,6 +14,7 @@
             <RowDefinition Height="150"/>
             <RowDefinition Height="150"/>
             <RowDefinition Height="155"/>
+         
 
         </Grid.RowDefinitions>
         <TextBlock Text="CLASSE COMANDANTI"  Style="{DynamicResource HeaderTextBlockBlockStyle}"/>
@@ -37,12 +38,14 @@
         <Border Grid.Row="2" Grid.Column="0" Style="{DynamicResource AggiungiDeleteBordeStyle}" MouseDown="Aggiungi_MouseDown">
             <TextBlock Text="AGGIUNGI" Style="{DynamicResource textBlockStyle}"/>
 
+
         </Border>
         <Border Grid.Row="2" Grid.Column="1" Style="{DynamicResource AggiungiDeleteBordeStyle}" MouseDown="Delete_MouseDown" Cursor="Hand">
                 <TextBlock Text="DELETE" Style="{DynamicResource textBlockStyle}" MouseDown="Delete_MouseDown"/>
             </Border>
 
-        <Image Source="/Img/ministero-difesa-logo.png" VerticalAlignment="Bottom" HorizontalAlignment="Left"></Image>
+
+        
 
     </Grid>
 </UserControl>

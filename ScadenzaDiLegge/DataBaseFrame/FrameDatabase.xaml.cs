@@ -34,7 +34,8 @@ namespace ScadenzaDiLegge
     public partial class FrameDatabase : Window
     {
         private string _nomeTabella;
-        
+        private List<string> _listaNavi;
+
 
         public FrameDatabase(string nomeNave)
         {
@@ -44,7 +45,12 @@ namespace ScadenzaDiLegge
             _nomeTabella = nomeNave.ToUpper();
             
             var db = new marinarescosqliteContext();
-            
+
+            _listaNavi = db.DboMarinaresco
+                                   .Select(x => x.Nave)
+                                   .Distinct()
+                                   .ToList();
+
 
             if (_nomeTabella.Equals("MARINARESCO"))
             {
@@ -54,7 +60,7 @@ namespace ScadenzaDiLegge
                 datagrid.ItemsSource = lista;
                 datagrid.LoadingRow += Datagrid_LoadingRow;
 
-
+                
             }
 
             else
@@ -79,6 +85,9 @@ namespace ScadenzaDiLegge
         private void bntSalva(object sender, DataGridRowEditEndingEventArgs e)
         {
            
+            
+
+
 
 
             if (e.EditAction == DataGridEditAction.Commit)
@@ -90,7 +99,18 @@ namespace ScadenzaDiLegge
                         var db = new marinarescosqliteContext();
                         var item = e.Row.Item as DboMarinaresco; // Oggetto modificato nel DataGrid
 
-               
+                        if (!_listaNavi.Contains(item.Nave)) {
+                            MessageBox.Show(
+                       "ERRORE: NON E' POSSIBILE MOFICARE IL NOME DELLA NAVE.",
+                       "Formato data errato",
+                       MessageBoxButton.OK,
+                       MessageBoxImage.Error
+                   );
+                            
+                            return;
+
+                        }
+
                         if (!string.IsNullOrWhiteSpace(item.DataEffettuazione))
                         {
                             DateTime data;
@@ -119,8 +139,8 @@ namespace ScadenzaDiLegge
                             DateTime data;
                             bool formatoCorretto = DateTime.TryParseExact(
                                 item.DataEffettuazione,
-                                "dd/MM/yyyy",                      // formato richiesto
-                                CultureInfo.InvariantCulture,      // cultura neutra (o usa it-IT)
+                                "dd/MM/yyyy",
+                                CultureInfo.InvariantCulture,
                                 DateTimeStyles.None,
                                 out data
                             );
@@ -128,14 +148,30 @@ namespace ScadenzaDiLegge
                             if (!formatoCorretto)
                             {
                                 MessageBox.Show(
-                    "ERRORE: La DATA non è nel formato corretto (Giorno/Mese/Anno).",
-                    "Formato data errato",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error
-                );
+                                    "ERRORE: La DATA non è nel formato corretto (Giorno/Mese/Anno).",
+                                    "Formato data errato",
+                                    MessageBoxButton.OK,
+                                    MessageBoxImage.Error
+                                );
+                                return;
+                            }
+
+                            // ✅ Limiti consentiti
+                            DateTime min = new DateTime(2014, 1, 1);
+                            DateTime max = new DateTime(2050, 12, 31);
+
+                            if (data < min || data > max)
+                            {
+                                MessageBox.Show(
+                                    "ERRORE: La data deve essere compresa tra il 01/01/2014 e il 31/12/2050.",
+                                    "Data fuori intervallo",
+                                    MessageBoxButton.OK,
+                                    MessageBoxImage.Warning
+                                );
                                 return;
                             }
                         }
+
 
                         db.Attach(item);
                         db.Entry(item).State = EntityState.Modified;
@@ -160,10 +196,17 @@ namespace ScadenzaDiLegge
 
         private void Datagrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
+            var contex = new marinarescosqliteContext();
+            int limite = contex.DataMancante.Where(x=> x.Id == 1)
+                                            .Select(x => x.setdata)
+                                            .FirstOrDefault();  
+
+
+
             var item = e.Row.Item as DboMarinaresco;
             if (item == null) return;
 
-            if ( item.GiorniMancantiAllaScadenza < 30 && item.GiorniMancantiAllaScadenza !=0)
+            if ( item.GiorniMancantiAllaScadenza < limite && item.GiorniMancantiAllaScadenza !=0)
             {
                 if (item.GiorniMancantiAllaScadenza < 0)
                 {
@@ -196,10 +239,7 @@ namespace ScadenzaDiLegge
 
             }
 
-        private void datagrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
-        {
-
-        }
+      
     }
 
       

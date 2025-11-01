@@ -47,8 +47,14 @@
 
             <Label x:Name="SearchLabel"  Grid.Row="1" Grid.Column="1" Style="{DynamicResource labelStyle}" MouseLeave="search_MouseLeave"  MouseEnter="search_MouseEnter" MouseDown="search_MouseDown" >CERCA</Label>
 
-            
-            
+
+            <Label x:Name="SettingLabel"  Grid.Row="2" Grid.Column="1" Style="{DynamicResource labelStyle}"  MouseLeave="setting_MouseLeave"  MouseEnter="setting_MouseEnter" MouseDown="setting_MouseDown">SETTING</Label>
+
+            <Image x:Name="Setting" Source="/Img/settingsW.png" Grid.Column="0" Grid.Row="2"  Margin="4,10,4,10" MouseLeave="setting_MouseLeave"  MouseEnter="setting_MouseEnter" MouseDown="setting_MouseDown"  />
+
+
+
+
 
 
 

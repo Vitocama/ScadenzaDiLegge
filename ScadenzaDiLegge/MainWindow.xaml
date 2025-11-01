@@ -16,6 +16,20 @@
 
 
     <Grid>
+
+        <Grid.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#0A3568" Offset="0.0"/>
+            <!-- grigio chiarissimo -->
+            <GradientStop Color="#0A3568" Offset="0.5"/>
+            <!-- grigio medio -->
+            <GradientStop Color="#3A6BA4" Offset="0.1111"/>
+            <!-- grigio più scuro -->
+        </LinearGradientBrush>
+        </Grid.Background>
+
+
+
         <!-- Definizione righe principali -->
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
@@ -75,7 +89,13 @@
 
 
 
-            <ClassiUserController:ComadoUserControl Grid.Column="2" HorizontalAlignment="Left" Height="5751" Margin="200,167,0,0" VerticalAlignment="Top" Width="2221"/>
+            <ClassiUserController:ComadoUserControl Grid.Column="2" HorizontalAlignment="Left" Height="5751" Margin="200,167,0,0" VerticalAlignment="Top" Width="221"/>
         </Grid>
+        <Canvas  VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="80" Height="50"   Grid.ColumnSpan="2" >
+            <Image Source="/Img/marina-logo.png" Width="150" Canvas.Top="580"></Image>
+
+        </Canvas>
+
+
     </Grid>
 </Window>

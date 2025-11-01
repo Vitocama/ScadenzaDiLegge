@@ -11,5 +11,7 @@ namespace ScadenzaDiLegge.Models
     {
         public long Id { get; set; }
         public string DataEvento { get; set; }
+
+        public int setdata { get; set; }
     }
 }
