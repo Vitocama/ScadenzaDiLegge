@@ -9,7 +9,7 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow"
-        Height="685" Width="1210"    
+        Height="700" Width="1210"    
         Closed="Window_Closed"
         >
 
@@ -91,10 +91,8 @@
 
             <ClassiUserController:ComadoUserControl Grid.Column="2" HorizontalAlignment="Left" Height="5751" Margin="200,167,0,0" VerticalAlignment="Top" Width="221"/>
         </Grid>
-        <Canvas  VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="80" Height="50"   Grid.ColumnSpan="2" >
-            <Image Source="/Img/marina-logo.png" Width="150" Canvas.Top="580"></Image>
 
-        </Canvas>
+       
 
 
     </Grid>

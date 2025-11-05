@@ -8,8 +8,9 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
 
+      
 
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Width="750" Height="500">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
             <DataGrid x:Name="scadenzaDiLeggeDataGrid"
               AutoGenerateColumns="True"
               CanUserAddRows="False"
@@ -18,7 +19,7 @@
               HorizontalAlignment="Stretch"
               VerticalAlignment="Stretch"
               AlternatingRowBackground="red"
-              RowBackground="OrangeRed"
+              RowBackground="#FFA583"
               AlternationCount="2"/>
         </ScrollViewer>
         

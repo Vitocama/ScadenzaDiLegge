@@ -16,6 +16,7 @@
                 <ResourceDictionary Source="/Dictionary/DeleteAggiungiDictionary.xaml"/>
                 <ResourceDictionary Source="/Dictionary/ComboBoxDictionary.xaml"/>
                 <ResourceDictionary Source="/Dictionary/TexBoxDictionary.xaml"/>
+                <ResourceDictionary Source="/Dictionary/DataGridSearchDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 

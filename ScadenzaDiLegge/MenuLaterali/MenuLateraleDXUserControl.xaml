@@ -46,6 +46,7 @@
             <Image x:Name="Scadenza" Source="/Img/port-signW.png" Grid.Column="0" Grid.Row="0"  Margin="4,10,4,10" MouseLeave="scadenza_MouseLeave"  />
 
             <Label x:Name="SearchLabel"  Grid.Row="1" Grid.Column="1" Style="{DynamicResource labelStyle}" MouseLeave="search_MouseLeave"  MouseEnter="search_MouseEnter" MouseDown="search_MouseDown" >CERCA</Label>
+            <Image x:Name="Search" Source="/Img/searchW.png" Grid.Column="0" Grid.Row="1"  Margin="4,10,4,10" MouseLeave="search_MouseLeave"  />
 
 
             <Label x:Name="SettingLabel"  Grid.Row="2" Grid.Column="1" Style="{DynamicResource labelStyle}"  MouseLeave="setting_MouseLeave"  MouseEnter="setting_MouseEnter" MouseDown="setting_MouseDown">SETTING</Label>

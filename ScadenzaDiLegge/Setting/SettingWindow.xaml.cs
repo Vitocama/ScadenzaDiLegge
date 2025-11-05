@@ -29,12 +29,20 @@ namespace ScadenzaDiLegge.Setting
             {
                 days.Add(i);
             }
+            var context = new marinarescosqliteContext();
+            int settaggio = context.DataMancante.Select(x => x.setdata).FirstOrDefault();
+
+            settaggiodatatextBox.Text = "Ultimo valore salvato: " + (settaggio + 1).ToString();
 
             GiorniScadenzaComboBox.ItemsSource = days;
         }
 
+   
+
+
         private void Down_MouseDown(object sender, MouseButtonEventArgs e)
         {
+
             try
             {
                 using (var db = new marinarescosqliteContext())
@@ -42,15 +50,15 @@ namespace ScadenzaDiLegge.Setting
                     var settaggio = db.DataMancante.First(x => x.Id == 1);
                     settaggio.DataEvento = "01/01/1900";
                     settaggio.setdata = int.Parse(GiorniScadenzaComboBox.SelectedIndex.ToString());
+                    settaggiodatatextBox.Text = "Ultimo valore salvato: " + (settaggio.setdata + 1).ToString();
+
                     db.SaveChanges();
                     MessageBox.Show(
-    "E' stato settato il valore: "+settaggio.setdata+1,
+    "E' stato settato il valore: "+(settaggio.setdata+1),
     "Attenzione",
     MessageBoxButton.OK,
   MessageBoxImage.Information
 );
-
-
 
                 }
             }
@@ -60,8 +68,7 @@ namespace ScadenzaDiLegge.Setting
 
             }
 
-            MenuLateraleDXUserControl menu = new MenuLateraleDXUserControl();
-            menu.UpdateLayout();
+         
 
             this.Close();
 

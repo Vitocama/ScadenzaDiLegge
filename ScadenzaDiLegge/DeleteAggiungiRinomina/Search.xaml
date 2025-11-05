@@ -6,68 +6,144 @@
         xmlns:local="clr-namespace:ScadenzaDiLegge.DeleteAggiungiRinomina"
         xmlns:ClassiUserController="clr-namespace:ScadenzaDiLegge.ClassiUserController" x:Class="ScadenzaDiLegge.DeleteAggiungiRinomina.Search"
         mc:Ignorable="d"
-        Title="Search" Height="800" Width="800">
-    <Grid>
-
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                <GradientStop Color="#3A6BA4" Offset="0.8"/>
-                <GradientStop Color="#0A3568" Offset="0.1111"/>
-                <GradientStop Color="#0A3568" Offset="0.0"/>
-            </LinearGradientBrush>
-        </Grid.Background>
-        <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" >
-            <TextBlock x:Name="serch"  Style="{DynamicResource HeaderTextBlockBlockStyle}" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"><Run Text="RICERCA DATI"/></TextBlock>
-
-            <TextBox x:Name="id"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20"  Style="{DynamicResource texBlockStyle}"/>
-
-            <TextBox x:Name="nave"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20" Style="{DynamicResource texBlockStyle}" />
-
-            <TextBox x:Name="comando"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20"  Style="{DynamicResource texBlockStyle}"/>
-
-            <TextBox x:Name="Base"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20" Style="{DynamicResource texBlockStyle}" />
-
-            <TextBox x:Name="visto"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20" Style="{DynamicResource texBlockStyle}" />
+        Title="Search" 
+        Width="1000" Height="3000"
+    >
 
 
+    <ScrollViewer >
 
-            <TextBox x:Name="TipologiaApparecchiature"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20"  Style="{DynamicResource texBlockStyle}"/>
+        <Grid>
 
-            <TextBox x:Name="searchTextBox"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20" Style="{DynamicResource texBlockStyle}" />
-
-
-
-            <TextBox x:Name="ApparecchiaturaSistemazione"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20"  Style="{DynamicResource texBlockStyle}"/>
-
-            <TextBox x:Name="Posizione"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20" Style="{DynamicResource texBlockStyle}" />
-
-            <TextBox x:Name="MarcaModelloDimensioni"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20" Style="{DynamicResource texBlockStyle}" />
-
-            <TextBox x:Name="TipoDiAccertamento"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20" Style="{DynamicResource texBlockStyle}" />
-
-            <TextBox x:Name="DataEffettuazione"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20" Style="{DynamicResource texBlockStyle}" />
-
-            <TextBox x:Name="ValiditaAnni"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20" Style="{DynamicResource texBlockStyle}" />
-
-            <TextBox x:Name="ProssimaScadenza"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20"  Style="{DynamicResource texBlockStyle}"/>
-
-            <TextBox x:Name="GiorniMancantiAllaScadenza"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20" Style="{DynamicResource texBlockStyle}" />
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#3A6BA4" Offset="0.8"/>
+                    <GradientStop Color="#0A3568" Offset="0.1111"/>
+                    <GradientStop Color="#0A3568" Offset="0.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" >
+                <TextBlock x:Name="search" Text="RICERCA DATI" Style="{DynamicResource HeaderTextBlockBlockStyle}"  Height="50"  HorizontalAlignment="Center"/>
 
 
-            <TextBox x:Name="DocumentiCorrelati"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20"  Style="{DynamicResource texBlockStyle}"/>
+                <TextBlock Text="ID" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="id" TextWrapping="Wrap" Height="25"
+         HorizontalAlignment="Stretch" Style="{DynamicResource texBlockStyle}"
+         />
+                <TextBlock Text="NAVE"  Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="nave" TextWrapping="Wrap"  Height="25" FontSize="20"
+         HorizontalAlignment="Stretch" Style="{DynamicResource texBlockStyle}"
+         />
 
-            <TextBox x:Name="certifivati"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20"  Style="{DynamicResource texBlockStyle}"/>
+                <TextBlock Text="COMANDO" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="comando" TextWrapping="Wrap"  Height="25" FontSize="20"
+         HorizontalAlignment="Stretch" Style="{DynamicResource texBlockStyle}"
+         />
 
-            <TextBox x:Name="column18"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20"  Style="{DynamicResource texBlockStyle}"/>
+                <TextBlock Text="BASE" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="Base" TextWrapping="Wrap" Height="25" FontSize="20"
+         HorizontalAlignment="Stretch" Style="{DynamicResource texBlockStyle}"
+         />
 
-            <TextBox x:Name="column19"  TextWrapping="Wrap" Text="TextBox" Width="120" Height="40" FontSize="20" Style="{DynamicResource texBlockStyle}" />
+                <TextBlock Text="VISTO" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="visto" TextWrapping="Wrap"  Height="25" FontSize="20"
+         HorizontalAlignment="Stretch" Style="{DynamicResource texBlockStyle}"
+         />
+
+                <TextBlock Text="TIPOLOGIA APPARECCHIATURE" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="TipologiaApparecchiature" TextWrapping="Wrap" 
+         Height="25" FontSize="20" HorizontalAlignment="Stretch"
+         Style="{DynamicResource texBlockStyle}"
+        />
+
+                <TextBlock Text="APPARECCHIATURA SISTEMAZIONE" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="apparecchiaturaSistemazione" TextWrapping="Wrap" 
+         Height="25" FontSize="20" HorizontalAlignment="Stretch"
+         Style="{DynamicResource texBlockStyle}"
+         />
+
+                <TextBlock Text="POSIZIONE" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="Posizione" TextWrapping="Wrap" Height="25" FontSize="20"
+         HorizontalAlignment="Stretch" Style="{DynamicResource texBlockStyle}"
+         />
+
+                <TextBlock Text="MARCA MODELLO DIMENSIONI" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="MarcaModelloDimensioni" TextWrapping="Wrap" 
+         Height="25" FontSize="20" HorizontalAlignment="Stretch"
+         Style="{DynamicResource texBlockStyle}"
+         />
+
+                <TextBlock Text="TIPO DI ACCERTAMENTO" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="TipoDiAccertamento" TextWrapping="Wrap" 
+         Height="25" FontSize="20" HorizontalAlignment="Stretch"
+         Style="{DynamicResource texBlockStyle}"
+         />
+
+                <TextBlock Text="DATA EFFETTUAZIONE" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="DataEffettuazione" TextWrapping="Wrap" 
+         Height="25" FontSize="20" HorizontalAlignment="Stretch"
+         Style="{DynamicResource texBlockStyle}"
+         />
+
+                <TextBlock Text="VALIDITA ANNI" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="ValiditaAnni" TextWrapping="Wrap" 
+         Height="25" FontSize="20" HorizontalAlignment="Stretch"
+         Style="{DynamicResource texBlockStyle}"
+         />
+
+                <TextBlock Text="PROSSIMA SCADENZA" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="ProssimaScadenza" TextWrapping="Wrap" 
+         Height="25" FontSize="20" HorizontalAlignment="Stretch"
+         Style="{DynamicResource texBlockStyle}"
+         />
+
+                <TextBlock Text="GIORNI MANCANTI ALLA SCADENZA" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="GiorniMancantiAllaScadenza" TextWrapping="Wrap" 
+         Height="25" FontSize="20" HorizontalAlignment="Stretch"
+         Style="{DynamicResource texBlockStyle}"
+                         
+                         
+         />
+
+                <TextBlock Text="NOTE" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="note" TextWrapping="Wrap" 
+ Height="25" FontSize="20" HorizontalAlignment="Stretch"
+ Style="{DynamicResource texBlockStyle}"
+ />
+
+                <TextBlock Text="DOCUMENTI CORRELATI" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="DocumentiCorrelati" TextWrapping="Wrap" 
+         Height="25" FontSize="20" HorizontalAlignment="Stretch"
+         Style="{DynamicResource texBlockStyle}"
+         />
+
+                <TextBlock Text="CERTIFICATI" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="certifiCati" TextWrapping="Wrap" 
+         Height="25" FontSize="20" HorizontalAlignment="Stretch"
+         Style="{DynamicResource texBlockStyle}"
+         />
+
+                <TextBlock Text="COLONNA 18" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="column18" TextWrapping="Wrap" 
+         Height="25" FontSize="20" HorizontalAlignment="Stretch"
+         Style="{DynamicResource texBlockStyle}"
+         />
+
+                <TextBlock Text="COLONNA 19" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="column19" TextWrapping="Wrap" 
+         Height="25" FontSize="20" HorizontalAlignment="Stretch"
+         Style="{DynamicResource texBlockStyle}"
+         />
 
 
-            <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource BorderStyle}"  Margin="0,50,0,0" MouseDown="Search_MouseDown">
-                <TextBlock Text="CERCA" Style="{DynamicResource textBlockStyle}"   />
-            </Border>
+                <Border  Style="{StaticResource BorderStyle}"   MouseDown="Search_MouseDown" VerticalAlignment="Bottom">
+                    <TextBlock Text="CERCA" Style="{DynamicResource textBlockStyle}"  MouseDown="Search_MouseDown"  />
 
-        </StackPanel>
 
-    </Grid>
+
+
+                </Border>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer >
 </Window>

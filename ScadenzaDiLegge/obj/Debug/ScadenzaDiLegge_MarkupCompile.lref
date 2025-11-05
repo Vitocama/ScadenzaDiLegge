@@ -2,11 +2,14 @@
 FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\App.xaml;;
 FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\CostellazioniClasse\CassiopeaUserControl.xaml;;
 FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\CassiopeaClasse\CassiopeaUserControl.xaml;;
+FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\DataBaseFrame\SearchDatagridWindow.xaml;;
 FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\DeleteAggiungiRinomina\AggiungiWindow.xaml;;
 FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\DeleteAggiungiRinomina\DeleteWindow.xaml;;
 FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\DeleteAggiungiRinomina\Search.xaml;;
+FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\HomeUserControl.xaml;;
 FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\MenuLaterali\MenuLateraleDXUserControl.xaml;;
 FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\PontoniClasse\PontoniUserControl.xaml;;
+FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\Setting\SettingWindow.xaml;;
 FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\SommergibiliClasse\SommergiliUserControl.xaml;;
 FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\Marinaresco\MarinarescoUserControl.xaml;;
 FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\NaviglioClasse\NaviglioMinoreUserControl.xaml;;
@@ -20,5 +23,4 @@ FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\MenuLaterali\menuLa
 FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\UserController\MarinaDifesaUserControl.xaml;;
 FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\UserController\Ministero_della_DIfesa_USERCONTROLLER.xaml;;
 FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\SplashScreen\SplashScreen.xaml;;
-FC:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\Setting\SettingWindow.xaml;;
 

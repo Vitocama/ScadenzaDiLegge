@@ -22,12 +22,13 @@ namespace ScadenzaDiLegge
 
         private void inizializzaDateScadenza()
         {
+            AreaComune.Content = new HomeUserControl();
 
 
 
 
 
-             var context = new marinarescosqliteContext();
+            var context = new marinarescosqliteContext();
 
 
             // 1️⃣ Recupera DataMancante
@@ -49,15 +50,16 @@ namespace ScadenzaDiLegge
                 var marinarescoList = context.DboMarinaresco.ToList();
 
 
-
-                        
+             
 
 
                 foreach (var item in marinarescoList)
                 {
-                    if (!DateTime.TryParseExact(item.ProssimaScadenza, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime prossimaScadenza))
+                    if (item.ProssimaScadenza.Equals("NON CONFORME"))
+                        return;
+                    if (!DateTime.TryParseExact(item.ProssimaScadenza.ToString(), "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime prossimaScadenza))
                         continue;
-                    if (!DateTime.TryParseExact(item.DataEffettuazione, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataEffettuazione))
+                    if (!DateTime.TryParseExact(item.DataEffettuazione.ToString(), "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataEffettuazione))
                         continue;
 
                     // Calcola giorni mancanti
@@ -78,6 +80,11 @@ namespace ScadenzaDiLegge
         private void Window_Closed(object sender, EventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void AreaComune_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+
         }
     }
 }

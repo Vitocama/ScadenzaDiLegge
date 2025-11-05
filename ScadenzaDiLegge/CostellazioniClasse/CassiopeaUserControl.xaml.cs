@@ -81,5 +81,28 @@ namespace ScadenzaDiLegge.ClassiUserController
         {
             AggiungiDelegate.addDel();
         }
+
+        private void Libra_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
+
+            // Estrai la parte prima di "_MouseDown" → "Foscari"
+            string windowName = methodName.Replace("_MouseDown", "");
+
+            // Controlla se esiste già una finestra con quel nome
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window is FrameDatabase db && db.Title == windowName)
+                {
+                    db.Activate();
+                    return;
+                }
+            }
+
+            // Se non è aperta, la crea e la mostra
+            FrameDatabase database = new FrameDatabase(windowName);
+            database.Title = windowName;
+            database.Show();
+        }
     }
 }

@@ -33,9 +33,10 @@ namespace ScadenzaDiLegge.Scadenze
 
             var context = new marinarescosqliteContext();
 
-            var giorniLim = context.DataMancante.Select(x => x.setdata).ToList();
+            int giorniLim = context.DataMancante.Select(x => x.setdata).FirstOrDefault();
 
-            
+
+
 
 
 
@@ -66,8 +67,6 @@ ORDER BY GIORNI_MANCANTI_ALLA_SCADENZA ASC;
 ).ToList();
 
               
-
-             
 
                 scadenzaDiLeggeDataGrid.ItemsSource = dboMarinaresco;
 

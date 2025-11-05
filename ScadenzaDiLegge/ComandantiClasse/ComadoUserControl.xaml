@@ -21,6 +21,21 @@
         <Border Grid.Row="0" Grid.Column="0" Style="{DynamicResource BorderStyle}" MouseDown="Bettica_MouseDown">
             <TextBlock Text="BETTICA" Style="{DynamicResource textBlockStyle}"/>
         </Border>
+
+        <Border Grid.ColumnSpan="2"
+ Grid.Row="1"
+ HorizontalAlignment="Center">
+
+            <Image Source="/Img/Stemma_Marina_ombra.png"
+    RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <ScaleTransform ScaleX="2.5" ScaleY="2.5"/>
+                </Image.RenderTransform>
+            </Image>
+
+        </Border>
+
+
         <Border Grid.Row="0" Grid.Column="1" Style="{DynamicResource BorderStyle}"  MouseDown="Borsini_MouseDown">
             
             <TextBlock Text="BORSINI" Style="{DynamicResource textBlockStyle}"/>
@@ -28,7 +43,7 @@
 
         <Border Grid.Row="1" Grid.Column="0" Style="{DynamicResource BorderStyle}"  MouseDown="Cigali_MouseDown">
             
-            <TextBlock Text="CIGALA" Style="{DynamicResource textBlockStyle}"/>
+            <TextBlock Text="CIGALA F." Style="{DynamicResource textBlockStyle}"/>
         </Border>
 
         <Border Grid.Row="1" Grid.Column="1" Style="{DynamicResource BorderStyle}"  MouseDown="Foscari_MouseDown">

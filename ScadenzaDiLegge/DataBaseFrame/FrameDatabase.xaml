@@ -9,13 +9,7 @@
         WindowState="Maximized">
 
     <Grid>
-        
-        
-        
-        
-        
-        
-    <Grid>
+        <Grid>
             <DataGrid x:Name="datagrid" Style="{DynamicResource datagridStyle}" RowEditEnding="bntSalva"    />
     </Grid>
     

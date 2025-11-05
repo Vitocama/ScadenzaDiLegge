@@ -64,6 +64,9 @@
     <Compile Include="ComandantiClasse\ComadoUserControl.xaml.cs">
       <DependentUpon>ComadoUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataBaseFrame\SearchDatagridWindow.xaml.cs">
+      <DependentUpon>SearchDatagridWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Delegate\AggiungiDelegate.cs" />
     <Compile Include="Delegate\DeleteDelegate.cs" />
     <Compile Include="Delegate\ListaNavi.cs" />
@@ -73,6 +76,9 @@
     <Compile Include="DeleteAggiungiRinomina\DeleteWindow.xaml.cs" />
     <Compile Include="DeleteAggiungiRinomina\Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUserControl.xaml.cs">
+      <DependentUpon>HomeUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="MenuLaterali\MenuLateraleDXUserControl.xaml.cs">
       <DependentUpon>MenuLateraleDXUserControl.xaml</DependentUpon>
@@ -128,6 +134,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DataBaseFrame\SearchDatagridWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DeleteAggiungiRinomina\AggiungiWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -144,11 +154,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Dictionary\DataGridSearchDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dictionary\DeleteAggiungiDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dictionary\TexBoxDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomeUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -361,6 +379,18 @@
   <ItemGroup>
     <Resource Include="Img\settings.png" />
     <Resource Include="Img\settingsW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\Stemma_Marina_ombra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\stemma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\searchW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
 ﻿using ScadenzaDiLegge.ClassiUserController;
+using ScadenzaDiLegge.DeleteAggiungiRinomina;
 using ScadenzaDiLegge.Models;
 using ScadenzaDiLegge.Scadenze;
 using ScadenzaDiLegge.Setting;
@@ -29,10 +30,9 @@ namespace ScadenzaDiLegge
             InitializeComponent();
 
 
-            var context = new marinarescosqliteContext();
-            int giorniLim = context.DataMancante.Select(x=>x.setdata).FirstOrDefault();
 
-            ScadenzeLabel.Content = "SCADENZA A "+giorniLim;
+
+            ScadenzeLabel.Content = "SCADENZA";
                 
 
 
@@ -64,24 +64,44 @@ namespace ScadenzaDiLegge
 
         private void search_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            var serchWindows = Application.Current.Windows.OfType<Search>().FirstOrDefault();
+            if (serchWindows != null)
+            {
+                serchWindows.Focus();
+                return;
+            }
+         
+            Search searchWindow = new Search();
+            searchWindow.Show();
         }
 
         private void search_MouseEnter(object sender, MouseEventArgs e)
         {
-
-            ScadenzeLabel.Foreground = Brushes.Black;
+            Search.Source = new BitmapImage(new Uri("pack://application:,,,/Img/search.png"));
+            SearchLabel.Foreground = Brushes.Black;
         }
 
         private void search_MouseLeave(object sender, MouseEventArgs e)
         {
-            ScadenzeLabel.Foreground = Brushes.White;
+            Search.Source = new BitmapImage(new Uri("pack://application:,,,/Img/searchW.png"));
+
+            SearchLabel.Foreground = Brushes.White;
         }
 
         private void setting_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            SettingWindow setting = new SettingWindow();
-            setting.Show();
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is SettingWindow)   // <-- nome della tua finestra
+                {
+                    w.Focus();     // porta avanti se già aperta
+                    return;
+                }
+            }
+
+            // Se non esiste, la crea e la mostra
+            SettingWindow fs = new SettingWindow();
+            fs.Show();
         }
 
         private void setting_MouseEnter(object sender, MouseEventArgs e)

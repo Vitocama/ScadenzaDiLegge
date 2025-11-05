@@ -10,18 +10,40 @@
         
         <Grid.RowDefinitions>
             
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Text="CLASSE COSTELLAZIONI" Style="{DynamicResource HeaderTextBlockBlockStyle}"/>
 
+
+        <Border Grid.Column="1"
+Grid.Row="1"
+HorizontalAlignment="Center">
+
+            <Image Source="/Img/Stemma_Marina_ombra.png"
+   RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <ScaleTransform ScaleX="2.5" ScaleY="2.5"/>
+                </Image.RenderTransform>
+            </Image>
+
+        </Border>
+        <Border Grid.Column="2" Grid.Row="0" Style="{StaticResource BorderStyle}" MouseDown="Libra_MouseDown">
+            <TextBlock Text="LIBRA" Style="{DynamicResource textBlockStyle}" ></TextBlock>
+        </Border>
+
+
        
-            <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource BorderStyle}" MouseDown="Sirio_MouseDown">
+    
+        <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource BorderStyle}" MouseDown="Sirio_MouseDown">
                 <TextBlock Text="SIRIO" Style="{DynamicResource textBlockStyle}" ></TextBlock>
             </Border>
 
@@ -29,11 +51,11 @@
                 <TextBlock Text="ORIONE" Style="{DynamicResource textBlockStyle}"></TextBlock>
             </Border>
 
-        <Border Grid.Column="0" Grid.Row="1" Style="{DynamicResource AggiungiDeleteBordeStyle}" MouseDown="Aggiungi_MouseDown">
+        <Border Grid.Column="0" Grid.Row="2" Style="{DynamicResource AggiungiDeleteBordeStyle}" MouseDown="Aggiungi_MouseDown">
                 <TextBlock Text="AGGIUNGI" Style="{DynamicResource textBlockStyle}" ></TextBlock>
             </Border>
 
-        <Border Grid.Column="1" Grid.Row="1" Style="{DynamicResource AggiungiDeleteBordeStyle}" MouseDown="Delete_MouseDown">
+        <Border Grid.Column="2" Grid.Row="2" Style="{DynamicResource AggiungiDeleteBordeStyle}" MouseDown="Delete_MouseDown">
                 <TextBlock Text="DELETE" Style="{DynamicResource textBlockStyle}"></TextBlock>
             </Border>
 

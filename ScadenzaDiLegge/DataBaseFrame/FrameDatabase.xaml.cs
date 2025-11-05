@@ -20,6 +20,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
@@ -34,7 +35,6 @@ namespace ScadenzaDiLegge
     public partial class FrameDatabase : Window
     {
         private string _nomeTabella;
-        private List<string> _listaNavi;
 
 
         public FrameDatabase(string nomeNave)
@@ -46,10 +46,6 @@ namespace ScadenzaDiLegge
             
             var db = new marinarescosqliteContext();
 
-            _listaNavi = db.DboMarinaresco
-                                   .Select(x => x.Nave)
-                                   .Distinct()
-                                   .ToList();
 
 
             if (_nomeTabella.Equals("MARINARESCO"))
@@ -82,119 +78,153 @@ namespace ScadenzaDiLegge
 
 
 
-        private void bntSalva(object sender, DataGridRowEditEndingEventArgs e)
+
+private void bntSalva(object sender, DataGridRowEditEndingEventArgs e)
+    {
+        if (e.EditAction != DataGridEditAction.Commit)
+            return;
+
+        Dispatcher.BeginInvoke(new Action(() =>
         {
-           
-            
+            var grid = (DataGrid)sender;
 
-
-
-
-            if (e.EditAction == DataGridEditAction.Commit)
+            try
             {
-                Dispatcher.BeginInvoke(new Action(() =>
+                var db = new marinarescosqliteContext();
+                var item = e.Row.Item as DboMarinaresco;
+
+                if (item == null)
+                    return;
+
+                // ✅ 1) --- Carico i dati originali dal database ---
+                var original = db.DboMarinaresco
+                                 .AsNoTracking()
+                                 .FirstOrDefault(x => x.Id == item.Id);
+
+                if (original == null)
+                    return;
+
+                // ✅ 2) --- Blocca campi NON modificabili ---
+                if (item.Nave != original.Nave ||
+                    item.GiorniMancantiAllaScadenza != original.GiorniMancantiAllaScadenza)
                 {
-                    try
+                    MessageBox.Show(
+                        "ERRORE: NON È POSSIBILE MODIFICARE IL DATO SELEZIONATO.",
+                        "Modifica non consentita",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error
+                    );
+
+                    // Ripristina vecchi valori nella riga del DataGrid
+                    db.Entry(item).CurrentValues.SetValues(original);
+                    grid.CancelEdit(DataGridEditingUnit.Row);
+                    grid.Items.Refresh();
+                    return;
+                }
+
+                // ✅ 3) --- Controllo formato DataEffettuazione ---
+                if (!string.IsNullOrWhiteSpace(item.DataEffettuazione))
+                {
+                    DateTime dataEff;
+                    bool formatoCorretto = DateTime.TryParseExact(
+                        item.DataEffettuazione,
+                        "dd/MM/yyyy",
+                        CultureInfo.InvariantCulture,
+                        DateTimeStyles.None,
+                        out dataEff
+                    );
+
+                    if (!formatoCorretto)
                     {
-                        var db = new marinarescosqliteContext();
-                        var item = e.Row.Item as DboMarinaresco; // Oggetto modificato nel DataGrid
+                        MessageBox.Show("ERRORE: La DATA non è nel formato corretto (Giorno/Mese/Anno).",
+                            "Formato errato", MessageBoxButton.OK, MessageBoxImage.Error);
 
-                        if (!_listaNavi.Contains(item.Nave)) {
-                            MessageBox.Show(
-                       "ERRORE: NON E' POSSIBILE MOFICARE IL NOME DELLA NAVE.",
-                       "Formato data errato",
-                       MessageBoxButton.OK,
-                       MessageBoxImage.Error
-                   );
-                            
-                            return;
+                        // Ripristina valori originali
+                        db.Entry(item).CurrentValues.SetValues(original);
+                        grid.CancelEdit(DataGridEditingUnit.Row);
+                        grid.Items.Refresh();
+                        return;
+                    }
 
-                        }
+                    // ✅ Controllo intervallo consentito
+                    DateTime min = new DateTime(2014, 1, 1);
+                    DateTime max = new DateTime(2050, 12, 31);
 
-                        if (!string.IsNullOrWhiteSpace(item.DataEffettuazione))
+                    if (dataEff < min || dataEff > max)
+                    {
+                        MessageBox.Show(
+                            "ERRORE: La data deve essere compresa tra il 01/01/2014 e il 31/12/2050.",
+                            "Data non valida", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+                        db.Entry(item).CurrentValues.SetValues(original);
+                        grid.CancelEdit(DataGridEditingUnit.Row);
+                        grid.Items.Refresh();
+                        return;
+                    }
+
+
+
+                    // ✅ 4) --- Controllo ProssimaScadenza ---
+                    if (!string.IsNullOrWhiteSpace(item.ProssimaScadenza))
+                    {
+                        if (!item.ProssimaScadenza.Equals("NON CONFORME"))
                         {
-                            DateTime data;
-                            bool formatoCorretto = DateTime.TryParseExact(
-                                item.DataEffettuazione,
-                                "dd/MM/yyyy",                      // formato richiesto
-                                CultureInfo.InvariantCulture,      // cultura neutra (o usa it-IT)
-                                DateTimeStyles.None,
-                                out data
-                            );
-
-                            if (!formatoCorretto)
+                            if (!DateTime.TryParseExact(item.ProssimaScadenza, "dd/MM/yyyy",
+                                CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime data))
                             {
-                                MessageBox.Show(
-                    "ERRORE: La DATA non è nel formato corretto (Giorno/Mese/Anno).",
-                    "Formato data errato",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error  
-                );
-                                return; 
-                            }
-                        }
+                                MessageBox.Show("ERRORE: La DATA non è nel formato corretto (Giorno/Mese/Anno).",
+                                    "Formato errato", MessageBoxButton.OK, MessageBoxImage.Error);
 
-                        if (!string.IsNullOrWhiteSpace(item.ProssimaScadenza))
-                        {
-                            DateTime data;
-                            bool formatoCorretto = DateTime.TryParseExact(
-                                item.DataEffettuazione,
-                                "dd/MM/yyyy",
-                                CultureInfo.InvariantCulture,
-                                DateTimeStyles.None,
-                                out data
-                            );
-
-                            if (!formatoCorretto)
-                            {
-                                MessageBox.Show(
-                                    "ERRORE: La DATA non è nel formato corretto (Giorno/Mese/Anno).",
-                                    "Formato data errato",
-                                    MessageBoxButton.OK,
-                                    MessageBoxImage.Error
-                                );
+                                db.Entry(item).CurrentValues.SetValues(original);
+                                grid.CancelEdit(DataGridEditingUnit.Row);
+                                grid.Items.Refresh();
                                 return;
                             }
 
-                            // ✅ Limiti consentiti
-                            DateTime min = new DateTime(2014, 1, 1);
-                            DateTime max = new DateTime(2050, 12, 31);
+                            // Limiti consentiti
+                           
 
                             if (data < min || data > max)
                             {
+                            
                                 MessageBox.Show(
                                     "ERRORE: La data deve essere compresa tra il 01/01/2014 e il 31/12/2050.",
-                                    "Data fuori intervallo",
-                                    MessageBoxButton.OK,
-                                    MessageBoxImage.Warning
-                                );
+                                    "Data non valida", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+                                db.Entry(item).CurrentValues.SetValues(original);
+                                grid.CancelEdit(DataGridEditingUnit.Row);
+                                grid.Items.Refresh();
                                 return;
                             }
                         }
-
-
-                        db.Attach(item);
-                        db.Entry(item).State = EntityState.Modified;
-
-                        
-                        db.SaveChanges();
-
-                        MessageBox.Show("Modifiche salvate con successo!");
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Errore durante il salvataggio: " + ex.Message);
-                    }
-                }), System.Windows.Threading.DispatcherPriority.Background);
+                }
+
+                // ✅ 5) --- TUTTO OK → Salvo nel database ---
+                db.Attach(item);
+                db.Entry(item).State = EntityState.Modified;
+                db.SaveChanges();
+
+                MessageBox.Show("✅ Modifiche salvate con successo!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Errore durante il salvataggio: " + ex.Message);
             }
 
+            // ✅ Ricarica la griglia
+            var reloadDb = new marinarescosqliteContext();
+            grid.ItemsSource = reloadDb.DboMarinaresco.ToList();
+            grid.Items.Refresh();
 
-        }
+        }), System.Windows.Threading.DispatcherPriority.Background);
+    }
 
 
 
 
-        private void Datagrid_LoadingRow(object sender, DataGridRowEventArgs e)
+
+    private void Datagrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
             var contex = new marinarescosqliteContext();
             int limite = contex.DataMancante.Where(x=> x.Id == 1)
