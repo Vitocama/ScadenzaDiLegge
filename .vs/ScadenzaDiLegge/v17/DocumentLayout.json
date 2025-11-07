@@ -3,35 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\scadenzadilegge\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|solutionrelative:scadenzadilegge\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|c:\\users\\hirad\\source\\repos\\scadenzadilegge\\scadenzadilegge\\inizializzazionemarinaresco\\datacalcolomarcanti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|solutionrelative:scadenzadilegge\\inizializzazionemarinaresco\\datacalcolomarcanti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|c:\\users\\hirad\\source\\repos\\scadenzadilegge\\scadenzadilegge\\usercontroller\\menulaterare_userscontroler.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|solutionrelative:scadenzadilegge\\usercontroller\\menulaterare_userscontroler.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|c:\\users\\hirad\\source\\repos\\scadenzadilegge\\scadenzadilegge\\databaseframe\\framedatabase.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|solutionrelative:scadenzadilegge\\databaseframe\\framedatabase.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\scadenzadilegge\\usercontroller\\menulaterare_userscontroler.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|solutionrelative:scadenzadilegge\\usercontroller\\menulaterare_userscontroler.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|c:\\users\\hirad\\source\\repos\\scadenzadilegge\\scadenzadilegge\\deleteaggiungirinomina\\aggiungiwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|solutionrelative:scadenzadilegge\\deleteaggiungirinomina\\aggiungiwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\scadenzadilegge\\classiusercontroller\\comadousercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|solutionrelative:scadenzadilegge\\classiusercontroller\\comadousercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|c:\\users\\hirad\\source\\repos\\scadenzadilegge\\scadenzadilegge\\deleteaggiungirinomina\\deletewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|solutionrelative:scadenzadilegge\\deleteaggiungirinomina\\deletewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\scadenzadilegge\\classiusercontroller\\comadousercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|solutionrelative:scadenzadilegge\\classiusercontroller\\comadousercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|c:\\users\\hirad\\source\\repos\\scadenzadilegge\\scadenzadilegge\\deleteaggiungirinomina\\aggiungiwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|solutionrelative:scadenzadilegge\\deleteaggiungirinomina\\aggiungiwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Microsoft.WinFx.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\scadenzadilegge\\databaseframe\\framedatabase.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|solutionrelative:scadenzadilegge\\databaseframe\\framedatabase.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\scadenzadilegge\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|solutionrelative:scadenzadilegge\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\scadenzadilegge\\cassiopeaclasse\\cassiopeausercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|solutionrelative:scadenzadilegge\\cassiopeaclasse\\cassiopeausercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\scadenzadilegge\\dictionary\\labeldictionary.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|solutionrelative:scadenzadilegge\\dictionary\\labeldictionary.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\scadenzadilegge\\models\\dbomarinaresco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FAACC09-9C76-4935-AF83-E7857F09BCCF}|ScadenzaDiLegge\\ScadenzaDiLegge.csproj|solutionrelative:scadenzadilegge\\models\\dbomarinaresco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,110 +41,117 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "DockedWidth": 491,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ComadoUserControl.xaml",
-              "DocumentMoniker": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\ClassiUserController\\ComadoUserControl.xaml",
-              "RelativeDocumentMoniker": "ScadenzaDiLegge\\ClassiUserController\\ComadoUserControl.xaml",
-              "ToolTip": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\ClassiUserController\\ComadoUserControl.xaml",
-              "RelativeToolTip": "ScadenzaDiLegge\\ClassiUserController\\ComadoUserControl.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-20T22:23:35.369Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "menuLaterare_usersControler.xaml",
-              "DocumentMoniker": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\UserController\\menuLaterare_usersControler.xaml",
-              "RelativeDocumentMoniker": "ScadenzaDiLegge\\UserController\\menuLaterare_usersControler.xaml",
-              "ToolTip": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\UserController\\menuLaterare_usersControler.xaml",
-              "RelativeToolTip": "ScadenzaDiLegge\\UserController\\menuLaterare_usersControler.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-20T21:54:19.407Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "menuLaterare_usersControler.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\UserController\\menuLaterare_usersControler.xaml.cs",
-              "RelativeDocumentMoniker": "ScadenzaDiLegge\\UserController\\menuLaterare_usersControler.xaml.cs",
-              "ToolTip": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\UserController\\menuLaterare_usersControler.xaml.cs",
-              "RelativeToolTip": "ScadenzaDiLegge\\UserController\\menuLaterare_usersControler.xaml.cs",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAEwJoAAAAIAAAAAAAAAA==",
+              "Title": "AggiungiWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\DeleteAggiungiRinomina\\AggiungiWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ScadenzaDiLegge\\DeleteAggiungiRinomina\\AggiungiWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\DeleteAggiungiRinomina\\AggiungiWindow.xaml.cs",
+              "RelativeToolTip": "ScadenzaDiLegge\\DeleteAggiungiRinomina\\AggiungiWindow.xaml.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAABoAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T21:55:59.862Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "ScadenzaDiLegge\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\MainWindow.xaml",
-              "RelativeToolTip": "ScadenzaDiLegge\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-20T22:03:22.425Z",
+              "WhenOpened": "2025-11-07T15:02:19.269Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ComadoUserControl.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\ClassiUserController\\ComadoUserControl.xaml.cs",
-              "RelativeDocumentMoniker": "ScadenzaDiLegge\\ClassiUserController\\ComadoUserControl.xaml.cs",
-              "ToolTip": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\ClassiUserController\\ComadoUserControl.xaml.cs",
-              "RelativeToolTip": "ScadenzaDiLegge\\ClassiUserController\\ComadoUserControl.xaml.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T22:25:53.495Z"
+              "Title": "DeleteWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\DeleteAggiungiRinomina\\DeleteWindow.xaml",
+              "RelativeDocumentMoniker": "ScadenzaDiLegge\\DeleteAggiungiRinomina\\DeleteWindow.xaml",
+              "ToolTip": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\DeleteAggiungiRinomina\\DeleteWindow.xaml",
+              "RelativeToolTip": "ScadenzaDiLegge\\DeleteAggiungiRinomina\\DeleteWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-07T15:02:09.91Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "ScadenzaDiLegge\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\MainWindow.xaml.cs",
-              "RelativeToolTip": "ScadenzaDiLegge\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAwAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "AggiungiWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\DeleteAggiungiRinomina\\AggiungiWindow.xaml",
+              "RelativeDocumentMoniker": "ScadenzaDiLegge\\DeleteAggiungiRinomina\\AggiungiWindow.xaml",
+              "ToolTip": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\DeleteAggiungiRinomina\\AggiungiWindow.xaml",
+              "RelativeToolTip": "ScadenzaDiLegge\\DeleteAggiungiRinomina\\AggiungiWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-07T15:02:03.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrameDatabase.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\DataBaseFrame\\FrameDatabase.xaml.cs",
+              "RelativeDocumentMoniker": "ScadenzaDiLegge\\DataBaseFrame\\FrameDatabase.xaml.cs",
+              "ToolTip": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\DataBaseFrame\\FrameDatabase.xaml.cs",
+              "RelativeToolTip": "ScadenzaDiLegge\\DataBaseFrame\\FrameDatabase.xaml.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAIMAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T22:03:19.563Z"
+              "WhenOpened": "2025-11-07T14:03:07.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DataCalcoloMarcanti.cs",
+              "DocumentMoniker": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\InizializzazioneMarinaresco\\DataCalcoloMarcanti.cs",
+              "RelativeDocumentMoniker": "ScadenzaDiLegge\\InizializzazioneMarinaresco\\DataCalcoloMarcanti.cs",
+              "ToolTip": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\InizializzazioneMarinaresco\\DataCalcoloMarcanti.cs",
+              "RelativeToolTip": "ScadenzaDiLegge\\InizializzazioneMarinaresco\\DataCalcoloMarcanti.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAgwEMAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T13:54:14.439Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Microsoft.WinFx.targets",
-              "DocumentMoniker": "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Microsoft.WinFx.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Microsoft.WinFx.targets",
-              "ToolTip": "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Microsoft.WinFx.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Microsoft.WinFx.targets",
-              "ViewState": "AgIAAP0AAAAAAAAAAAAqwAsBAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-10-20T22:09:23.782Z"
+              "Title": "FrameDatabase.xaml",
+              "DocumentMoniker": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\DataBaseFrame\\FrameDatabase.xaml",
+              "RelativeDocumentMoniker": "ScadenzaDiLegge\\DataBaseFrame\\FrameDatabase.xaml",
+              "ToolTip": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\DataBaseFrame\\FrameDatabase.xaml",
+              "RelativeToolTip": "ScadenzaDiLegge\\DataBaseFrame\\FrameDatabase.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-07T11:25:03.256Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "LabelDictionary.xaml",
-              "DocumentMoniker": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\Dictionary\\LabelDictionary.xaml",
-              "RelativeDocumentMoniker": "ScadenzaDiLegge\\Dictionary\\LabelDictionary.xaml",
-              "ToolTip": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\Dictionary\\LabelDictionary.xaml",
-              "RelativeToolTip": "ScadenzaDiLegge\\Dictionary\\LabelDictionary.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-20T22:10:42.653Z"
+              "Title": "DboMarinaresco.cs",
+              "DocumentMoniker": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\Models\\DboMarinaresco.cs",
+              "RelativeDocumentMoniker": "ScadenzaDiLegge\\Models\\DboMarinaresco.cs",
+              "ToolTip": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\Models\\DboMarinaresco.cs",
+              "RelativeToolTip": "ScadenzaDiLegge\\Models\\DboMarinaresco.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T12:01:28.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CassiopeaUserControl.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\CassiopeaClasse\\CassiopeaUserControl.xaml.cs",
+              "RelativeDocumentMoniker": "ScadenzaDiLegge\\CassiopeaClasse\\CassiopeaUserControl.xaml.cs",
+              "ToolTip": "C:\\Users\\Hirad\\source\\repos\\ScadenzaDiLegge\\ScadenzaDiLegge\\CassiopeaClasse\\CassiopeaUserControl.xaml.cs",
+              "RelativeToolTip": "ScadenzaDiLegge\\CassiopeaClasse\\CassiopeaUserControl.xaml.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAvwB0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T08:41:36.476Z",
+              "EditorCaption": ""
             }
           ]
         }

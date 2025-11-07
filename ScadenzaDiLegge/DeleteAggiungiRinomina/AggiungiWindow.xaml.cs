@@ -24,6 +24,7 @@ namespace ScadenzaDiLegge.DeleteAggiungi
 
 
             idTxt.Text = "ID "+maxIdLong.ToString();
+           
         }
 
         // Popola la ComboBox con le navi ordinate

@@ -58,16 +58,36 @@ namespace ScadenzaDiLegge.InizializzazioneMarinaresco
                     DateTime anniValidita;
 
 
-                    foreach (var item in marinarescoList)
+                    foreach (var item in marinarescoList) {
+
+                    if(item.DataEffettuazione==null)
+                    {
+                        item.ProssimaScadenza = "01/01/1900";
+                        item.GiorniMancantiAllaScadenza = 0;
+                        item.ValiditaAnni = 0;
+                        item.DataEffettuazione = "01/01/1900";
+                        continue;
+                    }
 
 
-                    {    if (item.ProssimaScadenza == null)
-                            continue;
 
-                        if (item.ProssimaScadenza.Equals("NON CONFORME"))
-                            continue;
+                    if (item.ProssimaScadenza.Equals("NON CONFORME")||
+                        item.ValiditaAnni == 0 || item.ProssimaScadenza=="0"||
+                        item.ProssimaScadenza.Equals("1/1/1900"))
+                    {
+                        item.ProssimaScadenza = "01/01/1900";
+                        item.GiorniMancantiAllaScadenza = 0;
+                        continue;
+                       
+                    }
+
+
+                   
+
                         if (!DateTime.TryParseExact(item.ProssimaScadenza.ToString(), "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime prossimaScadenza))
                             continue;
+
+
                         if (!DateTime.TryParseExact(item.DataEffettuazione.ToString(), "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataEffettuazione))
                             continue;
 

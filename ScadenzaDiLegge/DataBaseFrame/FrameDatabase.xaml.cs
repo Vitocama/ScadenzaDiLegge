@@ -131,21 +131,8 @@ private void datagrid_RowEditEnding(object sender, DataGridRowEditEndingEventArg
                         return;
                     }
 
-                    // ✅ Controllo intervallo consentito
-                    DateTime min = new DateTime(2014, 1, 1);
-                    DateTime max = new DateTime(2050, 12, 31);
-
-                    if (dataEff < min || dataEff > max)
-                    {
-                        MessageBox.Show(
-                            "ERRORE: La data deve essere compresa tra il 01/01/2014 e il 31/12/2050.",
-                            "Data non valida", MessageBoxButton.OK, MessageBoxImage.Warning);
-
-                        db.Entry(item).CurrentValues.SetValues(original);
-                        grid.CancelEdit(DataGridEditingUnit.Row);
-                        grid.Items.Refresh();
-                        return;
-                    }
+  
+                  
 
 
 
@@ -165,22 +152,7 @@ private void datagrid_RowEditEnding(object sender, DataGridRowEditEndingEventArg
                                 grid.Items.Refresh();
                                 return;
                             }
-
-                            // Limiti consentiti
-                           
-
-                            if (data < min || data > max)
-                            {
-                            
-                                MessageBox.Show(
-                                    "ERRORE: La data deve essere compresa tra il 01/01/2014 e il 31/12/2050.",
-                                    "Data non valida", MessageBoxButton.OK, MessageBoxImage.Warning);
-
-                                db.Entry(item).CurrentValues.SetValues(original);
-                                grid.CancelEdit(DataGridEditingUnit.Row);
-                                grid.Items.Refresh();
-                                return;
-                            }
+                     
                         }
                     }
                 }
