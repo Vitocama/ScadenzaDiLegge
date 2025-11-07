@@ -75,8 +75,6 @@ C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\NaviglioCl
 C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\NaviglioClasse\NaviglioMinoreUserControl.baml
 C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\FuoriSedeClassi\FuoriSedeUserControl.g.cs
 C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\FuoriSedeClassi\FuoriSedeUserControl.baml
-C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\RimorchiatoreClasse\RimorchiatoreUserControl.g.cs
-C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\RimorchiatoreClasse\RimorchiatoreUserControl.baml
 C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\bin\Debug\Dapper.dll
 C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\Marinaresco\MarinarescoUserControl.g.cs
 C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\Marinaresco\MarinarescoUserControl.baml
@@ -112,3 +110,5 @@ C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\HomeUserCo
 C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\DataBaseFrame\SearchDatagridWindow.g.cs
 C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\DataBaseFrame\SearchDatagridWindow.baml
 C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\Dictionary\DataGridSearchDictionary.baml
+C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\NaviglioClasse\RimorchiatoreClasse\RimorchiatoreUserControl.g.cs
+C:\Users\Hirad\source\repos\ScadenzaDiLegge\ScadenzaDiLegge\obj\Debug\NaviglioClasse\RimorchiatoreClasse\RimorchiatoreUserControl.baml

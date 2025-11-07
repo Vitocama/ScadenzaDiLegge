@@ -63,7 +63,7 @@ namespace ScadenzaDiLegge
             {
                 db = new marinarescosqliteContext();
                var lista = db.DboMarinaresco
-                              .Where(x => x.Nave == _nomeTabella).ToList();
+                              .Where(x => x.Nave == _nomeTabella).OrderBy(p=>p.Id).ToList();
                 datagrid.ItemsSource = lista;
                 datagrid.LoadingRow += Datagrid_LoadingRow;
             }
@@ -79,7 +79,7 @@ namespace ScadenzaDiLegge
 
 
 
-private void bntSalva(object sender, DataGridRowEditEndingEventArgs e)
+private void datagrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
     {
         if (e.EditAction != DataGridEditAction.Commit)
             return;
@@ -104,23 +104,8 @@ private void bntSalva(object sender, DataGridRowEditEndingEventArgs e)
                 if (original == null)
                     return;
 
-                // ✅ 2) --- Blocca campi NON modificabili ---
-                if (item.Nave != original.Nave ||
-                    item.GiorniMancantiAllaScadenza != original.GiorniMancantiAllaScadenza)
-                {
-                    MessageBox.Show(
-                        "ERRORE: NON È POSSIBILE MODIFICARE IL DATO SELEZIONATO.",
-                        "Modifica non consentita",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error
-                    );
-
-                    // Ripristina vecchi valori nella riga del DataGrid
-                    db.Entry(item).CurrentValues.SetValues(original);
-                    grid.CancelEdit(DataGridEditingUnit.Row);
-                    grid.Items.Refresh();
-                    return;
-                }
+               
+              
 
                 // ✅ 3) --- Controllo formato DataEffettuazione ---
                 if (!string.IsNullOrWhiteSpace(item.DataEffettuazione))
@@ -224,7 +209,42 @@ private void bntSalva(object sender, DataGridRowEditEndingEventArgs e)
 
 
 
-    private void Datagrid_LoadingRow(object sender, DataGridRowEventArgs e)
+
+        private void MyDataGrid_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            // Trova lo ScrollViewer interno
+            ScrollViewer scrollViewer = FindVisualChild<ScrollViewer>(datagrid);
+            if (scrollViewer != null)
+            {
+                double scrollFactor = 0.3; // 30% della velocità originale
+                scrollViewer.ScrollToVerticalOffset(scrollViewer.VerticalOffset - e.Delta * scrollFactor);
+                e.Handled = true; // blocca lo scroll originale
+            }
+        }
+
+        // Metodo helper per trovare lo ScrollViewer interno
+        private T FindVisualChild<T>(DependencyObject parent) where T : DependencyObject
+        {
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
+            {
+                DependencyObject child = VisualTreeHelper.GetChild(parent, i);
+                if (child != null && child is T tChild)
+                    return tChild;
+                else
+                {
+                    T childOfChild = FindVisualChild<T>(child);
+                    if (childOfChild != null)
+                        return childOfChild;
+                }
+            }
+            return null;
+        }
+
+
+
+
+
+        private void Datagrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
             var contex = new marinarescosqliteContext();
             int limite = contex.DataMancante.Where(x=> x.Id == 1)

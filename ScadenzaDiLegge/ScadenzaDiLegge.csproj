@@ -80,6 +80,7 @@
     <Compile Include="HomeUserControl.xaml.cs">
       <DependentUpon>HomeUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InizializzazioneMarinaresco\DataCalcoloMarcanti.cs" />
     <Compile Include="MenuLaterali\MenuLateraleDXUserControl.xaml.cs">
       <DependentUpon>MenuLateraleDXUserControl.xaml</DependentUpon>
     </Compile>
@@ -101,7 +102,7 @@
     <Compile Include="NaviglioClasse\NaviglioMinoreUserControl.xaml.cs">
       <DependentUpon>NaviglioMinoreUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RimorchiatoreClasse\RimorchiatoreUserControl.xaml.cs">
+    <Compile Include="NaviglioClasse\RimorchiatoreClasse\RimorchiatoreUserControl.xaml.cs">
       <DependentUpon>RimorchiatoreUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="FuoriSedeClassi\FuoriSedeUserControl.xaml.cs">
@@ -194,7 +195,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RimorchiatoreClasse\RimorchiatoreUserControl.xaml">
+    <Page Include="NaviglioClasse\RimorchiatoreClasse\RimorchiatoreUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

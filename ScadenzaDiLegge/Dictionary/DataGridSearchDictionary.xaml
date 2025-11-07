@@ -30,7 +30,7 @@
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="Black"/>
                 <Setter Property="Foreground" Value="White"/>
-                <Setter Property="FontSize" Value="17"/>
+                <Setter Property="FontSize" Value="16"/>
             </Trigger>
 
             <!-- Riga selezionata -->
