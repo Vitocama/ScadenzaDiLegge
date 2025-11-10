@@ -35,7 +35,16 @@ namespace ScadenzaDiLegge.Models
         {
             modelBuilder.Entity<DataMancante>(entity =>
             {
+                entity.HasIndex(e => e.Setdata)
+                    .IsUnique();
+
                 entity.Property(e => e.Id).ValueGeneratedNever();
+
+                entity.Property(e => e.Setdata)
+                    .IsRequired()
+                    .HasColumnName("Setdata")
+                    .HasColumnType("NUMERIC")
+                    .HasDefaultValueSql("40");
             });
 
             modelBuilder.Entity<DboMarinaresco>(entity =>
@@ -64,6 +73,8 @@ namespace ScadenzaDiLegge.Models
                 entity.Property(e => e.DataEffettuazione).HasColumnName("DATA_EFFETTUAZIONE");
 
                 entity.Property(e => e.DocumentiCorrelati).HasColumnName("DOCUMENTI_CORRELATI");
+
+                entity.Property(e => e.Fattibilita).HasColumnName("FATTIBILITA'");
 
                 entity.Property(e => e.GiorniMancantiAllaScadenza).HasColumnName("GIORNI_MANCANTI_ALLA_SCADENZA");
 

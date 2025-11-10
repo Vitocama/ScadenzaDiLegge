@@ -55,16 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CostellazioniClasse\CassiopeaUserControl.xaml.cs">
+    <Compile Include="Delegate\Edit_Datagrid.cs" />
+    <Compile Include="NaviSchermata\ComandantiClasse\CostellazioniClasse\CassiopeaUserControl.xaml.cs">
       <DependentUpon>CassiopeaUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CassiopeaClasse\CassiopeaUserControl.xaml.cs">
+    <Compile Include="NaviSchermata\CassiopeaClasse\CassiopeaUserControl.xaml.cs">
       <DependentUpon>CassiopeaUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ComandantiClasse\ComadoUserControl.xaml.cs">
+    <Compile Include="NaviSchermata\ComandantiClasse\ComadoUserControl.xaml.cs">
       <DependentUpon>ComadoUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataBaseFrame\SearchDatagridWindow.xaml.cs">
+    <Compile Include="DataGrid\SearchDatagridWindow.xaml.cs">
       <DependentUpon>SearchDatagridWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Delegate\AggiungiDelegate.cs" />
@@ -81,34 +82,34 @@
       <DependentUpon>HomeUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="InizializzazioneMarinaresco\DataCalcoloMarcanti.cs" />
-    <Compile Include="MenuLaterali\MenuLateraleDXUserControl.xaml.cs">
+    <Compile Include="Menu\MenuLaterali\MenuLateraleDXUserControl.xaml.cs">
       <DependentUpon>MenuLateraleDXUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PontoniClasse\PontoniUserControl.xaml.cs">
+    <Compile Include="NaviSchermata\PontoniClasse\PontoniUserControl.xaml.cs">
       <DependentUpon>PontoniUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Setting\SettingWindow.xaml.cs">
       <DependentUpon>SettingWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SommergibiliClasse\SommergiliUserControl.xaml.cs">
+    <Compile Include="NaviSchermata\SommergibiliClasse\SommergiliUserControl.xaml.cs">
       <DependentUpon>SommergiliUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Marinaresco\MarinarescoUserControl.xaml.cs">
+    <Compile Include="NaviSchermata\Marinaresco\MarinarescoUserControl.xaml.cs">
       <DependentUpon>MarinarescoUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\DataMancante.cs" />
     <Compile Include="Models\DboMarinaresco.cs" />
     <Compile Include="Models\marinarescosqliteContext.cs" />
-    <Compile Include="NaviglioClasse\NaviglioMinoreUserControl.xaml.cs">
+    <Compile Include="NaviSchermata\NaviglioClasse\NaviglioMinoreUserControl.xaml.cs">
       <DependentUpon>NaviglioMinoreUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NaviglioClasse\RimorchiatoreClasse\RimorchiatoreUserControl.xaml.cs">
+    <Compile Include="NaviSchermata\NaviglioClasse\RimorchiatoreClasse\RimorchiatoreUserControl.xaml.cs">
       <DependentUpon>RimorchiatoreUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="FuoriSedeClassi\FuoriSedeUserControl.xaml.cs">
       <DependentUpon>FuoriSedeUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataBaseFrame\FrameDatabase.xaml.cs">
+    <Compile Include="DataGrid\FrameDatabase.xaml.cs">
       <DependentUpon>FrameDatabase.xaml</DependentUpon>
     </Compile>
     <Compile Include="Scadenze\ScadenzeUserControl.xaml.cs">
@@ -117,7 +118,7 @@
     <Compile Include="UserController\Logo_Marina_USERCONTROLLER.xaml.cs">
       <DependentUpon>Logo_Marina_USERCONTROLLER.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MenuLaterali\menuLaterare_usersControler.cs">
+    <Compile Include="Menu\MenuLaterali\menuLaterare_usersControler.cs">
       <DependentUpon>menuLaterare_usersControler.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserController\MarinaDifesaUserControl.xaml.cs" />
@@ -127,15 +128,15 @@
     <Compile Include="SplashScreen\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
-    <Page Include="CostellazioniClasse\CassiopeaUserControl.xaml">
+    <Page Include="NaviSchermata\ComandantiClasse\CostellazioniClasse\CassiopeaUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="CassiopeaClasse\CassiopeaUserControl.xaml">
+    <Page Include="NaviSchermata\CassiopeaClasse\CassiopeaUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DataBaseFrame\SearchDatagridWindow.xaml">
+    <Page Include="DataGrid\SearchDatagridWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,11 +172,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenuLaterali\MenuLateraleDXUserControl.xaml">
+    <Page Include="Menu\MenuLaterali\MenuLateraleDXUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PontoniClasse\PontoniUserControl.xaml">
+    <Page Include="NaviSchermata\PontoniClasse\PontoniUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -183,19 +184,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SommergibiliClasse\SommergiliUserControl.xaml">
+    <Page Include="NaviSchermata\SommergibiliClasse\SommergiliUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Marinaresco\MarinarescoUserControl.xaml">
+    <Page Include="NaviSchermata\Marinaresco\MarinarescoUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NaviglioClasse\NaviglioMinoreUserControl.xaml">
+    <Page Include="NaviSchermata\NaviglioClasse\NaviglioMinoreUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NaviglioClasse\RimorchiatoreClasse\RimorchiatoreUserControl.xaml">
+    <Page Include="NaviSchermata\NaviglioClasse\RimorchiatoreClasse\RimorchiatoreUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -203,7 +204,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ComandantiClasse\ComadoUserControl.xaml">
+    <Page Include="NaviSchermata\ComandantiClasse\ComadoUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -231,7 +232,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DataBaseFrame\FrameDatabase.xaml">
+    <Page Include="DataGrid\FrameDatabase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -255,7 +256,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MenuLaterali\menuLaterare_usersControler.xaml">
+    <Page Include="Menu\MenuLaterali\menuLaterare_usersControler.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

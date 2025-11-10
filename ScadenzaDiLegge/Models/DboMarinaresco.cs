@@ -13,7 +13,7 @@ namespace ScadenzaDiLegge.Models
         public string Nave { get; set; }
         public string Comando { get; set; }
         public string Base { get; set; }
-        public int? Visto { get; set; }
+        public long? Fattibilita { get; set; }
         public string TipologiaApparecchiature { get; set; }
         public string ApparecchiaturaSistemazione { get; set; }
         public string Posizione { get; set; }
@@ -22,7 +22,7 @@ namespace ScadenzaDiLegge.Models
         public string DataEffettuazione { get; set; }
         public int? ValiditaAnni { get; set; }
         public string ProssimaScadenza { get; set; }
-        public int? GiorniMancantiAllaScadenza { get; set; }
+        public long? GiorniMancantiAllaScadenza { get; set; }
         public string Note { get; set; }
         public string DocumentiCorrelati { get; set; }
         public string Certificati { get; set; }

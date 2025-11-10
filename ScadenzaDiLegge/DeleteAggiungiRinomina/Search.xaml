@@ -7,7 +7,8 @@
         xmlns:ClassiUserController="clr-namespace:ScadenzaDiLegge.ClassiUserController" x:Class="ScadenzaDiLegge.DeleteAggiungiRinomina.Search"
         mc:Ignorable="d"
         Title="Search" 
-        Width="1000" Height="3000"
+     WindowState="Maximized"
+        Width="1000" Height="1100"
     >
 
 
@@ -45,8 +46,8 @@
          HorizontalAlignment="Stretch" Style="{DynamicResource texBlockStyle}"
          />
 
-                <TextBlock Text="VISTO" Style="{DynamicResource textBlockStyle }"/>
-                <TextBox x:Name="visto" TextWrapping="Wrap"  Height="25" FontSize="20"
+                <TextBlock Text="Fattibilita" Style="{DynamicResource textBlockStyle }"/>
+                <TextBox x:Name="Fattibilita" TextWrapping="Wrap"  Height="25" FontSize="20"
          HorizontalAlignment="Stretch" Style="{DynamicResource texBlockStyle}"
          />
 
@@ -123,21 +124,13 @@
          Style="{DynamicResource texBlockStyle}"
          />
 
-                <TextBlock Text="COLONNA 18" Style="{DynamicResource textBlockStyle }"/>
-                <TextBox x:Name="column18" TextWrapping="Wrap" 
-         Height="25" FontSize="20" HorizontalAlignment="Stretch"
-         Style="{DynamicResource texBlockStyle}"
-         />
-
-                <TextBlock Text="COLONNA 19" Style="{DynamicResource textBlockStyle }"/>
-                <TextBox x:Name="column19" TextWrapping="Wrap" 
-         Height="25" FontSize="20" HorizontalAlignment="Stretch"
-         Style="{DynamicResource texBlockStyle}"
-         />
 
 
-                <Border  Style="{StaticResource BorderStyle}"   MouseDown="Search_MouseDown" VerticalAlignment="Bottom">
-                    <TextBlock Text="CERCA" Style="{DynamicResource textBlockStyle}"  MouseDown="Search_MouseDown"  />
+               
+            </StackPanel>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+            <Border  Style="{StaticResource BorderStyle}"   MouseDown="Search_MouseDown" VerticalAlignment="Bottom" Height="1110">
+                    <TextBlock Text="CERCA" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource textBlockStyle}"  MouseDown="Search_MouseDown"  />
 
 
 

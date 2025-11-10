@@ -33,7 +33,7 @@ namespace ScadenzaDiLegge.Scadenze
 
             var context = new marinarescosqliteContext();
 
-            int giorniLim = context.DataMancante.Select(x => x.setdata).FirstOrDefault();
+            int giorniLim = context.DataMancante.Select(x => x.Setdata).FirstOrDefault();
 
 
 

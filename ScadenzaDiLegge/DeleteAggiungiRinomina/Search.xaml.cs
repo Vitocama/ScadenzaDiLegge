@@ -37,7 +37,7 @@ namespace ScadenzaDiLegge.DeleteAggiungiRinomina
             listaProprietaMarinaresco.Add(nave.Text);
             listaProprietaMarinaresco.Add(comando.Text);
             listaProprietaMarinaresco.Add(Base.Text);
-            listaProprietaMarinaresco.Add(visto.Text);
+            listaProprietaMarinaresco.Add(Fattibilita.Text);
             listaProprietaMarinaresco.Add(TipologiaApparecchiature.Text);
             listaProprietaMarinaresco.Add(apparecchiaturaSistemazione.Text);
             listaProprietaMarinaresco.Add(Posizione.Text);
@@ -50,8 +50,7 @@ namespace ScadenzaDiLegge.DeleteAggiungiRinomina
             listaProprietaMarinaresco.Add(note.Text);
             listaProprietaMarinaresco.Add(DocumentiCorrelati.Text);
             listaProprietaMarinaresco.Add(certifiCati.Text);
-            listaProprietaMarinaresco.Add(column18.Text);
-            listaProprietaMarinaresco.Add(column19.Text);
+      
 
 
 

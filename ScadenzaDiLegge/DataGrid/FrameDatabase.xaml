@@ -1,0 +1,214 @@
+﻿<Window x:Class="ScadenzaDiLegge.FrameDatabase"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:ScadenzaDiLegge"
+        mc:Ignorable="d"
+        Title="FrameDatabase" 
+        WindowState="Maximized">
+
+    <Grid>
+        <Grid>
+            <DataGrid x:Name="datagrid"
+          AutoGenerateColumns="False"
+          ItemsSource="{Binding MarinarescoList}"
+          SelectedItem="{Binding MarinarescoSelezionato}"
+          CanUserAddRows="True"
+          CanUserDeleteRows="True"
+          
+          Style="{DynamicResource datagridStyle}"
+          Margin="10"
+                 
+                          
+                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                  ScrollViewer.CanContentScroll="True"
+                      >
+
+                <DataGrid.Columns>
+
+                    
+                    
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
+
+                    
+
+                    <DataGridTextColumn Header="Nave" Binding="{Binding Nave}" IsReadOnly="True"/>
+
+
+
+                    <DataGridTemplateColumn Header="Comando">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <!-- ✅ Mostrato quando NON stai modificando la cella -->
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Comando}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <!-- ✅ Mostrato SOLO durante la modifica -->
+                            <DataTemplate>
+                                <ComboBox SelectedItem="{Binding Comando, UpdateSourceTrigger=PropertyChanged}">
+                                    <sys:String>COMDINAV QUATTRO</sys:String>
+                                    <sys:String>MARISTANAV</sys:String>
+                                    <sys:String>MARISUPLOG ME</sys:String>
+                                    <sys:String>MARISICILIA</sys:String>
+                                    <sys:String>COMDINAV DUE</sys:String>
+                                    <sys:String>MARINARSEN</sys:String>
+
+                                </ComboBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+
+
+
+                    <DataGridTemplateColumn Header="Base">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <!-- ✅ Mostrato quando NON stai modificando la cella -->
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Base}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <!-- ✅ Mostrato SOLO durante la modifica -->
+                            <DataTemplate>
+                                <ComboBox SelectedItem="{Binding Base, UpdateSourceTrigger=PropertyChanged}">
+                                    <sys:String>AU</sys:String>
+                                    <sys:String>CA</sys:String>
+                                    <sys:String>ME</sys:String>
+                                    <sys:String>NA</sys:String>
+                                </ComboBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+
+                    
+                    
+                    <DataGridTextColumn Header="Fattibilita" Binding="{Binding Fattibilita}" />
+                    <DataGridTemplateColumn Header="Tipologia">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding TipologiaApparecchiature}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox SelectedItem="{Binding TipologiaApparecchiature, UpdateSourceTrigger=PropertyChanged}">
+                                    <sys:String>NULL</sys:String>
+                                    <sys:String>Apparecchi di sollevamento azionati a mano</sys:String>
+                                    <sys:String>Apparecchi di sollevamento motorizzati</sys:String>
+                                    <sys:String>Componenti ed accessori non compresi nella configurazione di specifica sistemazione di forza</sys:String>
+                                    <sys:String>Componenti ed accessori non compresi nella configurazione di specifica sistemazione di forza (Accessori smontabili)</sys:String>
+                                    <sys:String>Componenti ed accessori non compresi nella configurazione di specifica sistemazione di forza (Albero abbattibile)</sys:String>
+                                    <sys:String>Componenti ed accessori non compresi nella configurazione di specifica sistemazione di forza (Punti di forza)</sys:String>
+                                    <sys:String>Elevatori</sys:String>
+                                    <sys:String>Sistemazione Tonneggio - Ormeggio - Rimorchio</sys:String>
+                                    <sys:String>Sistemazioni per il trasferimento dei carichi liquidi</sys:String>
+                                    <sys:String>Sistemazioni per il trasferimento dei carichi solidi</sys:String>
+                                    <sys:String>Strutture mobili ed articolate  (Portelloni-Ponti-Rampe)</sys:String>
+                                </ComboBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn x:Name="colAppSist" Header="APPARECCHIATURA SISTEMAZIONE" Binding="{Binding ApparecchiaturaSistemazione}" />
+
+
+
+                    <DataGridTextColumn Header="Posizione" Binding="{Binding Posizione}" />
+                    <DataGridTextColumn Header="Marca / Modello" Binding="{Binding MarcaModelloDimensioni}" />
+                    <DataGridTemplateColumn Header="Accertamento">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding TipoDiAccertamento}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox SelectedItem="{Binding TipoDiAccertamento, UpdateSourceTrigger=PropertyChanged}">
+                                    <sys:String>NULL</sys:String>
+                                    <sys:String>Ispezione e verifica quadriennale</sys:String>
+                                    <sys:String>Ispezione e verifica biennale</sys:String>
+                                    <sys:String>Ispezione e verifica iniziale</sys:String>
+                                    <sys:String>Ispezione e verifica occasionale</sys:String>
+                                    <sys:String>Ispezione e verifica periodica</sys:String>
+                                    <sys:String>Ispezione e verifica programmata</sys:String>
+                                    <sys:String>Ispezione e verifica straordinaria</sys:String>
+                                    <sys:String>Ispezione e Verifica Visiva</sys:String>
+                                    <sys:String>Ispezione iniziale e prima verifica</sys:String>
+                                    <sys:String>Ispezioni e verifiche iniziali</sys:String>
+                                    <sys:String>Ispezioni e verifiche programmate</sys:String>
+                                    <sys:String>Prima verifica - nuova acquisizione</sys:String>
+                                    <sys:String>Verifica Straordinaria</sys:String>
+                                </ComboBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+
+
+
+
+                    <DataGridTextColumn Header="Data Effettuazione"
+                    Binding="{Binding DataEffettuazione, StringFormat=\{0:dd/MM/yyyy\}}"/>
+
+
+
+                    <DataGridTemplateColumn Header="Validità">
+                        <!-- Template quando la cella NON è in editing -->
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ValiditaAnni}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <!-- Template quando la cella è in editing -->
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox SelectedItem="{Binding ValiditaAnni, UpdateSourceTrigger=PropertyChanged}">
+                                    <sys:Int32>0</sys:Int32>
+                                    <sys:Int32>1</sys:Int32>
+                                    <sys:Int32>2</sys:Int32>
+                                    <sys:Int32>3</sys:Int32>
+                                    <sys:Int32>4</sys:Int32>
+                                    <sys:Int32>5</sys:Int32>
+                                    <sys:Int32>6</sys:Int32>
+                                    <sys:Int32>7</sys:Int32>
+                                    <sys:Int32>8</sys:Int32>
+                                    <sys:Int32>9</sys:Int32>
+                                    <sys:Int32>10</sys:Int32>
+                                </ComboBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+
+
+
+                    <DataGridTextColumn Header="Data Scadenza" IsReadOnly="True"
+  Binding="{Binding ProssimaScadenza , StringFormat=\{0:dd/MM/yyyy\}}"/>
+
+
+                    
+                    <DataGridTextColumn Header="Giorni Mancanti" Binding="{Binding GiorniMancantiAllaScadenza}" IsReadOnly="True"/>
+                    
+                    
+                    
+                    <DataGridTextColumn Header="Note" Binding="{Binding Note}" />
+                    
+                    
+                    
+                    <DataGridTextColumn Header="Documento" Binding="{Binding DocumentiCorrelati}" />
+                    
+                    
+                    
+                    <DataGridTextColumn Header="Certificati" Binding="{Binding Certificati}" />
+
+                    
+                    
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+    
+    </Grid>
+</Window>
