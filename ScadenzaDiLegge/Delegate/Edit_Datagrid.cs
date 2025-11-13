@@ -26,47 +26,33 @@ namespace ScadenzaDiLegge.Delegate
 
                 try
                 {
-                    var item = e.Row.Item as DboMarinaresco;
+                    var item = e.Row.Item as Models.Marinaresco;
                     if (item == null)
                         return;
 
                     using (var db = new marinarescosqliteContext())
                     {
-                        var original = db.DboMarinaresco.AsNoTracking()
+                        var original = db.Marinaresco.AsNoTracking()
                                                         .FirstOrDefault(x => x.Id == item.Id);
                         if (original == null)
                             return;
 
-                        // ✅ VALIDAZIONE DataEffettuazione
-                        if (!string.IsNullOrWhiteSpace(item.DataEffettuazione))
+                        // ✅ VALIDAZIONE DataVerifica
+                        if (!string.IsNullOrWhiteSpace(item.DataVerifica))
                         {
-                            if (!DateTime.TryParseExact(item.DataEffettuazione, "dd/MM/yyyy",
+                            if (!DateTime.TryParseExact(item.DataVerifica, "dd/MM/yyyy",
                                 CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
                             {
                                 MessageBox.Show("ERRORE: La Data Effettuazione non è valida (Formato: Giorno/Mese/Anno)",
                                     "Errore Formato", MessageBoxButton.OK, MessageBoxImage.Error);
 
                                 CopyValues(original, item);
-                                RefreshGrid(grid);
+                              //
                                 return;
                             }
                         }
 
-                        // ✅ VALIDAZIONE ProssimaScadenza
-                        if (!string.IsNullOrWhiteSpace(item.ProssimaScadenza)
-                            && item.ProssimaScadenza != "NON CONFORME")
-                        {
-                            if (!DateTime.TryParseExact(item.ProssimaScadenza, "dd/MM/yyyy",
-                                CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
-                            {
-                                MessageBox.Show("ERRORE: La Prossima Scadenza non è valida (Formato: Giorno/Mese/Anno)",
-                                    "Errore Formato", MessageBoxButton.OK, MessageBoxImage.Error);
-
-                                CopyValues(original, item);
-                                RefreshGrid(grid);
-                                return;
-                            }
-                        }
+                        
 
                         // ✅ TUTTO OK – SALVATAGGIO
                         db.Update(item);
@@ -74,7 +60,7 @@ namespace ScadenzaDiLegge.Delegate
                         MessageBox.Show("✅ Modifiche salvate correttamente");
                     }
 
-                    RefreshGrid(grid);
+                   // RefreshGrid(grid);
                 }
                 catch (Exception ex)
                 {
@@ -85,31 +71,32 @@ namespace ScadenzaDiLegge.Delegate
         }
 
         // ✅ Metodo per ricaricare la griglia
+        /**
         private static void RefreshGrid(DataGrid grid)
         {
             using (var refreshDb = new marinarescosqliteContext())
             {
-                grid.ItemsSource = refreshDb.DboMarinaresco.ToList();
+                grid.ItemsSource = refreshDb.Marinaresco.ToList();
                 grid.Items.Refresh();
             }
         }
-
+        **/
         // ✅ Copia valori originali se inseriti errati
-        private static void CopyValues(DboMarinaresco source, DboMarinaresco target)
+        private static void CopyValues(Models.Marinaresco source, Models.Marinaresco target)
         {
-            target.Nave = source.Nave;
+            target.UnitaNavale = source.UnitaNavale;
             target.Comando = source.Comando;
             target.Base = source.Base;
             target.Fattibilita = source.Fattibilita;
-            target.TipologiaApparecchiature = source.TipologiaApparecchiature;
-            target.ApparecchiaturaSistemazione = source.ApparecchiaturaSistemazione;
+            target.CategoriaNav70 = source.CategoriaNav70;
+            target.DescrizioneSistemazione = source.DescrizioneSistemazione;
             target.Posizione = source.Posizione;
-            target.MarcaModelloDimensioni = source.MarcaModelloDimensioni;
+            target.MarcaModelloMatricolaPortata = source.MarcaModelloMatricolaPortata;
             target.TipoDiAccertamento = source.TipoDiAccertamento;
-            target.DataEffettuazione = source.DataEffettuazione;
-            target.ValiditaAnni = source.ValiditaAnni;
-            target.ProssimaScadenza = source.ProssimaScadenza;
-            target.GiorniMancantiAllaScadenza = source.GiorniMancantiAllaScadenza;
+            target.DataVerifica = source.DataVerifica;
+            target.DataVerificaAnni = source.DataVerificaAnni;
+            target.ProssimaVerifica= source.ProssimaVerifica;
+            target.Scadenza = source.Scadenza;
             target.Note = source.Note;
             target.DocumentiCorrelati = source.DocumentiCorrelati;
             target.Certificati = source.Certificati;

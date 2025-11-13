@@ -107,5 +107,10 @@ namespace ScadenzaDiLegge.ClassiUserController
             AggiungiDelegate.addDel();
 
         }
+
+        private void Libra_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

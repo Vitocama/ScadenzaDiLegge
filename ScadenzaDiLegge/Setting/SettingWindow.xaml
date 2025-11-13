@@ -26,7 +26,17 @@
             </Border>
             <TextBlock x:Name="settaggiodatatextBox" Style="{DynamicResource textBlockStyle}" Text="" />
         </StackPanel>
+
+
+
+        <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
+            <Button Name="btnOpenFile" Click="btnOpenFile_Click">Open file</Button>
+       <TextBox Name="txtEditor" />
         
+        </WrapPanel>
+
+        
+
     </Grid>
     
 </Window>

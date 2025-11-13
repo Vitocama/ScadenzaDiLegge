@@ -9,7 +9,7 @@ namespace ScadenzaDiLegge.Models
 {
     public partial class DataMancante
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string DataEvento { get; set; }
         public int Setdata { get; set; }
     }

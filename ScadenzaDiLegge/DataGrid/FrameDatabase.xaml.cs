@@ -37,12 +37,12 @@ namespace ScadenzaDiLegge
         private string _nomeTabella;
 
 
-        public FrameDatabase(string nomeNave)
+        public FrameDatabase(string nomeUnitaNavale)
         {
             InitializeComponent();
 
 
-            _nomeTabella = nomeNave.ToUpper();
+            _nomeTabella = nomeUnitaNavale.ToUpper();
             
             var db = new marinarescosqliteContext();
 
@@ -52,9 +52,9 @@ namespace ScadenzaDiLegge
             {
 
 
-                var  lista = db.DboMarinaresco.OrderBy(x=>x.Id).ToList();
+                var  lista = db.Marinaresco.OrderBy(x=>x.Id).ToList();
                 datagrid.ItemsSource = lista;
-                datagrid.LoadingRow += Datagrid_LoadingRow;
+                datagrid.LoadingRow += LoadRow.Datagrid_LoadingRow;
 
                 
             }
@@ -62,15 +62,15 @@ namespace ScadenzaDiLegge
             else
             {
                 db = new marinarescosqliteContext();
-               var lista = db.DboMarinaresco
-                              .Where(x => x.Nave == _nomeTabella).OrderBy(p=>p.Id).ToList();
+               var lista = db.Marinaresco
+                              .Where(x => x.UnitaNavale == _nomeTabella).OrderBy(p=>p.Id).ToList();
                 datagrid.ItemsSource = lista;
-                datagrid.LoadingRow += Datagrid_LoadingRow;
+                
             }
 
             datagrid.RowEditEnding += Edit_Datagrid.RonRowEditEnding;
 
-            datagrid.LoadingRow += Datagrid_LoadingRow;
+            datagrid.LoadingRow += LoadRow.Datagrid_LoadingRow;
 
         }
 
@@ -81,82 +81,7 @@ namespace ScadenzaDiLegge
 
 
 
-        // Dentro un metodo di un'altra classe
-
-        
-
-
-
-
-
-
-        // Metodo helper per trovare lo ScrollViewer interno
-        private T FindVisualChild<T>(DependencyObject parent) where T : DependencyObject
-        {
-            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
-            {
-                DependencyObject child = VisualTreeHelper.GetChild(parent, i);
-                if (child != null && child is T tChild)
-                    return tChild;
-                else
-                {
-                    T childOfChild = FindVisualChild<T>(child);
-                    if (childOfChild != null)
-                        return childOfChild;
-                }
-            }
-            return null;
-        }
-
-
-
-
-
-        private void Datagrid_LoadingRow(object sender, DataGridRowEventArgs e)
-        {
-            var contex = new marinarescosqliteContext();
-            int limite = contex.DataMancante.Where(x=> x.Id == 1)
-                                            .Select(x => x.Setdata)
-                                            .FirstOrDefault();  
-
-
-
-            var item = e.Row.Item as DboMarinaresco;
-            if (item == null) return;
-
-            if ( item.GiorniMancantiAllaScadenza < limite && item.GiorniMancantiAllaScadenza !=0)
-            {
-                if (item.GiorniMancantiAllaScadenza < 0)
-                {
-                    e.Row.Background = Brushes.White;
-                    e.Row.Foreground = Brushes.Red;
-                }
-
-                else
-                {
-                    e.Row.Background = Brushes.Red;
-                    e.Row.Foreground = Brushes.Black;
-                }
-            }
-            else if (item.Id % 2 == 0)
-            {
-               
-                
-                    e.Row.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6C99C4"));
-                    e.Row.Foreground = Brushes.White;
-                }
-                else
-                {
-                    e.Row.Background = Brushes.LightCyan;
-                    e.Row.Foreground = Brushes.Black;
-
-                }
-
-
-
-
-            }
-
+       
       
     }
 

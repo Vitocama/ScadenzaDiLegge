@@ -1,4 +1,5 @@
 ﻿using ScadenzaDiLegge.ClassiUserController;
+using ScadenzaDiLegge.Delegate;
 using ScadenzaDiLegge.DeleteAggiungiRinomina;
 using ScadenzaDiLegge.Models;
 using ScadenzaDiLegge.Scadenze;
@@ -115,6 +116,37 @@ namespace ScadenzaDiLegge
             Setting.Source = new BitmapImage(new Uri("pack://application:,,,/Img/settingsW.png"));
             SettingLabel.Foreground = Brushes.White;
 
+        }
+
+        private void delete_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            DeleteDelegate.DeleteDel();
+        }
+
+        private void delete_MouseEnter(object sender, MouseEventArgs e)
+        {
+            DeleteLabel.Foreground = Brushes.Black;
+        }
+
+        private void delete_MouseLeave(object sender, MouseEventArgs e)
+        {
+            DeleteLabel.Foreground = Brushes.White;
+        }
+
+        private void aggiungi_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            AggiungiDelegate.addDel();
+        }
+
+        private void aggiungi_MouseEnter(object sender, MouseEventArgs e)
+        {
+            AggiungiLabel.Foreground = Brushes.White;
+        }
+
+        private void aggiungi_MouseLeave(object sender, MouseEventArgs e)
+        {
+            AggiungiLabel.Foreground = Brushes.Black;
         }
     }
 }

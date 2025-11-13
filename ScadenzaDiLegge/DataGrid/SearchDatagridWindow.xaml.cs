@@ -23,12 +23,13 @@ namespace ScadenzaDiLegge.DataBaseFrame
 
 
             datagrid.RowEditEnding += Edit_Datagrid.RonRowEditEnding;
+            datagrid.LoadingRow += LoadRow.Datagrid_LoadingRow;
 
           //  datagrid.LoadingRow += Datagrid_LoadingRow;
 
 
             string _id = listaProprietaMarinaresco[0];
-            string _nave = listaProprietaMarinaresco[1];
+            string _UnitaNavale = listaProprietaMarinaresco[1];
             string _comando = listaProprietaMarinaresco[2];
             string _base = listaProprietaMarinaresco[3];
             string _Fattibilita = listaProprietaMarinaresco[4];
@@ -51,7 +52,7 @@ namespace ScadenzaDiLegge.DataBaseFrame
 
             // Carico lista dal DB
             var context = new marinarescosqliteContext();
-            var lista = context.DboMarinaresco.ToList();
+            var lista = context.Marinaresco.ToList();
 
             // Creo query filtrabile
             var query = lista.AsQueryable();
@@ -62,10 +63,10 @@ namespace ScadenzaDiLegge.DataBaseFrame
                 query = query.Where(p => p.Id == idValue);
             }
 
-            // ✅ FILTRO NAVE
-            if (!string.IsNullOrEmpty(_nave))
+            // ✅ FILTRO UnitaNavale
+            if (!string.IsNullOrEmpty(_UnitaNavale))
             {
-                query = query.Where(p => EF.Functions.Like(p.Nave, $"%{_nave}%"));
+                query = query.Where(p => EF.Functions.Like(p.UnitaNavale, $"%{_UnitaNavale}%"));
             }
 
             // ✅ FILTRO COMANDO
@@ -81,21 +82,22 @@ namespace ScadenzaDiLegge.DataBaseFrame
             }
 
             // ✅ FILTRO Fattibilita
-            if (!string.IsNullOrEmpty(_Fattibilita) && int.TryParse(_id, out  idValue))
+            if (!string.IsNullOrEmpty(_Fattibilita) && int.TryParse(_Fattibilita, out idValue))
             {
-                query = query.Where(p => p.Fattibilita== idValue);
+                bool valoreBool = (idValue == 1);   // 1 → true, 0 → false
+                query = query.Where(p => p.Fattibilita == valoreBool);
             }
 
             // ✅ FILTRO TIPOLOGIA
             if (!string.IsNullOrEmpty(_tipologia))
             {
-                query = query.Where(p => EF.Functions.Like(p.TipologiaApparecchiature, $"%{_tipologia}%"));
+                query = query.Where(p => EF.Functions.Like(p.CategoriaNav70, $"%{_tipologia}%"));
             }
 
             // ✅ FILTRO APP SISTEMA
             if (!string.IsNullOrEmpty(_appSistema))
             {
-                query = query.Where(p => EF.Functions.Like(p.ApparecchiaturaSistemazione, $"%{_appSistema}%"));
+                query = query.Where(p => EF.Functions.Like(p.DescrizioneSistemazione, $"%{_appSistema}%"));
             }
 
             // ✅ FILTRO POSIZIONE
@@ -107,7 +109,7 @@ namespace ScadenzaDiLegge.DataBaseFrame
             // ✅ FILTRO MARCA MODELLI
             if (!string.IsNullOrEmpty(_marcaModelli))
             {
-                query = query.Where(p => EF.Functions.Like(p.MarcaModelloDimensioni, $"%{_marcaModelli}%"));
+                query = query.Where(p => EF.Functions.Like(p.MarcaModelloMatricolaPortata, $"%{_marcaModelli}%"));
             }
 
             // ✅ FILTRO ACCERTAMENTO
@@ -119,25 +121,25 @@ namespace ScadenzaDiLegge.DataBaseFrame
             // ✅ FILTRO DATA EFF
             if (!string.IsNullOrEmpty(_dataEff))
             {
-                query = query.Where(p => EF.Functions.Like(p.DataEffettuazione, $"%{_dataEff}%"));
+                query = query.Where(p => EF.Functions.Like(p.DataVerifica, $"%{_dataEff}%"));
             }
 
             // ✅ FILTRO VALIDITA
-            if (!string.IsNullOrEmpty(_id) && int.TryParse(_id, out  idValue))
+            if (!string.IsNullOrEmpty(_validita) && int.TryParse(_validita, out  idValue))
             {
-                query = query.Where(p => p.ValiditaAnni==idValue);
+                query = query.Where(p => p.DataVerificaAnni==idValue);
             }
 
             // ✅ FILTRO SCADENZA
-            if (!string.IsNullOrEmpty(_scadenza))
+            if (!string.IsNullOrEmpty(_validita) && int.TryParse(_validita, out idValue))
             {
-                query = query.Where(p => EF.Functions.Like(p.ProssimaScadenza, $"%{_scadenza}%"));
+                query = query.Where(p => (p.Scadenza == idValue));
             }
 
             // ✅ FILTRO GIORNI MANCANTI
-            if (!string.IsNullOrEmpty(_giorniMancanti) && int.TryParse(_id, out idValue))
+            if (!string.IsNullOrEmpty(_giorniMancanti) && int.TryParse(_giorniMancanti, out idValue))
             {
-                query = query.Where(p => p.GiorniMancantiAllaScadenza==idValue);
+                query = query.Where(p => p.Scadenza==idValue);
             }
 
             // ✅ FILTRO NOTE

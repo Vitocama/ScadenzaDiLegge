@@ -17,8 +17,8 @@ namespace ScadenzaDiLegge.DeleteAggiungi
             Aggiungi_MouseDown();
             var db = new marinarescosqliteContext();
             
-            var lista = db.DboMarinaresco.OrderBy(n => n.Id).ToList();
-            long maxIdLong = db.DboMarinaresco.Max(x => x.Id)+1;
+            var lista = db.Marinaresco.OrderBy(n => n.Id).ToList();
+            long maxIdLong = db.Marinaresco.Max(x => x.Id)+1;
 
 
 
@@ -30,11 +30,13 @@ namespace ScadenzaDiLegge.DeleteAggiungi
         // Popola la ComboBox con le navi ordinate
         private void Aggiungi_MouseDown()
         {
+
+
              var db = new marinarescosqliteContext();
 
-            var navi = db.DboMarinaresco
-                .Where(x => x.Nave != null)
-                .Select(x => x.Nave)
+            var navi = db.Marinaresco
+                .Where(x => x.UnitaNavale != null)
+                .Select(x => x.UnitaNavale)
                 .Distinct()
                 .OrderBy(n => n)
                 .ToList();
@@ -49,34 +51,35 @@ namespace ScadenzaDiLegge.DeleteAggiungi
         {
             var db = new marinarescosqliteContext();
             int indice = 0;
-            var lista = db.DboMarinaresco.OrderBy(n => n.Id).ToList();
-            long maxIdLong = db.DboMarinaresco.Max(x => x.Id);
+            var lista = db.Marinaresco.OrderBy(n => n.Id).ToList();
+            int maxIdLong = db.Marinaresco.Max(x => x.Id);
             indice = (int)maxIdLong + 1;
 
 
 
 
 
-            if (navComboBox.SelectedItem is string naveSelezionata && !string.IsNullOrEmpty(naveSelezionata))
+            if (navComboBox.SelectedItem is string UnitaNavaleSelezionata && !string.IsNullOrEmpty(UnitaNavaleSelezionata))
             {
                  
 
-                var nuovoRecord = new DboMarinaresco
+                var nuovoRecord = new Models.Marinaresco
                 {
-                    Nave = naveSelezionata,
-                    Id = indice
+                    UnitaNavale = UnitaNavaleSelezionata,
+                    Id = indice,
+                    Fattibilita = false
 
                 };
 
                 try
                 {
-                    db.DboMarinaresco.Add(nuovoRecord);
+                    db.Marinaresco.Add(nuovoRecord);
                     db.SaveChanges();
 
                     // EF popola automaticamente l'ID
                     int newId =(int) nuovoRecord.Id;
 
-                    MessageBox.Show($"Record con ID {newId} e nave '{naveSelezionata}' aggiunto.");
+                    MessageBox.Show($"Record con ID {newId} e UnitaNavale '{UnitaNavaleSelezionata}' aggiunto.");
 
                     // Aggiorna ComboBox per eventuali nuovi inserimenti
                     Aggiungi_MouseDown();
@@ -92,7 +95,7 @@ namespace ScadenzaDiLegge.DeleteAggiungi
             }
             else
             {
-                MessageBox.Show("Selezionare una nave dalla lista.");
+                MessageBox.Show("Selezionare una UnitaNavale dalla lista.");
             }
         }
 

@@ -26,7 +26,7 @@
 
             <TextBlock    Style="{DynamicResource HeaderTextBlockBlockStyle}" Height="50"> ID</TextBlock>
             <ComboBox x:Name="idComboBox"  Height="70" Width="250" Style="{DynamicResource ComboBoxStyle}"></ComboBox>
-            <TextBlock    Style="{DynamicResource HeaderTextBlockBlockStyle}" Height="50" Margin="0,50,0,0"> NAVE</TextBlock>
+            <TextBlock    Style="{DynamicResource HeaderTextBlockBlockStyle}" Height="50" Margin="0,50,0,0"> Unita Navale</TextBlock>
             <ComboBox x:Name="navComboBox"  Height="70" Width="250" Style="{DynamicResource ComboBoxStyle}"></ComboBox>
 
             <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource BorderStyle}"  Margin="0,50,0,0" MouseDown="Cancella_MouseDown">

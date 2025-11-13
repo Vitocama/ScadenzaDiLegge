@@ -21,10 +21,14 @@ namespace ScadenzaDiLegge.DeleteAggiungiRinomina
     /// </summary>
     public partial class Search : Window
     {
+
+        SearchDatagridWindow _searchDatagridWindow;
         public Search()
         {
             InitializeComponent();
-            
+
+
+           
         }
 
         private void Search_MouseDown(object sender, MouseButtonEventArgs e)
@@ -34,19 +38,19 @@ namespace ScadenzaDiLegge.DeleteAggiungiRinomina
 
             // Supponendo che listaProprietaMarinaresco sia List<string>
             listaProprietaMarinaresco.Add(id.Text);
-            listaProprietaMarinaresco.Add(nave.Text);
+            listaProprietaMarinaresco.Add(UnitaNavale.Text);
             listaProprietaMarinaresco.Add(comando.Text);
             listaProprietaMarinaresco.Add(Base.Text);
             listaProprietaMarinaresco.Add(Fattibilita.Text);
-            listaProprietaMarinaresco.Add(TipologiaApparecchiature.Text);
-            listaProprietaMarinaresco.Add(apparecchiaturaSistemazione.Text);
+            listaProprietaMarinaresco.Add(CategoriaNav70.Text);
+            listaProprietaMarinaresco.Add(DescrizioneSistemazione.Text);
             listaProprietaMarinaresco.Add(Posizione.Text);
-            listaProprietaMarinaresco.Add(MarcaModelloDimensioni.Text);
+            listaProprietaMarinaresco.Add(MarcaModelloDimensioniPortatai.Text);
             listaProprietaMarinaresco.Add(TipoDiAccertamento.Text);
-            listaProprietaMarinaresco.Add(DataEffettuazione.Text);
-            listaProprietaMarinaresco.Add(ValiditaAnni.Text);
+            listaProprietaMarinaresco.Add(DataVerifica.Text);
+            listaProprietaMarinaresco.Add(VerificaAnni.Text);
             listaProprietaMarinaresco.Add(ProssimaScadenza.Text);
-            listaProprietaMarinaresco.Add(GiorniMancantiAllaScadenza.Text);
+            listaProprietaMarinaresco.Add(Scadenza.Text);
             listaProprietaMarinaresco.Add(note.Text);
             listaProprietaMarinaresco.Add(DocumentiCorrelati.Text);
             listaProprietaMarinaresco.Add(certifiCati.Text);
@@ -62,13 +66,13 @@ namespace ScadenzaDiLegge.DeleteAggiungiRinomina
             var serchText = Application.Current.Windows.OfType<SearchDatagridWindow>().FirstOrDefault();
             if (serchText != null)
             {
-                SearchDatagridWindow searchDatagridWindow = serchText as SearchDatagridWindow;
-                searchDatagridWindow.Show();
+                _searchDatagridWindow = serchText as SearchDatagridWindow;
+                _searchDatagridWindow.Show();
             }
             else
                 {
-                SearchDatagridWindow searchDatagridWindow = new SearchDatagridWindow(listaProprietaMarinaresco);
-                searchDatagridWindow.Focus();
+                _searchDatagridWindow = new SearchDatagridWindow(listaProprietaMarinaresco);
+                _searchDatagridWindow.Focus();
             }
 
 

@@ -45,14 +45,9 @@
             <TextBlock Text="TIRSO" Style="{DynamicResource textBlockStyle}" ></TextBlock>
         </Border>
 
-        <Border Grid.Row="2" Grid.Column="0" Style="{DynamicResource AggiungiDeleteBordeStyle}" MouseDown="Aggiungi_MouseDown" Cursor="Hand">
-            <TextBlock Text="AGGIUNGI" Style="{DynamicResource textBlockStyle}"/>
+       
 
-        </Border>
-        <Border Grid.Row="2" Grid.Column="2" Style="{DynamicResource AggiungiDeleteBordeStyle}" Cursor="Hand" MouseDown="Delete_MouseDown">
-            <TextBlock Text="DELETE" Style="{DynamicResource textBlockStyle}"/>
-
-        </Border>
+        
     </Grid>
 
 

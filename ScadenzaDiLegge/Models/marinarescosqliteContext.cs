@@ -20,7 +20,7 @@ namespace ScadenzaDiLegge.Models
         }
 
         public virtual DbSet<DataMancante> DataMancante { get; set; }
-        public virtual DbSet<DboMarinaresco> DboMarinaresco { get; set; }
+        public virtual DbSet<Marinaresco> Marinaresco { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -42,53 +42,50 @@ namespace ScadenzaDiLegge.Models
 
                 entity.Property(e => e.Setdata)
                     .IsRequired()
-                    .HasColumnName("Setdata")
+                    .HasColumnName("setdata")
                     .HasColumnType("NUMERIC")
                     .HasDefaultValueSql("40");
             });
 
-            modelBuilder.Entity<DboMarinaresco>(entity =>
+            modelBuilder.Entity<Marinaresco>(entity =>
             {
-                entity.ToTable("dbo_MARINARESCO");
-
-                entity.HasIndex(e => e.Id)
-                    .IsUnique();
+                entity.ToTable("MARINARESCO");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.ApparecchiaturaSistemazione).HasColumnName("APPARECCHIATURA_SISTEMAZIONE");
-
                 entity.Property(e => e.Base).HasColumnName("BASE");
+
+                entity.Property(e => e.CategoriaNav70).HasColumnName("CATEGORIA_NAV_70");
 
                 entity.Property(e => e.Certificati).HasColumnName("CERTIFICATI");
 
-                entity.Property(e => e.Column18).HasColumnName("column18");
-
-                entity.Property(e => e.Column19).HasColumnName("column19");
-
                 entity.Property(e => e.Comando).HasColumnName("COMANDO");
 
-                entity.Property(e => e.DataEffettuazione).HasColumnName("DATA_EFFETTUAZIONE");
+                entity.Property(e => e.DataVerifica).HasColumnName("DATA_VERIFICA");
+
+                entity.Property(e => e.DataVerificaAnni).HasColumnName("DATA_VERIFICA_ANNI");
+
+                entity.Property(e => e.DescrizioneSistemazione).HasColumnName("DESCRIZIONE_SISTEMAZIONE");
 
                 entity.Property(e => e.DocumentiCorrelati).HasColumnName("DOCUMENTI_CORRELATI");
 
-                entity.Property(e => e.Fattibilita).HasColumnName("FATTIBILITA'");
+                entity.Property(e => e.Fattibilita).HasColumnName("FATTIBILITA");
 
-                entity.Property(e => e.GiorniMancantiAllaScadenza).HasColumnName("GIORNI_MANCANTI_ALLA_SCADENZA");
-
-                entity.Property(e => e.MarcaModelloDimensioni).HasColumnName("MARCA_MODELLO_DIMENSIONI");
+                entity.Property(e => e.MarcaModelloMatricolaPortata).HasColumnName("MARCA_MODELLO_MATRICOLA_PORTATA");
 
                 entity.Property(e => e.Note).HasColumnName("NOTE");
 
-                entity.Property(e => e.ProssimaScadenza).HasColumnName("PROSSIMA_SCADENZA");
+                entity.Property(e => e.Posizione).HasColumnName("POSIZIONE");
+
+                entity.Property(e => e.ProssimaVerifica).HasColumnName("PROSSIMA_VERIFICA");
+
+                entity.Property(e => e.Scadenza).HasColumnName("SCADENZA");
 
                 entity.Property(e => e.TipoDiAccertamento).HasColumnName("TIPO_DI_ACCERTAMENTO");
 
-                entity.Property(e => e.TipologiaApparecchiature).HasColumnName("TIPOLOGIA_APPARECCHIATURE");
-
-                entity.Property(e => e.ValiditaAnni).HasColumnName("VALIDITA_anni");
+                entity.Property(e => e.UnitaNavale).HasColumnName("UNITA_NAVALE");
             });
 
             OnModelCreatingPartial(modelBuilder);

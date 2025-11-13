@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ScadenzaDiLegge.InizializzazioneMarinaresco
@@ -33,88 +34,64 @@ namespace ScadenzaDiLegge.InizializzazioneMarinaresco
                 var context = new marinarescosqliteContext();
 
 
-                // 1️⃣ Recupera DataMancante
-                var scade = context.DataMancante
-                    .FirstOrDefault(x => x.Id == 1);
-
-
-
-                if (DateTime.TryParseExact(scade.DataEvento, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataEvento))
-                {
-                    // Parsing riuscito, dataEvento è valida
-                    string dataFormattata = dataEvento.ToString("dd/MM/yyyy");
-                }
 
 
                     DateTime oggi = DateTime.Today;
-                
+                TimeSpan giorni;
+                try
+                {
 
-                // 2️⃣ Aggiorna solo se necessario
-              
-                    // 3️⃣ Recupera tutti i record di DboMarinaresco
-                    var marinarescoList = context.DboMarinaresco.ToList();
-
-
-                    DateTime anniValidita;
+                    var marinarescoList = context.Marinaresco.ToList();
 
 
-                    foreach (var item in marinarescoList) {
+                    DateTime anniValidita; 
 
-                    if(item.DataEffettuazione==null)
+
+                    foreach (var item in marinarescoList) 
                     {
-                        item.ProssimaScadenza = "01/01/1900";
-                        item.GiorniMancantiAllaScadenza = 0;
-                        item.ValiditaAnni = 0;
-                        item.DataEffettuazione = "01/01/1900";
-                        continue;
-                    }
 
+                                     if(item.DataVerifica==null)
+                            {
+                                    item.ProssimaVerifica = new DateTime(1900, 1, 1);
+                                item.Scadenza = 0;
+                                item.DataVerificaAnni = 0;
+                                item.DataVerifica = "01/01/1900";
+                                continue;
+                            }
 
-
-                    if (item.ProssimaScadenza.Equals("NON CONFORME")||
-                        item.ValiditaAnni == 0 || item.ProssimaScadenza=="0"||
-                        item.ProssimaScadenza.Equals("1/1/1900"))
-                    {
-                        item.ProssimaScadenza = "01/01/1900";
-                        item.GiorniMancantiAllaScadenza = 0;
-                        continue;
-                       
-                    }
-
-
-                   
-
-                        if (!DateTime.TryParseExact(item.ProssimaScadenza.ToString(), "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime prossimaScadenza))
-                            continue;
-
-
-                        if (!DateTime.TryParseExact(item.DataEffettuazione.ToString(), "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataEffettuazione))
-                            continue;
-
-                        DateTime dateTime = DateTime.Parse(item.ProssimaScadenza.ToString());
-                        DateTime dateEffettuazione = DateTime.Parse(item.DataEffettuazione.ToString());
-                        if (item.ValiditaAnni == null)
-                            continue;
-                        else
+                        if (
+                            item.DataVerificaAnni == 0 )
                         {
-                            int anni = item.ValiditaAnni.Value;
-
-                            anniValidita = dateEffettuazione.AddYears(anni);
+                                item.ProssimaVerifica = new DateTime(1900, 1, 1);
+                            item.Scadenza = 0;
+                            continue;
+                       
                         }
 
-                        // Calcola giorni mancanti
-                        int giorni = (int)(prossimaScadenza - oggi).TotalDays;
-                        item.GiorniMancantiAllaScadenza = giorni;
-                        item.ProssimaScadenza = anniValidita.ToString("dd/MM/yyyy");
+
+                        DateTime verifica=DateTime.Parse(item.DataVerifica);
+
+
+                            item.ProssimaVerifica = verifica.AddMonths(item.DataVerificaAnni);
+
+
+
+                        giorni = (item.ProssimaVerifica - oggi);
+
+                        item.Scadenza = (int)giorni.TotalDays;
+                           
+                    
                     }
 
                     // 4️⃣ Salva tutti gli aggiornamenti
                     context.SaveChangesAsync();
 
-                    // 5️⃣ Aggiorna DataEvento come "gg/MM/yyyy"
-                    scade.DataEvento = oggi.ToString("dd/MM/yyyy");
+                   
                     context.SaveChangesAsync();
-                
+                 }
+                catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+                }
 
             }
 

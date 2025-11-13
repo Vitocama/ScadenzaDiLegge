@@ -34,13 +34,13 @@ namespace ScadenzaDiLegge
         {
             var db = new marinarescosqliteContext();
 
-            List<int> existingIds = db.DboMarinaresco.Select(item => (int)item.Id).OrderBy(n => n).ToList();
+            List<int> existingIds = db.Marinaresco.Select(item => (int)item.Id).OrderBy(n => n).ToList();
 
             int number = existingIds.Count + 1;
 
             Dictionary<string, int> naviNome = new Dictionary<string, int>();
-            var navi = db.DboMarinaresco
-    .Select(item => item.Nave)
+            var navi = db.Marinaresco
+    .Select(item => item.UnitaNavale)
     .Where(n => n != null)     // evita valori null
     .Distinct()                // opzionale: evita duplicati
     .ToList();
@@ -59,21 +59,21 @@ namespace ScadenzaDiLegge
 
         private void Cancella_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (idComboBox.SelectedItem is int idToDelete && navComboBox.SelectedItem is string naveSelezionata)
+            if (idComboBox.SelectedItem is int idToDelete && navComboBox.SelectedItem is string UnitaNavaleSelezionata)
             {
                 using (var db = new marinarescosqliteContext())
                 {
-                    // Cerca il record con ID e nave corrispondenti
-                    var record = db.DboMarinaresco
-                        .SingleOrDefault(x => x.Id == idToDelete && x.Nave == naveSelezionata);
+                    // Cerca il record con ID e UnitaNavale corrispondenti
+                    var record = db.Marinaresco
+                        .SingleOrDefault(x => x.Id == idToDelete && x.UnitaNavale == UnitaNavaleSelezionata);
 
                     if (record != null)
                     {
                         try
                         {
-                            db.DboMarinaresco.Remove(record);
+                            db.Marinaresco.Remove(record);
                             db.SaveChanges();
-                            MessageBox.Show($"Record con ID {idToDelete} e nave '{naveSelezionata}' eliminato.");
+                            MessageBox.Show($"Record con ID {idToDelete} e UnitaNavale '{UnitaNavaleSelezionata}' eliminato.");
                         }
                         catch (Exception ex)
                         {
@@ -88,7 +88,7 @@ namespace ScadenzaDiLegge
             }
             else
             {
-                MessageBox.Show("Selezionare sia l'ID che la nave.");
+                MessageBox.Show("Selezionare sia l'ID che la UnitaNavale.");
             }
         }
     }

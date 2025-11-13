@@ -75,7 +75,7 @@ namespace ScadenzaDiLegge.ClassiUserController
             database.Show();
         }
 
-        private void Cigali_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Cigala_MouseDown(object sender, MouseButtonEventArgs e)
         {
             string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
 
@@ -132,5 +132,7 @@ namespace ScadenzaDiLegge.ClassiUserController
         {
             AggiungiDelegate.addDel();
         }
+
+      
     }
 }

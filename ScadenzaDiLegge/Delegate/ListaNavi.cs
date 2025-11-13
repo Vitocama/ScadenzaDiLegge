@@ -12,7 +12,7 @@ namespace ScadenzaDiLegge.Delegate
     {
         public static List<string> Lista() {
             var context = new marinarescosqliteContext();
-            List<string> listanavi = context.DboMarinaresco.Select(x => x.Nave.Distinct()).Cast<string>().ToList();
+            List<string> listanavi = context.Marinaresco.Select(x => x.UnitaNavale.Distinct()).Cast<string>().ToList();
             return listanavi;
         }
 

@@ -51,16 +51,11 @@ HorizontalAlignment="Center">
                 <TextBlock Text="VEGA" Style="{DynamicResource textBlockStyle}" ></TextBlock>
             </Border>
 
-            <Border Grid.Row="2" Grid.Column="0" Style="{DynamicResource AggiungiDeleteBordeStyle}" MouseDown="Aggiungi_MouseDown">
-                <TextBlock Text="AGGIUNGI" Style="{DynamicResource textBlockStyle}"/>
-
-            </Border>
-        <Border Grid.Row="2" Grid.Column="1" Style="{DynamicResource AggiungiDeleteBordeStyle}" Cursor="Hand" MouseDown="Delete_MouseDown">
-                <TextBlock Text="DELETE" Style="{DynamicResource textBlockStyle}"/>
-            </Border>
+        <Border Grid.ColumnSpan="2" Grid.Row="0" Style="{StaticResource BorderStyle}" MouseDown="Libra_MouseDown">
+            <TextBlock Text="LIBRA" Style="{DynamicResource textBlockStyle}" ></TextBlock>
+        </Border>
 
 
-        
     </Grid>
 
 

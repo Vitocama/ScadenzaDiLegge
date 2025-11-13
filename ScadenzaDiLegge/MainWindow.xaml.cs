@@ -16,7 +16,7 @@ namespace ScadenzaDiLegge
         public MainWindow()
         {
             InitializeComponent();
-            DataCalcoloMarcanti dataCalcoloMarcanti=new DataCalcoloMarcanti(AreaComune);
+            DataCalcoloMarcanti dataCalcoloMarcanti = new DataCalcoloMarcanti(AreaComune);
             dataCalcoloMarcanti.inizializzaDateScadenza();
 
 
@@ -27,9 +27,7 @@ namespace ScadenzaDiLegge
             Application.Current.Shutdown();
         }
 
-        private void AreaComune_ImageFailed(object sender, ExceptionRoutedEventArgs e)
-        {
-
-        }
     }
-}
+    }
+
+

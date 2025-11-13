@@ -6,22 +6,58 @@
              xmlns:local="clr-namespace:ScadenzaDiLegge.Scadenze"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <Grid>
 
-      
+        <DataGrid x:Name="scadenzaDiLeggeDataGrid"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  IsReadOnly="True"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  AlternatingRowBackground="Red"
+                  RowBackground="#FFA583"
+                  AlternationCount="2">
 
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
-            <DataGrid x:Name="scadenzaDiLeggeDataGrid"
-              AutoGenerateColumns="True"
-              CanUserAddRows="False"
-              CanUserDeleteRows="False"
-              IsReadOnly="True"
-              HorizontalAlignment="Stretch"
-              VerticalAlignment="Stretch"
-              AlternatingRowBackground="red"
-              RowBackground="#FFA583"
-              AlternationCount="2"/>
-        </ScrollViewer>
-        
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
+
+                
+                
+                <DataGridTextColumn Header="Unita Navale" Binding="{Binding UnitaNavale}" IsReadOnly="True"/>
+
+
+
+                <DataGridTextColumn Header="SCADENZA"
+                         Binding="{Binding Scadenza}" IsReadOnly="True"  />
+
+                
+
+                <DataGridTextColumn Header="DESCRIZIONE SISTEMAZIONE" Binding="{Binding DescrizioneSistemazione}" />
+
+                
+                
+
+                <DataGridTextColumn Header="DATA VERIFICA"
+                                    Binding="{Binding DataVerifica, StringFormat=\{0:dd/MM/yyyy\}}"  IsReadOnly="True" />
+
+
+                
+                <DataGridTextColumn Header="PROSSIMA VERIFICA"
+                                    Binding="{Binding ProssimaVerifica, StringFormat=\{0:dd/MM/yyyy\}}"  
+                                    IsReadOnly="True"/>
+
+                
+                
+                <DataGridTextColumn Header="SCADENZA"
+                                    Binding="{Binding Scadenza}" IsReadOnly="True"  />
+
+                
+                
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </UserControl>

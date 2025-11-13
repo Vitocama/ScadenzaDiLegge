@@ -9,70 +9,103 @@
 
         Title="SearchDatagridWindow" WindowState="Maximized">
     <Grid>
-
-
         <Grid>
             <DataGrid x:Name="datagrid"
-        AutoGenerateColumns="False"
-        ItemsSource="{Binding MarinarescoList}"
-        SelectedItem="{Binding MarinarescoSelezionato}"
-        CanUserAddRows="True"
-        CanUserDeleteRows="True"
-       
-        Style="{DynamicResource datagridStyle}"
-        Margin="10"
-               
-                       
-                ScrollViewer.VerticalScrollBarVisibility="Visible"
-                ScrollViewer.CanContentScroll="True"
-                    >
+      AutoGenerateColumns="False"
+      ItemsSource="{Binding MarinarescoList}"
+      SelectedItem="{Binding MarinarescoSelezionato}"
+      CanUserAddRows="FAlse"
+      CanUserDeleteRows="True"
+      
+      Style="{DynamicResource datagridStyle}"
+      Margin="10"
+             
+                      
+              ScrollViewer.VerticalScrollBarVisibility="Visible"
+              ScrollViewer.CanContentScroll="True"
+                  >
 
                 <DataGrid.Columns>
 
-                    <DataGridTextColumn x:Name="colId" Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
 
-                    <DataGridTextColumn x:Name="colNave" Header="Nave" Binding="{Binding Nave}" IsReadOnly="True"/>
 
-                    <DataGridTextColumn x:Name="colComando" Header="Comando" Binding="{Binding Comando}" />
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
 
-                    <DataGridTemplateColumn x:Name="colBase" Header="Base">
+
+
+                    <DataGridTextColumn Header="Unita Navale" Binding="{Binding UnitaNavale}" IsReadOnly="True"/>
+
+
+
+                    <DataGridTemplateColumn Header="Comando">
                         <DataGridTemplateColumn.CellTemplate>
+                            <!-- ✅ Mostrato quando NON stai modificando la cella -->
                             <DataTemplate>
-                                <TextBlock Text="{Binding Base}" />
+                                <TextBlock Text="{Binding Comando}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                         <DataGridTemplateColumn.CellEditingTemplate>
+                            <!-- ✅ Mostrato SOLO durante la modifica -->
                             <DataTemplate>
-                                <ComboBox SelectedItem="{Binding Base, UpdateSourceTrigger=PropertyChanged}">
-                                    <sys:String>AU</sys:String>
-                                    <sys:String>CA</sys:String>
-                                    <sys:String>ME</sys:String>
-                                    <sys:String>NA</sys:String>
+                                <ComboBox SelectedItem="{Binding Comando, UpdateSourceTrigger=PropertyChanged}">
+                                    <sys:String>CDN4</sys:String>
+                                    <sys:String>COMFLOTSOM</sys:String>
+                                    <sys:String>MARISICILIA</sys:String>
+                                    <sys:String>MARISUPLOG ME</sys:String>
+                                    <sys:String>COMDINAV DUE</sys:String>
+
+
                                 </ComboBox>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellEditingTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTextColumn x:Name="colFattibilita" Header="Fattibilita" Binding="{Binding Fattibilita}" />
 
-                    <DataGridTemplateColumn x:Name="colTipologia" Header="Tipologia">
+
+                    <DataGridTemplateColumn Header="Base">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <!-- ✅ Mostrato quando NON stai modificando la cella -->
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Base}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <!-- ✅ Mostrato SOLO durante la modifica -->
+                            <DataTemplate>
+                                <ComboBox SelectedItem="{Binding Base, UpdateSourceTrigger=PropertyChanged}">
+                                    <sys:String>AU</sys:String>
+                                    <sys:String>CA</sys:String>
+                                    <sys:String>ME</sys:String>
+                                </ComboBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+
+
+
+                    <DataGridCheckBoxColumn Header="Fattibilità"
+                            Binding="{Binding Fattibilita}" />
+
+
+
+                    <DataGridTemplateColumn Header="CATEGORIA NAV 70">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding TipologiaApparecchiature}" />
+                                <TextBlock Text="{Binding CategoriaNav70}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                         <DataGridTemplateColumn.CellEditingTemplate>
                             <DataTemplate>
-                                <ComboBox SelectedItem="{Binding TipologiaApparecchiature, UpdateSourceTrigger=PropertyChanged}">
+                                <ComboBox SelectedItem="{Binding CategoriaNav70, UpdateSourceTrigger=PropertyChanged}">
                                     <sys:String>NULL</sys:String>
                                     <sys:String>Apparecchi di sollevamento azionati a mano</sys:String>
                                     <sys:String>Apparecchi di sollevamento motorizzati</sys:String>
+                                    <sys:String>Elevatori</sys:String>
+                                    <sys:String>Sistemazione Tonneggio - Ormeggio - Rimorchio</sys:String>
                                     <sys:String>Componenti ed accessori non compresi nella configurazione di specifica sistemazione di forza</sys:String>
                                     <sys:String>Componenti ed accessori non compresi nella configurazione di specifica sistemazione di forza (Accessori smontabili)</sys:String>
                                     <sys:String>Componenti ed accessori non compresi nella configurazione di specifica sistemazione di forza (Albero abbattibile)</sys:String>
                                     <sys:String>Componenti ed accessori non compresi nella configurazione di specifica sistemazione di forza (Punti di forza)</sys:String>
-                                    <sys:String>Elevatori</sys:String>
-                                    <sys:String>Sistemazione Tonneggio - Ormeggio - Rimorchio</sys:String>
                                     <sys:String>Sistemazioni per il trasferimento dei carichi liquidi</sys:String>
                                     <sys:String>Sistemazioni per il trasferimento dei carichi solidi</sys:String>
                                     <sys:String>Strutture mobili ed articolate  (Portelloni-Ponti-Rampe)</sys:String>
@@ -81,21 +114,27 @@
                         </DataGridTemplateColumn.CellEditingTemplate>
                     </DataGridTemplateColumn>
 
-                    
-                    <DataGridTextColumn x:Name="colAppSist" Header="APPARECCHIATURA SISTEMAZIONE" Binding="{Binding ApparecchiaturaSistemazione}" />
+
+
+                    <DataGridTextColumn Header="DESCRIZIONE SISTEMAZIONE" Binding="{Binding DescrizioneSistemazione}" />
+
+
+                    <DataGridTextColumn Header="POSIZIONE" Binding="{Binding Posizione}" />
 
 
 
-                    <DataGridTextColumn x:Name="colPosizione" Header="Posizione" Binding="{Binding Posizione}" />
+                    <DataGridTextColumn Header="MARCA MODELLO DIMENSIONI PORTATA" Binding="{Binding MarcaModelloMatricolaPortata}" />
 
-                    <DataGridTextColumn x:Name="colMarcaModello" Header="Marca / Modello" Binding="{Binding MarcaModelloDimensioni}" />
 
-                    <DataGridTemplateColumn x:Name="colAccertamento" Header="Accertamento">
+                    <DataGridTemplateColumn Header="Accertamento">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding TipoDiAccertamento}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
+
+
+
                         <DataGridTemplateColumn.CellEditingTemplate>
                             <DataTemplate>
                                 <ComboBox SelectedItem="{Binding TipoDiAccertamento, UpdateSourceTrigger=PropertyChanged}">
@@ -118,18 +157,24 @@
                         </DataGridTemplateColumn.CellEditingTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTextColumn x:Name="colDataEff" Header="Data Effettuazione"
-                        Binding="{Binding DataEffettuazione, StringFormat={}{0:dd/MM/yyyy}}"/>
 
-                    <DataGridTemplateColumn x:Name="colValidita" Header="Validità">
+
+                    <DataGridTextColumn Header="DATA VERIFICA"
+                Binding="{Binding DataVerifica, StringFormat=\{0:dd/MM/yyyy\}}"/>
+
+
+
+                    <DataGridTemplateColumn Header="VERIFICA ANNI">
+                        <!-- Template quando la cella NON è in editing -->
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding ValiditaAnni}" />
+                                <TextBlock Text="{Binding DataVerificaAnni}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
+                        <!-- Template quando la cella è in editing -->
                         <DataGridTemplateColumn.CellEditingTemplate>
                             <DataTemplate>
-                                <ComboBox SelectedItem="{Binding ValiditaAnni, UpdateSourceTrigger=PropertyChanged}">
+                                <ComboBox SelectedItem="{Binding VerificaAnni, UpdateSourceTrigger=PropertyChanged}">
                                     <sys:Int32>0</sys:Int32>
                                     <sys:Int32>1</sys:Int32>
                                     <sys:Int32>2</sys:Int32>
@@ -146,31 +191,35 @@
                         </DataGridTemplateColumn.CellEditingTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTextColumn x:Name="colScadenza" Header="Data Scadenza" IsReadOnly="True"
-                        Binding="{Binding ProssimaScadenza , StringFormat={}{0:dd/MM/yyyy}}"/>
 
-                    <DataGridTextColumn x:Name="colGiorniMancanti" Header="Giorni Mancanti" Binding="{Binding GiorniMancantiAllaScadenza}" IsReadOnly="True"/>
 
-                    <DataGridTextColumn x:Name="colNote" Header="Note" Binding="{Binding Note}" />
+                    <DataGridTextColumn Header="PROSSIMA VERIFICA"
+                IsReadOnly="True"
+                Binding="{Binding ProssimaVerifica, StringFormat={}{0:dd/MM/yyyy}}"/>
 
-                    <DataGridTextColumn x:Name="colDocumenti" Header="Documento" Binding="{Binding DocumentiCorrelati}" />
 
-                    <DataGridTextColumn x:Name="colCertificati" Header="Certificati" Binding="{Binding Certificati}" />
 
-                    <DataGridTextColumn x:Name="col18" Header="colonna 18" Binding="{Binding Column18}" />
+                    <DataGridTextColumn Header="SCADENZA" Binding="{Binding Scadenza}" IsReadOnly="True"/>
 
-                    <DataGridTextColumn x:Name="col19" Header="colonna 19" Binding="{Binding Column19}" />
+
+
+                    <DataGridTextColumn Header="NOTE" Binding="{Binding Note}" />
+
+
+
+                    <DataGridTextColumn Header="DOCUMENTI" Binding="{Binding DocumentiCorrelati}" />
+
+
+
+                    <DataGridTextColumn Header="CERTIFICATI" Binding="{Binding Certificati}" />
 
 
 
                 </DataGrid.Columns>
-
             </DataGrid>
 
         </Grid>
 
-
-
-
     </Grid>
 </Window>
+    

@@ -41,7 +41,7 @@
             <TextBlock Text="BORSINI" Style="{DynamicResource textBlockStyle}"/>
         </Border>
 
-        <Border Grid.Row="1" Grid.Column="0" Style="{DynamicResource BorderStyle}"  MouseDown="Cigali_MouseDown">
+        <Border Grid.Row="1" Grid.Column="0" Style="{DynamicResource BorderStyle}"  MouseDown="Cigala_MouseDown">
             
             <TextBlock Text="CIGALA F." Style="{DynamicResource textBlockStyle}"/>
         </Border>
@@ -50,14 +50,7 @@
             <TextBlock Text="FOSCARI" Style="{DynamicResource textBlockStyle}"/>
         </Border>
 
-        <Border Grid.Row="2" Grid.Column="0" Style="{DynamicResource AggiungiDeleteBordeStyle}" MouseDown="Aggiungi_MouseDown">
-            <TextBlock Text="AGGIUNGI" Style="{DynamicResource textBlockStyle}"/>
-
-
-        </Border>
-        <Border Grid.Row="2" Grid.Column="1" Style="{DynamicResource AggiungiDeleteBordeStyle}" MouseDown="Delete_MouseDown" Cursor="Hand">
-                <TextBlock Text="DELETE" Style="{DynamicResource textBlockStyle}" MouseDown="Delete_MouseDown"/>
-            </Border>
+       
 
 
         

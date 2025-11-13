@@ -24,7 +24,6 @@ namespace ScadenzaDiLegge.Scadenze
     /// </summary>
     public partial class ScadenzeUserControl : UserControl
     {
-        private readonly string _connectionString = "Data Source=C:\\NSL_CHIARA\\marinarescosqlite.sqlite";
 
         public ScadenzeUserControl()
         {
@@ -32,43 +31,17 @@ namespace ScadenzaDiLegge.Scadenze
             InitializeComponent();
 
             var context = new marinarescosqliteContext();
+            var dboMArinaresco = context.Marinaresco.ToList();
+
 
             int giorniLim = context.DataMancante.Select(x => x.Setdata).FirstOrDefault();
 
 
 
+            List<Models.Marinaresco> lista = dboMArinaresco.Where(x => x.Scadenza< giorniLim).ToList();
+            lista = lista.Where(x => x.Scadenza >0).OrderBy(p=>p.Scadenza).ToList();
 
-
-
-            using (var conn = new SqliteConnection(_connectionString)) { 
-
-
-            
-                conn.Open();
-                
-               
-
-                string Sql = @"SELECT 
-    id,
-    nave,
-    GIORNI_MANCANTI_ALLA_SCADENZA,
-    TIPOLOGIA_APPARECCHIATURE,
-    TIPO_DI_ACCERTAMENTO,
-    PROSSIMA_SCADENZA
-FROM dbo_MARINARESCO
-WHERE GIORNI_MANCANTI_ALLA_SCADENZA > 0 
-  AND GIORNI_MANCANTI_ALLA_SCADENZA < @GiorniLimite
-ORDER BY GIORNI_MANCANTI_ALLA_SCADENZA ASC;
-";
-
-                var dboMarinaresco = conn.Query(
-    Sql,
-    new { GiorniLimite =giorniLim}  // <-- qui passi il parametro
-).ToList();
-
-              
-
-                scadenzaDiLeggeDataGrid.ItemsSource = dboMarinaresco;
+            scadenzaDiLeggeDataGrid.ItemsSource = lista;
 
 
             }
@@ -76,5 +49,5 @@ ORDER BY GIORNI_MANCANTI_ALLA_SCADENZA ASC;
         }
 
         
-    }
+    
 
